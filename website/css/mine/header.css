@@ -1,0 +1,141 @@
+/* Colors
+#141259 Dark Purple
+#038c3e Dark Green
+#9a99bf Pale Purple
+#a9d9be Pale Green
+#F2F2F2 Whitish
+*/
+#hiddenNav
+{
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    transition: 0;
+    z-index: 3;
+}
+#lastOffer
+{
+    border-top: 1.25em solid var(--pale-purple);
+    height: 178px;
+    margin-top: .9em;
+    width: 100%;
+}
+#navver
+{
+    position: sticky;
+    top: 0;
+    z-index:3;
+}
+.navbar{
+  --bs-navbar-padding-x: 0;
+  --bs-navbar-padding-y: 0;
+}
+.carousel-item
+{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+.carousel-item img
+{
+    height: 85vh;
+}
+.container, .row, .col,col-1 {
+    margin: 0;
+    padding: 0;
+}
+.mainCardButton
+{
+    background: #141259;
+    border: .3em solid #9be7bc;
+    color: #a9d9be;
+    font-size: 2.25ch;
+    font-weight: bold;
+    margin-left: 3%;
+    width: 30%;
+}
+.mainCardButton:hover
+{
+    
+    background: #9a99bf;
+    border: .3em solid #F2F2F2;
+    color: #F2F2F2;
+}
+.mainCardImage
+{
+    background: #9a99bf;
+    border-bottom: 9pt double #F2F2F2;
+    width: 100%;
+}
+.mainCardTitle
+{
+    background: #a9d9be;
+    border-bottom: 9pt double #F2F2F2;
+    color: #141259;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 2% 0;
+    text-align: center;
+}
+.mainCardTitle a
+{
+    color: #141259;
+    text-decoration: none;
+}
+.mainCardTitle a:hover
+{
+    color: #9a99bf;
+}
+.mainCardPrice
+{
+    border-bottom: 9pt double black;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 190%;
+    padding-left: 10%;
+    text-align: center;
+}
+.mainCardSettings
+{
+    overflow:hidden;
+}
+.mainCardText
+{
+    font-size: 14px;
+    margin-right: 0.25em;
+    text-align:justify;
+}
+.navbar-toggler{
+    color: #000;
+    border: .225rem solid black;
+}
+.navLink
+{
+    background: #000;
+}
+.transNav
+{
+    background: #000;
+    opacity: .4;
+}
+.offers
+{
+    border: .2em solid #9a99bf;
+    height: 178px;
+    margin: 1.25em 0 .6em 0;
+    width: 100%;
+}
+article
+{
+    background: #a9d9be;
+    border: .2em solid #141259;
+    text-justify: center;
+    margin: auto;
+}
+article img
+{
+    width: 100%;
+}
+nav{
+    background: #a9d9be;
+}

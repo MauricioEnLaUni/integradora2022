@@ -1,0 +1,27 @@
+#carrusel
+{
+    --height: 64vh;
+    height: var(--height);
+}
+#carrusel img
+{
+    height: var(--height);
+}
+.carousel-control-prev
+{
+    background: var(--dark-purple);
+    width:10%;
+}
+.carousel-control-next
+{
+    background: var(--dark-purple);
+    width:10%;
+}
+
+@media all and (min-width: 576px)
+{
+    #carrusel
+    {
+        --height: 48vh;
+    }
+}

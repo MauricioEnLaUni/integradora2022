@@ -1,0 +1,65 @@
+.ofertaMain
+{
+    --height: 20vh;
+    display: flex;
+    flex-direction: column;
+    margin: .8vh 0 0 0;
+    position: relative;
+    row-gap: .8vh;
+    user-select: none;
+    z-index: 1;
+}
+.ofertaMain img
+{ 
+    height: var(--height);
+    width: 100vw;
+}
+.ofertaMain::before
+{
+    content:'';
+    background:hsla(var(--dark-purpleA),.4);
+    position: absolute;
+    height: var(--height);
+    width: 100%;
+    z-index:2;
+}
+.ofertaMain h3
+{
+    font-size: 2rem;
+    font-weight: 700;
+    position: absolute;
+    right: 1%;
+    text-shadow: .6px .6px 0 var(--dark-green),.2px .2px .5em var(--dark-purple);
+    top: .2rem;
+    z-index:3;
+}
+.ofertaMain p
+{
+    color: var(--whitish);
+    font-size: .8rem;
+    position: absolute;
+    text-align: right;
+    text-shadow:.8px .8px 0em var(--pale-purple),.2px .2px .5em black;
+    top: 3rem;
+    z-index:3;
+}
+
+@media all and (min-width: 576px)
+{
+    .ofertaMain
+    {
+        --height: 24vh;
+    }
+}
+@media all and (min-width: 767px)
+{
+    .ofertaMain
+    {
+        margin: .8vh 1.5% 0 1.2%;
+        width: 97%;
+    }
+    .ofertaMain img
+    {
+        width: 100%;
+    }
+}
