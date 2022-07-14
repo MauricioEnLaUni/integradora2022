@@ -1,5 +1,5 @@
 <?php
-require '..\..\..\..\ssl\connector.php';
+require '..\..\ssl\connector.php';
 
 if(!$dbc){
   echo 'Connection Error: ' . mysqli_connect_error();

@@ -4,7 +4,7 @@ function drawer(nombre,precio,desc,id){
     '<div class="container">'+
     '<div class="row">'+
     '<div class="col-12 mainCardImage">'+
-    '<img class="" src="..\\img\\items\\'+id+'.jpg" alt=""/>'+
+    '<img class="" src="img\\items\\'+id+'.jpg" alt=""/>'+
     '</div>'+
     '<h3 class="col-12 mainCardTitle"><a href="big.html">'+nombre+'</a></h3>'+
     '<button class="col-4 btn mainCardButton">'+
@@ -26,11 +26,4 @@ function drawer(nombre,precio,desc,id){
     '</article>';
     var content = document.getElementById('card');
     content.innerHTML+=card;
-    // let i = 0;
-    // while(i < iteraciones)
-    // {
-    //     content.innerHTML+=card;
-    //     i++;
-    // }
 }
-// window.addEventListener('load',drawer(10));

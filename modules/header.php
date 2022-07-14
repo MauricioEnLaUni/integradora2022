@@ -3,10 +3,10 @@
 
     <div id="navBarButtons">
         <button id="usuario" onclick="appear('formaUsuario')" class="topbar">
-        <img src="..\img\svg\personOpt.svg" alt="Administración de Usuario" />
+        <img src="img\svg\personOpt.svg" alt="Administración de Usuario" />
         </button>
         <button id="carrito" class="topbar">
-        <img src="..\img\svg\cart.svg" alt="" />
+        <img src="img\svg\cart.svg" alt="" />
         </button>
         <div id="buscar" class="topbar">
             <div class="search-bar">
@@ -17,13 +17,13 @@
                     aria-label="buscar"
                 />
                 <button class="search-bar__submit" aria-label="enviar búsqueda">
-                    <img src="..\img\svg\search.svg" alt="" />
+                    <img src="img\svg\search.svg" alt="" />
                 </button>
                 </div>
             </div>
 
         <button id="lista" onclick="sideBar('hiddenNav','shower','hider')" class="topbar">
-        <img src="..\img\svg\list.svg" alt="" />
+        <img src="img\svg\list.svg" alt="" />
         </button>
     </div>
     <!-- Can be implemented with a Bootstrap modal -->

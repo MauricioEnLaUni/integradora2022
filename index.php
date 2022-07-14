@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fictichos</title>
     <?php
-    include 'stylesheets.php';
+    include 'modules\stylesheets.php';
     ?>
     <link rel="shortcut icon" href="../img/logo/favicon.ico" type="image/x-icon" />
   </head>
@@ -15,16 +15,16 @@
     <!-- Inicia la barra de navegación. -->
     <div class="content-wrapper">
       <?php
-      include 'header.php';
+      include 'modules\header.php';
       ?>
 
       <main>
         <?php
-        include 'carrusel.php';
+        include 'modules\index\carrusel.php';
         ?>
 
         <?php
-        include 'ofertas.php';
+        include 'modules\ofertas.php';
         ?>
 
         <div id="card">
@@ -33,17 +33,17 @@
       </main>
 
       <?php
-      include 'footer.php';
+      include 'modules\footer.php';
       ?>
 
     </div>
 
     <!-- Scripts -->
     <?php
-    include 'scripts.html';
+    include 'modules\scripts.html';
     ?>
     <?php
-      include 'card.php';
+      include 'modules\index\card.php';
     ?>
   </body>
 </html>

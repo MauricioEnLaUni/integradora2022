@@ -8,8 +8,8 @@
     </p>
     <picture>
         <source 
-                srcset="..\img\smol\oferta\saleOffersSmall.webp 767w,
-                        ..\img\salesOffer.jpg 768w"
+                srcset="img\smol\oferta\saleOffersSmall.webp 767w,
+                        img\salesOffer.jpg 768w"
                 sizes="(max-width:767px) 767px,
                         768px"
                 src="img\salesOffer.jpg"
@@ -21,8 +21,8 @@
     <div class="ofertaInd dNone">
     <picture>
         <source 
-                srcset="..\img\smol\oferta\offerTagsSmall.webp 767w,
-                        ..\img\offersTag.jpg 768w"
+                srcset="img\smol\oferta\offerTagsSmall.webp 767w,
+                        img\offersTag.jpg 768w"
                 sizes="(max-width:767px) 767px,
                         768px"
                 src="img\offersTag.jpg"
