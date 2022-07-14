@@ -42,7 +42,16 @@ function sideBar(elem,classAdd,classRemove)
 };
 
 
-function userOrder()
+function userOrder(one,two,address,button)
 {
-  
+  let d = Date(Date.now());
+  let orderTime = d.toString();
+  var content = document.getElementById('datosSale');
+  let datos = `<h3><strong>Nombre de Usuario:</strong></h3><p>`+one+`</p>
+                <h3>Número de Orden:</h3><p>`+two+`</p>
+                <h3>Fecha de Pedido:</h3><p>`+orderTime+`</p>
+                <h3>Dirección de Envio</h3><p>`+address+`</p>
+                <h3>Agregar otra dirección:</h3>`+button+`
+            </div>`;
+  content.innerHTML+=a;
 }
