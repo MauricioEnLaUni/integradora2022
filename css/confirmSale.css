@@ -4,8 +4,31 @@
   grid-template-areas:"user user userPHP formaPago"
                       "norder norder norderPHP formaPago"
                       "fecha fecha PHP formaPago"
-                      "address addressPHP addAddress formaPago";
-  grid-template-columns: 1fr 1fr 2fr 3fr;
+                      "addAddress address addressPHP formaPago";
+  grid-template-columns: 1fr 1fr 2fr;
+}
+#datosSale h3:first-of-type
+{
+    grid-area: user;
+}
+#datosSale h3:nth-of-type(2)
+{
+    grid-area: norder;
+}
+#datosSale h3:nth-of-type(3)
+{
+    grid-area: fecha;
+}
+#datosSale h3,
+#datosSale p,
+#datosSale button
+{
+    display: grid;
+}
+#payments
+{
+  display: grid;
+  grid-area: formaPago;
 }
 #salesTable
 {

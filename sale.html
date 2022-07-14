@@ -20,7 +20,14 @@ crossorigin="anonymous"
         <div class="row">
             <h1>Confirmación de Compra</h1>
         </div>
-        <div class="row" id="datosSale">
+        <div>
+            <div class="row" id="datosSale">
+            </div>
+            <div class="accordion" id="payments">
+                <!-- <?php
+                include "modules\acordeon.php";
+                ?> -->
+            </div>
         </div>
         <div class="row" id="salesTable">
             <div class="container row" id="tHeader">
@@ -140,6 +147,6 @@ crossorigin="anonymous"
 async defer>
 </script>
 <script src="js\one.js"></script>
-<script>userOrder();</script>
+<script>userOrder('José','a23423423','Onwasda','empty');</script>
 </body>
 </html>
