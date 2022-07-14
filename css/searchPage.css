@@ -1,0 +1,19 @@
+#estilo
+{
+    text-align: center;
+    flex: 100%;
+    flex-direction: row;
+}
+#estilo label
+{
+    display: flex;
+    text-align: center;
+}
+#estilo input
+{
+}
+.lmao label > input:checked
+{
+    color: blue;
+    font-size: 90px;
+}
