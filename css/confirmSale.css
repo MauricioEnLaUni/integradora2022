@@ -1,0 +1,43 @@
+#datosSale
+{
+  display:grid;
+  grid-template-areas:"user user userPHP formaPago"
+                      "norder norder norderPHP formaPago"
+                      "fecha fecha PHP formaPago"
+                      "address addressPHP addAddress formaPago";
+  grid-template-columns: 1fr 1fr 2fr 3fr;
+}
+#salesTable
+{
+  border: .4vw double black;
+  max-height: 35vh;
+  margin: auto;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  width: 80%;
+}
+#salesTable::-webkit-scrollbar
+{
+    background-color: #000;
+    color: white;
+}
+.salesTableElement:nth-child(even)
+{
+    background-color: black;
+}
+#tHeader
+{
+  border-bottom: .2vw solid black;
+}
+#tHeader div
+{
+    border-left: .2vw solid black;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center;
+    padding: 1% 0;
+}
+#tHeader :first-child
+{
+    border-left: 0;
+}
