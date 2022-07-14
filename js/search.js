@@ -1,15 +1,34 @@
-function estiloForm(value,name)
+function estiloForm()
 {
-  let checkForm = `
-<label>
-  <input
-  type="checkbox"
-  form="searchBar"
-  name="estilos"
-  value="`+value+`"
-  />
-  <span>`+name+`</span>
-</label>`;
-  var content = document.getElementById('estilo');
-  content.innerHTML+=checkForm;
+  let typeArray = [
+    'Bota',
+    'Bote',
+    'Clogs',
+    'Loafer',
+    'Sandalia',
+    'Slipper',
+    'Atlético',
+    'Trabajo',
+    'Mocasín',
+    'Vestir',
+    'Tacones',
+    'Mary Janes',
+    'Ortopédico'
+    ];
+  let content = document.getElementById('estilo');
+    for(i = 0; i < typeArray.length;i++)
+    {
+        sum=`
+        <label>
+        <input
+        type="checkbox"
+        form="searchBar"
+        name="estilos"
+        value="`+i+`"
+        />
+        <span>`+typeArray[i]+`</span>
+        </label>`;
+        content.innerHTML+=sum;
+    }
 }
+window.addEventListener(onload,estiloForm());

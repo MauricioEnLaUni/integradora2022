@@ -21,9 +21,10 @@
     <link rel="stylesheet" href="css\carrusel.css">
     <link rel="stylesheet" href="css\offers.css">
     <link rel="stylesheet" href="css\footer.css">
+    <link rel="stylesheet" href="css\colors.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <form action="search.php" id="searchBar" role="search">
@@ -43,34 +44,26 @@
             <div class="col-sm-12 col-md-4 col-lg-3" id="searchForm">
                 <fieldset id="estilo">
                     <legend>Estilo</legend>
-                    <label>
-                        <input
-                        type="checkbox"
-                        form="searchBar"
-                        name="estilos"
-                        />
-                        <span>I'm a label</span>
-                    </label>
-                    <label>
-                        <input
-                        type="checkbox"
-                        form="searchBar"
-                        name="estilos"
-                        />
-                        <span>I'm also a label</span>
-                    </label>
                 </fieldset>
                 <fieldset id="oferta">
                     <legend>
                         Descuentos
                     </legend>
                     <label>
+                        Rebajas
                         <input
                         form="searchForm"
-                        name=""
-                        type="checkbox"
+                        name="saleSearch"
+                        type="radio"
                         />
-                        Surprisingly I'm also a label.
+                    </label>
+                    <label>
+                        <input
+                        form="searchForm"
+                        name="saleSearch"
+                        type="radio"
+                        />
+                        Todo
                     </label>
                 </fieldset>
                 <fieldset id="calificacion">
@@ -92,12 +85,24 @@
                         Precio
                     </legend>
                     <label>
-                        Precio Mínimo
-                        <input type="number" name="minNumber"/>
+                        min
+                        <input
+                        type="number"
+                        name="minNumber"
+                        size="5"
+                        min="150"
+                        max="2999"
+                        />
                     </label>
                     <label>
-                        Precio máximo
-                        <input type="number" name="maxNumber"/>
+                        max
+                        <input
+                        type="number"
+                        name="maxNumber"
+                        size="5"
+                        min="150"
+                        max="2999"
+                        />
                     </label>
                 </fieldset>
     
@@ -148,7 +153,7 @@
                 </fieldset>
                 <fieldset id="marca">
                     <legend>
-                        Marca
+                        Color
                     </legend>
                     <label>
                         <input
@@ -169,5 +174,6 @@
                 </article>
             </div>
     </div>
+    <script src="js\search.js"></script>
 </body>
 </html>
