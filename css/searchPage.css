@@ -11,9 +11,9 @@
 }
 #estilo input
 {
+    display: none;
 }
-.lmao label > input:checked
+:checked + span
 {
-    color: blue;
-    font-size: 90px;
+    color: red;
 }
