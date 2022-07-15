@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap -->
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-rel="stylesheet"
-integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-crossorigin="anonymous"
-/>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<link rel="stylesheet" href="css\confirmSale.css">
-<link rel="stylesheet" href="css\colors.css">
-</head>
-<body>
-    <div class="container-fluid">
+<div class="container-fluid">
         <div class="row">
             <h1 id="titleSale">Confirmación de Compra</h1>
         </div>
@@ -28,6 +9,9 @@ crossorigin="anonymous"
                 </div>
                 <div class="col-8">
                     <div class="accordion" id="payments">
+                        <?php
+                        include "modules\\acordeon.php";
+                        ?>
                     </div>
                 </div>
             </div>
@@ -56,13 +40,3 @@ crossorigin="anonymous"
             </form>
         </div>
     </div>
-    
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-async defer>
-</script>
-<script src="js\one.js"></script>
-<script>userOrder('José','a23423423','Onwasda','empty');</script>
-<script>drawOrder(1,'asdasd',548.06,2);</script>
-<script>drawOrder(1,'asdasd',548.06,2);</script>
-</body>
-</html> 

@@ -29,4 +29,11 @@
   --deep-saffron:hsl(30, 95%, 62%);
   /* BLACK */
   --rich-black:hsl(210, 50%, 1%);
+  
+  /* MonoBlue */ 
+  --lavender-web:hsl(229, 89%, 93%);
+  --cornflower-blue:hsl(230, 87%, 72%);
+  --blue-ryb:hsl(230, 88%, 52%);
+  --resolution-blue:hsl(230, 88%, 32%);
+  --oxford-blue:hsl(230, 70%, 12%);
 }
