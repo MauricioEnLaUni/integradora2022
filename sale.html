@@ -28,6 +28,7 @@ crossorigin="anonymous"
                 </div>
                 <div class="col-8">
                     <div class="accordion" id="payments">
+                        <div id="ppplus"></div>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,11 @@ crossorigin="anonymous"
                 </label>
                 <div class="g-recaptcha" data-sitekey="your_site_key"></div>
                 <br/>
-                <input type="submit" value="Comfirmar Pedido">
+                <button
+                type="submit"
+                value="Comfirmar Pedido"
+                id="continueButton"
+                onclick="ppp.doContinue();return false;"></button>
                 <input type="reset" value="Cancelar" />
             </form>
         </div>
@@ -64,5 +69,13 @@ async defer>
 <script>userOrder('José','a23423423','Onwasda','empty');</script>
 <script>drawOrder(1,'asdasd',548.06,2);</script>
 <script>drawOrder(1,'asdasd',548.06,2);</script>
+<script src="https://www.paypalobjects.com/webstatic/ppplusdcc/ppplusdcc.min.js" type="text/javascript"></script>
+<script type="application/javascript">
+    var ppp = PAYPAL.apps.PPP({
+    "approvalUrl": "'.$approval_url.'",
+        "placeholder": "ppplus",
+        "mode": "sandbox",});
+</script>
+<script src="js\paypalPlaholder.js"></script>
 </body>
 </html> 

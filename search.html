@@ -27,15 +27,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <form action="search.php" id="searchBar" role="search">
-                    <label for="searchInput">
+                <form action="search.php" id="searchBar" role="search" method="GET">
+                    <label>
                         <img src="img\svg\search.svg" alt="">
+                        <input
+                        type="search"
+                        name="searchText"
+                        />
                     </label>
-                    <input
-                    type="search"
-                    name="searchText"
-                    id="searchInput"
-                    />
                 </form>
             </div>
         </div>
@@ -53,14 +52,14 @@
                         Rebajas
                         <input
                         form="searchForm"
-                        name="saleSearch"
+                        name="offer"
                         type="radio"
                         />
                     </label>
                     <label>
                         <input
                         form="searchForm"
-                        name="saleSearch"
+                        name="offer"
                         type="radio"
                         />
                         Todo
@@ -92,6 +91,7 @@
                         size="5"
                         min="150"
                         max="2999"
+                        value="150"
                         />
                     </label>
                     <label>
@@ -102,6 +102,7 @@
                         size="5"
                         min="150"
                         max="2999"
+                        value="2999"
                         />
                     </label>
                 </fieldset>
@@ -110,58 +111,49 @@
                     <legend>
                         Género
                     </legend>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="genSearch"
-                        value="dama"
-                        />&ensp;Dama
-                    </label>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="genSearch"
-                        value="caballero"
-                        />&ensp;Caballeros
-                    </label>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="genSearch"
-                        value="unisex"
-                        />&ensp;Unisex
-                    </label>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="genSearch"
-                        value="niños"
-                        />&ensp;Infantil
-                    </label>
+                    <div class="flexbox">
+                        <label>
+                            <input
+                            type="checkbox"
+                            name="genSearch"
+                            value="dama"
+                            />&ensp;Dama
+                        </label>
+                        <label>
+                            <input
+                            type="checkbox"
+                            name="genSearch"
+                            value="caballero"
+                            />&ensp;Caballeros
+                        </label>
+                        <label>
+                            <input
+                            type="checkbox"
+                            name="genSearch"
+                            value="unisex"
+                            />&ensp;Unisex
+                        </label>
+                        <label>
+                            <input
+                            type="checkbox"
+                            name="genSearch"
+                            value="niños"
+                            />&ensp;Infantil
+                        </label>
+                    </div>
                 </fieldset>
                 <fieldset id="marca">
                     <legend>
                         Marca
                     </legend>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="brandSearch"
-                        value=""
-                        />&ensp;Marca
-                    </label>
                 </fieldset>
-                <fieldset id="marca">
+                <fieldset id="colorFlex">
                     <legend>
                         Color
                     </legend>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="colorSearch"
-                        value=""
-                        />&ensp;COLOR
-                    </label>
+                    <div class="flexbox" id="color">
+
+                    </div>
                 </fieldset>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-3" id="searchResults">
