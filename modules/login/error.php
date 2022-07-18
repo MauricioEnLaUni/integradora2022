@@ -14,7 +14,7 @@ function invalidUser($ur,$dbc){
     $result;
     if(!preg_match("/^[a-zA-Z0-9]*$/",$ur))
     {
-        $result = true;
+        
     }
     else
     {
@@ -54,14 +54,11 @@ function invalidEmail($em,$dbc){
         $result = false;
     }
 }
-function repeatPassword($sw,$rp){
+function repeatPassword($pwd,$rpt){
     $result;
-    if($sw !== $rp)
-    {
+    if($pwd !== $rpt){
         $result = true;
-    }
-    else
-    {
+    }else{
         $result = false;
     }
 }
