@@ -1,0 +1,39 @@
+:root
+{
+  /* BLUES */
+  --midnight-blue: hsl(243, 66%, 21%);
+  --electric-blue: hsl(186, 100%, 77%);
+  --persian-blue: hsl(173, 75%, 38%);
+  --teal-blue: hsl(190, 90%, 28%);
+  --glaucous:hsl(224, 38%, 55%);
+  --maximum-blue:hsl(190, 39%, 59%);
+  --wild-blue-yonder:hsl(221, 43%, 69%);
+  --opal:hsl(164, 21%, 65%);
+  /* GREEN */
+  --spanish-green: hsl(145, 81%, 33%);
+  --shiny-shamrock:hsl(133, 21%, 55%);
+  --amazon:hsl(144, 26%, 34%);
+  --hookers-green:hsl(152, 21%, 36%);
+  --eton-blue:hsl(115, 35%, 71%);
+  --bottle-green:hsl(161, 82%, 24%);
+  --artichoke:hsl(97, 16%, 58%);
+  /* WHITES */
+  --snow: hsl(0, 30%, 95%);
+  --lavender-blush:hsl(354, 100%, 96%);
+  --gainsboro:hsl(240, 3%, 88%);
+  /* REDS */
+  --desert-sand:hsl(25, 50%, 79%);
+  --salmon-pink:hsl(358, 79%, 78%);
+  --persian-plum:hsl(1, 66%, 27%);
+  /* YELLOW */
+  --deep-saffron:hsl(30, 95%, 62%);
+  /* BLACK */
+  --rich-black:hsl(210, 50%, 1%);
+  
+  /* MonoBlue */ 
+  --lavender-web:hsl(229, 89%, 93%);
+  --cornflower-blue:hsl(230, 87%, 72%);
+  --blue-ryb:hsl(230, 88%, 52%);
+  --resolution-blue:hsl(230, 88%, 32%);
+  --oxford-blue:hsl(230, 70%, 12%);
+}

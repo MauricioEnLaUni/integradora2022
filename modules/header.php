@@ -2,7 +2,9 @@
     <div id="logo"></div>
 
     <div id="navBarButtons">
-        <button id="usuario" onclick="appear('formaUsuario')" class="topbar">
+        <button id="usuario"
+        data-bs-toggle="modal"
+        href="#logInModal" class="topbar">
         <img src="img\svg\personOpt.svg" alt="Administración de Usuario" />
         </button>
         <button id="carrito" class="topbar">
@@ -26,57 +28,26 @@
         <img src="img\svg\list.svg" alt="" />
         </button>
     </div>
-    <!-- Can be implemented with a Bootstrap modal -->
-    <!-- User LogIn start -->
-    <form
-        action=""
-        method="post"
-        class="ingreso"
-        id="formaUsuario"
-        style="display: none"
-    >
-        <div id="formStyle">
-        <div id="gridUser">
-            <label for="usrForm" class="flexUsrMinor">Cuenta</label>
-            <input
-            type="text"
-            name="usuario"
-            id="entradaUsuario"
-            class="flexUsr usrInput"
-            maxlength="16"
-            />
-            <label for="password" class="flexUsrMinor">Contraseña</label>
-            <input
-            type="password"
-            name="contraseña"
-            id="entradaContraseña"
-            maxlength="60"
-            class="flexUsr usrInput"
-            />
-            <input
-            type="submit"
-            value="Ingresar"
-            class="flexUsrMinor usrButton"
-            />
-            <input
-            type="reset"
-            value="Limpiar"
-            class="flexUsrMinor usrButton"
-            />
-        </div>
-        </div>
-    </form>
-    <!-- User LogIn END -->
-    <!-- End of User log in -->
-    
     <nav>
         <div id="acceder" class="noneBasic">
             <picture> </picture>
-            <p>Acceder</p>
+            <a
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            href="#logInModal"
+            role="button">
+                Acceder
+            </a>
         </div>
         <div id="inscribir" class="noneBasic">
             <picture> </picture>
-            <p>Inscribirse</p>
+            <a
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            href="#logInModal2"
+            role="button">
+                Inscribirse
+            </a>
         </div>
         <div id="noneBasic">
             <div id="acceder">

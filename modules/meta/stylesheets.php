@@ -13,3 +13,11 @@
 <link rel="stylesheet" href="css\offers.css">
 <link rel="stylesheet" href="css\card.css">
 <link rel="stylesheet" href="css\footer.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap"
+rel="stylesheet"> 

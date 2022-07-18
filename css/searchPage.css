@@ -1,19 +1,129 @@
+#marca,
 #estilo
 {
-    text-align: center;
     flex: 100%;
     flex-direction: row;
+    height: 32vh;
+    overflow: scroll;
+    scrollbar-width: none;
 }
+#estilo::-webkit-scrollbar
+{
+  display: none;
+}
+#marca label,
 #estilo label
 {
+    border-top: 2px solid black;
+    color: var(--midnight-blue);
     display: flex;
+    font-size: 1.8vw;
+    font-weight: 700;
+    height: 3vw;
+    padding-left: 1.3em;
     text-align: center;
+    text-shadow: .5px .5px 0em var(--gainsboro),.1px .1px 2.8em var(--gainsboro);
 }
+#marca input,
+#color input,
 #estilo input
 {
     display: none;
 }
+#precio label
+{
+    display: block;
+    float: left;
+    margin-bottom: 3%;
+    padding-left: 5%;
+    width: 50%;
+}
+#oferta label
+{
+    color: var(--midnight-blue);
+    display: block;
+    float:left;
+    font-weight: 600;
+    margin-bottom: 3%;
+    padding-left: 12%;
+    width: 50%;
+}
+#oferta label:focus-within
+{
+    font-weight: 700;
+    text-shadow:
+    .1px .1px 0em var(--gainsboro);
+}
+#searchForm
+{
+    background: var(--teal-blue);
+    padding: 0;
+}
+.flexbox
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin: .3em .5em;
+    min-width: 0;
+}
+#color label
+{
+    display: flex;
+    flex: 0 0 25%;
+    align-content: space-around;
+    justify-content: center;
+    margin: .2em 0;
+}
+#color label:last-child
+{
+    align-self: center;
+    flex: 1 1 100%;
+}
+#color label span
+{
+    border: .2em solid black;
+    border-radius: 100vh;
+    display: flex;
+    min-height: 3vw;
+    min-width: 3vw;
+    position: relative;
+}
+.colorImg
+{
+    display: none;
+    margin:auto;
+    height: 1.3em;
+}
+:checked + img
+{
+    display: flex;
+}
+.flexbox label
+{
+    display: flex;
+    flex: 0 0 50%;
+}
 :checked + span
 {
-    color: red;
+    color: var(--eton-blue);
+    text-shadow:
+      .5px .5px 0em var(--rich-black),
+      .1px .1px 2.8em var(--rich-black);
+}
+fieldset
+{
+  border: .45vw solid var(--maximum-blue);
+}
+legend
+{
+    color: var(--midnight-blue);
+    font-size: 2vw;
+    font-weight: 800;
+    letter-spacing: .22vw;
+    margin: .3em 0 .3em 0;
+    text-align: center;
+    text-shadow:
+      .5px .5px 0em var(--gainsboro),
+      .05px .05px 1.4em var(--persian-plum);
+    
 }

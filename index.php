@@ -6,25 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fictichos</title>
     <?php
-    include 'modules\stylesheets.php';
+      include_once 'modules/meta/stylesheets.php';
     ?>
-    <link rel="shortcut icon" href="../img/logo/favicon.ico" type="image/x-icon" />
+    <link
+    rel="shortcut icon"
+    href="img/logo/favicon.ico"
+    type="image/x-icon"
+    />
   </head>
 
   <body>
+    <?php
+      require_once "modules/session.php";
+    ?>
+    <?php
+      include_once "modules/modal.php";
+    ?>
     <!-- Inicia la barra de navegación. -->
     <div class="content-wrapper">
       <?php
-      include 'modules\header.php';
+        include_once 'modules/header.php';
       ?>
 
       <main>
         <?php
-        include 'modules\index\carrusel.php';
+          include_once 'modules/index/carrusel.php';
         ?>
 
         <?php
-        include 'modules\ofertas.php';
+          include_once 'modules/ofertas.php';
         ?>
 
         <div id="card">
@@ -33,17 +43,17 @@
       </main>
 
       <?php
-      include 'modules\footer.php';
+        include_once 'modules/footer.php';
       ?>
 
     </div>
 
     <!-- Scripts -->
     <?php
-    include 'modules\scripts.html';
+      include_once 'modules/meta/scripts.html';
     ?>
     <?php
-      include 'modules\index\card.php';
+      include_once 'modules/index/card.php';
     ?>
   </body>
 </html>

@@ -1,9 +1,3 @@
-@font-face{
-    font-family: 'Righteous';
-    font-weight: 500;
-    font-style: normal;
-    src: url('/fonts/Righteous-Regular.ttf');
-}
 :root
 {
     --dark-purple:hsl(242, 66%, 21%);
