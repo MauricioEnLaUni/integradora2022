@@ -8,14 +8,14 @@ function submitError($sbm){
         $usr = $_POST['usuario'];
         $pwd = $_POST['password'];
         $eml = $_POST['email'];
-        $rpt = $_POST['repeat'];
+        // $rpt = $_POST['repeat'];
     }else{
-        header("locale:fictichos.com/index.php");
+        header("locale:fictichos.com/index.php?error=submit");
         exit();
     }
 }
 
-function empty_error($usr,$pwd,$rpt,$eml){
+function emptyError($usr,$pwd,$rpt,$eml){
     $result;
     if(empty($ur) || empty($sw) || empty($rp) || empty($em))
     {
@@ -82,11 +82,33 @@ function emailValidation($eml,$dbc){
         }
         mysqli_stmt_close($stmt);
     }else{
-        $result = false;
+        $result = true;
     }
 }
 
-function passValidation(){
+function passValidation($usr,$pwd,$dbc){
+    $result;
+    $sql = 'SELECT `us_pw` FROM `USER` WHERE `us_an` = ?;';
+    $stmt = mysqli_stmt_init($dbc);
+    // Checks the stament works, remove on production.
+    if(!mysqli_stmt_prepare($sql,$stmt)){
+        header("location:". $_SESSION['back'] ."?error=stmt");
+        exit();
+    }
+    mysql_stmt_bind_param($stmt,"s",$usr);
+    mysqli_stmt_execute($stmt);
+    
+    $resultData = mysqli_stmt_get_result($stmt);
 
+    if($row = mysqli_fetch_assoc($resultData)){
+        if(password_verify($pwd,$row)){
+            $result = false;
+        }
+        return $result;
+    }else{
+        $result = true;
+        return $return;
+    }
+    mysqli_stmt_close($stmt);
 }
 ?>

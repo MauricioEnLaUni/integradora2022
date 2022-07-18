@@ -27,7 +27,7 @@ tabindex="-1">
                     </p>
                     <form
                     class="mt-3 mx-4"
-                    action="back.php"
+                    action="logValidate.php"
                     method="POST">
                         <fieldset class="mb-3">
                             <label class="row">
