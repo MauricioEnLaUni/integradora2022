@@ -1,29 +1,47 @@
-#datosSale
+/* #datosSale
 {
   display:grid;
-  grid-template-areas:"user user userPHP formaPago"
-                      "norder norder norderPHP formaPago"
-                      "fecha fecha PHP formaPago"
-                      "addAddress address addressPHP formaPago";
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-areas:"user userPHP userPHP userPHP formaPago"
+                      "norder norderPHP norderPHP norderPHP formaPago"
+                      "fecha fechaPHP fechaPHP fechaPHP formaPago"
+                      "address addH AddressPHP AddressPHP AddressPHP formaPago";
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
 }
-#datosSale h3:first-of-type
+#datosSale p
 {
-    grid-area: user;
+  grid-column: 2 / 4;
+  font-size: 6;
 }
-#datosSale h3:nth-of-type(2)
+#datosSale h3
 {
-    grid-area: norder;
+  grid-column: 1 / 1;
+  font-size: 24px;
 }
-#datosSale h3:nth-of-type(3)
+#datosSale h3:last-child
 {
-    grid-area: fecha;
+  grid-area: addH;
+  font-size: 24px;
+}
+#datosSale button
+{
+    grid-column: 1/2;
 }
 #datosSale h3,
 #datosSale p,
 #datosSale button
 {
     display: grid;
+} */
+#datosSale
+{
+  margin: .4em 5% 1.4em 5%;
+}
+#titleSale
+{
+  font-size: 48px;
+  font-weight: 900;
+  margin: .35em 0;
+  text-align: center;
 }
 #payments
 {
@@ -32,29 +50,68 @@
 }
 #salesTable
 {
-  border: .4vw double black;
+  border: .4vw double var(--lavender-web);
   max-height: 35vh;
   margin: auto;
   overflow-y: auto;
-  scrollbar-gutter: stable;
-  width: 80%;
+  scrollbar-color: var(--electric-blue) var(--rich-black);
+  scrollbar-width: thin;
+  width: 90%;
 }
-#salesTable::-webkit-scrollbar
+.salesTableElement
 {
-    background-color: #000;
-    color: white;
+  align-items: center;
+  background:var(--resolution-blue);
+  border-top: .2vw solid var(--lavender-web);
+  color: var(--snow);
+  margin: 0;
+  font-weight: 600;
+  padding-right: .15em;
+}
+.salesTableElement button
+{
+  background: hsl(42, 100%, 50%);
+  border: .3em solid var(--oxford-blue);
+}
+.salesTableElement button:hover
+{
+  background: var(--blue-ryb);
+  border: .3em solid hsl(77, 100%, 75%);
+}
+.salesTableElement img
+{
+  filter: invert(7%) sepia(36%) saturate(3628%) hue-rotate(215deg) brightness(94%) contrast(102%);
+}
+.salesTableElement img:hover
+{
+  filter: invert(93%) sepia(11%) saturate(1723%) hue-rotate(25deg) brightness(106%) contrast(101%);
+}
+.salesTableElement div
+{
+  text-align: right;
+}
+.salesTableElement div:nth-child(2)
+{
+  text-align: left;
+}
+.salesTableElement div:first-child
+{
+  text-align: center;
 }
 .salesTableElement:nth-child(even)
 {
-    background-color: black;
+    background-color: var(--cornflower-blue);
+    color: var(--oxford-blue);
 }
 #tHeader
 {
-  border-bottom: .2vw solid black;
+  background: var(--oxford-blue);
+  color: var(--snow);
+  margin: 0;
 }
 #tHeader div
 {
-    border-left: .2vw solid black;
+    border-left: .2vw solid var(--lavender-web);
     font-size: 1.3em;
     font-weight: 700;
     text-align: center;
