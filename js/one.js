@@ -1,17 +1,3 @@
-/* This hides a modal when you click outside of it. */
-var userStop = false;
-const target = document.querySelector('#gridUser');
-const fUsr = document.getElementById("formaUsuario");
-  document.addEventListener('click', (event) => {
-    const withinBoundaries = event.composedPath().includes(target)
-  
-    if (!withinBoundaries) {
-      fUsr.style.display = "none";
-    }
-  });
-
-
-
 function appear(elem)
 {
   let a = document.getElementById(elem);
