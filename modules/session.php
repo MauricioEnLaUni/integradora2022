@@ -9,6 +9,7 @@ function manageSessions(){
         $_SESSION['last_activity'] = date('Y-m-d H:i:s');
         $_SESSION['location'] = $_SERVER['REMOTE_ADDR'];
         $_SESSION['userId'] = 0;
+        $_SESSION['cart'] = [];
     }else{
         $_SESSION['back'] = $_SESSION['page'];
         $_SESSION['back'] = substr($_SESSION['back'], 0, strpos($_SESSION['back'], "?"));

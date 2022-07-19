@@ -10,7 +10,7 @@
                 <div class="col-8">
                     <div class="accordion" id="payments">
                         <?php
-                        include "modules\\acordeon.php";
+                        include "modules/acordeon.php";
                         ?>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ $max = (isset($_GET['maxNumber'])) ? $_GET['maxNumber'] : "";
 $gen = (isset($_GET['genSearch'])) ?  'it_wh = ' . $_GET['genSearch'] : "";
 $marca = (isset($_GET['marca'])) ? 'it_br' . $_GET['marca'] : "";
 
-require_once "../../ssl/connector.php";
+require_once "connector.php";
 if(!$dbc){
   echo 'Connection Error: ' . mysqli_connect_error();
 }
