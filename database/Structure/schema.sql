@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `fict`;
 USE `fict`;
 SET NAMES 'utf8mb4';
-
+ALTER TABLE `ACCOUNTING` CHARACTER SET utf8mb4;
 CREATE TABLE `ACCOUNTING`(
 	`ac_id` int NOT NULL, -- ID
     `ac_ct` VARCHAR(12), -- Concepto
@@ -13,7 +13,7 @@ CREATE TABLE `ACCOUNTING`(
     CONSTRAINT `PK_ACC` PRIMARY KEY (`ac_id`),
     INDEX `IX_DT`(`ac_dt`), -- Indice para buscar por fechas
     INDEX `IX_AM`(`ac_am`) -- Indice para buscar por cantidad
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `ADDRESS`(
 	`ad_id` INT NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE `ADDRESS`(
     CONSTRAINT `PK_AD` PRIMARY KEY (`ad_id`),
     INDEX `IX_PS`(`ad_ps`,`ad_cy`),
     INDEX `IX_CY`(`AD_CY`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `BANK`(
 	`bk_id` INT,
@@ -36,7 +36,7 @@ CREATE TABLE `BANK`(
     `bk_nm` VARCHAR(16), -- Account number
 	CONSTRAINT `PK_BK` PRIMARY KEY (`bk_id`),
     CONSTRAINT `UQ_NM` UNIQUE (`bk_nm`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 -- might not be used at all
 CREATE TABLE `CART`(
@@ -45,7 +45,7 @@ CREATE TABLE `CART`(
     `ct_ds` TINYINT, -- Destino del carro, compra, inactividad, cancelacion
     CONSTRAINT `PK_CT` PRIMARY KEY (`CT_ID`),
     INDEX `IX_CT`(`ct_ds`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 -- Tabla muchos a muchos
 -- might not be used at all
@@ -53,7 +53,7 @@ CREATE TABLE `CT_IT`(
 	`ct_id` int,
 	`it_id` int,
     `ct_am` TINYINT -- Amount
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `EMAIL`(
 	`em_id` INT NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `EMAIL`(
 	CONSTRAINT `PK_EM` PRIMARY KEY (`em_id`),
     CONSTRAINT `UQ_EM` UNIQUE (`em_em`),
     INDEX `IX_EM`(`em_em`) -- Indice para buscar por email
-) ENGINE=InnoDB;
+) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 -- Tabla muchos a muchos
 -- Tabla de órdenes e items
@@ -70,7 +70,7 @@ CREATE TABLE `it_or`(
 	`or_id` int,
     `it_id` int,
     `io_am` TINYINT
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `ITEM`(
 	`it_id` INT NOT NULL, -- IDENTIFIER
@@ -89,7 +89,7 @@ CREATE TABLE `ITEM`(
     INDEX `IX_NM`(`it_nm`),
     INDEX `IX_BR`(`it_br`),
     INDEX `IX_OT`(`it_ot`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `OFFERS`(
 	`of_id` int,
@@ -100,7 +100,7 @@ CREATE TABLE `OFFERS`(
     CONSTRAINT `PK_OF` PRIMARY KEY (`of_id`),
     UNIQUE `UQ_OF`(`of_st`),
     INDEX `IX_OFDT`(`of_st`,`of_ed`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `ORDERS`(
 	`or_id` int NOT NULL, -- Identifier PK
@@ -112,7 +112,7 @@ CREATE TABLE `ORDERS`(
     `or_pd` BOOL, -- If the order's been paid. Not sure.
     CONSTRAINT `PK_OR` PRIMARY KEY (`or_id`),
     INDEX `IX_ORPY`(`OR_PY`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `PHONE`(
 	`ph_id` INT NOT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE `PHONE`(
 	CONSTRAINT `PK_PH` PRIMARY KEY (`ph_id`),
     CONSTRAINT `UQ_PH` UNIQUE (`PH_NM`),
     INDEX `IX_PH`(`ph_nm`)
-) ENGINE=InnoDB;
+) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `PROVIDER`(
 	`pr_id` int NOT NULL, -- Identifier
@@ -130,7 +130,7 @@ CREATE TABLE `PROVIDER`(
     CONSTRAINT `PK_PR` PRIMARY KEY (`pr_id`),
     CONSTRAINT `UQ_WB` UNIQUE (`PR_WB`),
     INDEX `IX_WBNM`(`PR_NM`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 create table `SCORE`(
 	`sc_id` INT,-- ID
@@ -138,7 +138,7 @@ create table `SCORE`(
 	`sc_us` INT,-- FK USER
 	`sc_se` INT,-- SCORE?
 	CONSTRAINT `PK_SC` PRIMARY KEY (`sc_id`)
-)engine = InnoDB;
+)engine = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `STOCK`(
 	`st_id` int NOT NULL, -- IDENTIFIER
@@ -148,7 +148,7 @@ CREATE TABLE `STOCK`(
     `st_sz` TINYINT, -- Hexadecimal Operation DETERMINES SHOE SIZE 00 TO FF Only the first 
     CONSTRAINT `PK_ST` PRIMARY KEY (`st_id`),
     INDEX `IX_STSZ`(`ST_SZ`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `USERS`(
 	`us_id` INT NOT NULL, -- Identifier
@@ -163,7 +163,7 @@ CREATE TABLE `USERS`(
     CONSTRAINT `UQ_USAN` UNIQUE (`us_an`),
     CONSTRAINT `UQ_USDN` UNIQUE (`us_dn`),
     INDEX `IX_USPR`(`US_PR`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 -- FOREIGN KEYS
 ALTER TABLE `ACCOUNTING`
