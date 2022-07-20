@@ -85,6 +85,7 @@ CREATE TABLE `ITEM`(
 	`it_wh` CHAR(4), -- Niño, Niña, Infa, Unsx, Homb, Mujr
 	`it_rd` DATE, -- RELEASE DATE
     `it_of` INT,
+    `it_ft` BOOL,
     CONSTRAINT `PK_IT` PRIMARY KEY (`it_id`),
     INDEX `IX_NM`(`it_nm`),
     INDEX `IX_BR`(`it_br`),
