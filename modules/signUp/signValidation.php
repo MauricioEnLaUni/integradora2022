@@ -20,20 +20,20 @@
   }elseif(userValidation($usr) !== true){
     header("Location: http://localhost/Integradora/index.php?error=usr");
     exit();
-  }elseif(newUser($usr,$dbc) !== true){
+  }elseif(newUser($usr,$conn) !== true){
     header("Location: http://localhost/Integradora/index.php?error=newUser");
     exit();
   }elseif(emailValidation($eml) !== true){
     header("Location: http://localhost/Integradora/index.php?error=email");
     exit();
-  }elseif(newEmail($eml,$dbc) !== true){
+  }elseif(newEmail($eml,$conn) !== true){
     header("Location: http://localhost/Integradora/index.php?error=newEmail");
     exit();
   }elseif(passValidation($pwd,$rpt) !== false){
     header("Location: http://localhost/Integradora/index.php?error=password");
     exit();
   }else{
-    createUser($dbc,$usr,$pwd,$eml);
+    createUser($conn,$usr,$pwd,$eml);
   }
   echo "Log In succesful" . $_SESSION['user'];
 ?>
