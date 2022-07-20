@@ -1,0 +1,10 @@
+INSERT INTO USERS VALUES(1,'Jared3540','cagey drug','Jared','Rhodes','ODetQmC1Fgfqnf7rMJTdRTdJzrOZh7TrJD5DfyQAtNt8xjG9JMMtDKvZrqxbu2v7',NULL,3);
+INSERT INTO USERS VALUES(2,'Donna5936','tasteful soda','Donna','Clement','WglYpwEFoMBCyK78SQQF9INi1oRaQchSumnxgPxhMC3jQAzGmlqGqYkhjcdCQWXB',NULL,3);
+INSERT INTO USERS VALUES(3,'Robin4070','talented soda','Robin','Smith','mKr81JDBHiZKaaSAcwjOXVuGydn6Phbjs7jnnxEBTQ0IvR9lK4PenFObqoocSWlf',NULL,3);
+INSERT INTO USERS VALUES(4,'Jamie9889','wary canal','Jamie','Fajardo','Sn5ireKJEymUbZn0yzhPOjZHWzJUitMK3sFJlaErnYezBiT7m7hQaoamA74zrOsa',NULL,3);
+INSERT INTO USERS VALUES(5,'William1292','wise movement','William','Mackinder','5q7blSOPCmQAThGm3wyA26EAiXOdkO5CuBnT7boxTed6AdIVn56lRRhfFJAx0K2h',NULL,3);
+INSERT INTO USERS VALUES(6,'Steven1613','decorous endure','Steven','Wilson','n8qNG4bwwTX8m0nnqb86uivwnNj6Flbcppq1GZnziOIgJfxS0or5JvvvvbDYKsyx',NULL,3);
+INSERT INTO USERS VALUES(7,'Steven7213','hollow bestseller','Steven','Wilson','OhtBDZ8ohvHuW13gJP2kcaoqkCOhTW1rvXWmovhF4QzyKjPia3EEwJC5W4wBlprc',NULL,3);
+INSERT INTO USERS VALUES(8,'John5473','cynical thickness','John','Gregorio','soJQBnwzlfHvSy4CXJ3eRResILRamaUH6XenCJztnriemFKpLSc2zA2mr2JHIpOp',NULL,3);
+INSERT INTO USERS VALUES(9,'Michael130','wacky cornerstone','Michael','Johnson','ejqpTlRpoHatrdGLrRIhi8U4FfmUyN1bJ7MSlz7eWngcL8H9VOTbKfbzAZd810mv',NULL,3);
+INSERT INTO USERS VALUES(10,'Alfred777','maniacal owl','Alfred','Mills','ZGFOf6xb7tuLouRK44YDKnfVwXff5XMyPQ6bSpK4pjTPW37WpZdd7V1F40u0BdbK',NULL,3);

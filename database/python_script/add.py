@@ -28,7 +28,7 @@ def I(a):
     
 def inO(x,y):
     from random import randint
-    return "\'"+str(randint(x,y))+"\'"
+    return "\'"+str(randint(x,y))+"\',"
     
 def nameMe():
     from wonderwords import RandomWord
@@ -44,27 +44,12 @@ def toFile(x,y):
 
 def whose():
     from random import randint
-    if(randint(0,1) == 0):
-        x = randint(1,120)
-        if(x<10):
-            a = "00"+str(x)
-        elif(x<100):
-            a = "0"+str(x)
-        else:
-            a = str(x)
-        return "\'US0"+a+"\',NULL,"
-    else:
-        x = randint(1,30)
-        if(x<10):
-            a = "00"+str(x)
-        elif(x<100):
-            a = "0"+str(x)
-        else:
-            a = str(x)
+    x = randint(1,10)
+    return str(x)+","
 
-        return "NULL,\'PR0"+a+"\',"
-
-for i in range(200):
+for i in range(16):
     ct = list(countries)[0] if randint(1,10) >= 8 else list(countries)[randint(1,5)]
     cy = "\'"+countries[ct]+"\'"
-    toFile("address.txt","INSERT INTO ADDRESS VALUES("+I(i)+whose()+inO(100,1500)+","+nameMe()+","+inO(100,999999)+","+nameMe()+","+cy+",\'"+ct+"\');\n")
+    toFile("address.txt","INSERT INTO ADDRESS VALUES("+str(i+1)+","+
+    whose()+inO(100,1500)+nameMe()+","+inO(1000,64000)+nameMe()+","+
+    cy+",\'"+ct+"\');\n")
