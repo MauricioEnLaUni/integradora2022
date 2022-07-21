@@ -21,8 +21,8 @@
                 <button class="search-bar__submit" aria-label="enviar búsqueda">
                     <img src="img\svg\search.svg" alt="" />
                 </button>
-                </div>
             </div>
+        </div>
 
         <button id="lista" onclick="sideBar('hiddenNav','shower','hider')" class="topbar">
         <img src="img\svg\list.svg" alt="" />

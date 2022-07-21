@@ -53,3 +53,15 @@ function drawOrder(id,nm,un,qt)
 </div>`;
   content.innerHTML+=textblock;
 }
+
+function picture(where,srcOne,srcTwo,def,altText){
+  let content = document.getElementById(where);
+  let picture = `<picture>
+  <source srcset="` + srcOne + ` 767w,` + srcTwo + `, 767w"
+  size="(max-width:767px) 767px,768px"
+  src="` + def +  `"
+  alt="` + altText + `"/>
+  <img src="` + def + `"/>
+  </picture>`;
+  content.innerHTML+=picture;
+}

@@ -1,0 +1,140 @@
+#logo
+{
+    background-color: var(--pale-green);
+    border-right: 0.3vh solid var(--dark-purple);
+}
+#logo picture img{
+  height: 80px;
+  width: 80px;
+}
+.navBCont
+{
+    height: 100%;
+    overflow:hidden;
+}
+.navButtons
+{
+    border-left: 3px double white;
+    color: var(--gainsboro);
+}
+.navButtons:hover,
+.navButtons:hover
+{
+    background: var(--oxford-blue);
+    color: var(--persian-blue);
+}
+.logButtons:hover
+{
+    color: var(--resolution-blue);
+}
+.navButtons:first-child
+{
+  border-left: initial;
+}
+#hiddenNav
+{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    height: calc(100vh - 80px);
+    position: fixed;
+    text-align: center;
+    top: 80px;
+    transition: .25s;
+    width: 70%;
+    z-index: 3;
+}
+#hiddenNav button
+{
+    background: var(--pale-purple);
+    border: 2px double var(--pale-green);
+    cursor: pointer;
+    display: hidden;
+    color: var(--whitish);
+    font-size: 32px;
+    font-weight: 900;
+    padding: 5.5vh;
+    text-decoration: none;
+}
+.hider
+{
+    right: -100%;
+}
+.logButtons
+{
+  color: var(--lavender-web);
+}
+.navButtons
+{
+  background-color: var(--blue-ryb);
+}
+.navContainer
+{
+  background: var(--cornflower-blue);
+  font-size: 24px;
+  font-weight: 700;
+  overflow: hidden;
+}
+.shower
+{
+    right: 0;
+}
+.topbar
+{
+    background: var(--dark-purple);
+    border: 0.6vh double var(--pale-purple);
+    border-radius: 50vh;
+    margin: auto;
+}
+.topbar:hover
+{
+    background: #000;
+}
+.topbar img
+{
+    --size: calc(100vw - 48px);
+    cursor: pointer;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+    padding: 1vh 1vh;
+    width: calc(var(--size) / 7);
+}
+
+@media all and (min-width: 575px)
+{
+    .topbar img
+{
+    --size: calc(100vw - 19vh);
+}
+}
+
+@media all and (min-width: 768px)
+{
+    #hiddenNav
+    {
+        position: static;
+        height: initial;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: initial;
+        grid-area: buttons;
+    }
+    #hiddenNav button
+    {
+        font-size: 1em;
+        height: 100%;
+        padding: 1.4vh 1vw;
+    }
+    #navBarButtons
+    {
+        display: none;
+    }
+    .hider
+    {
+        display: grid;
+    }
+    nav
+    {
+        display: grid;
+        grid-area: navButtons;
+        grid-template-areas: ". access"
+                             "buttons buttons";
+    }
+}
