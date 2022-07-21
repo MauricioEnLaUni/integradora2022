@@ -3,10 +3,10 @@
 if (window.addEventListener) {
     window.addEventListener("message", messageListener, false)
     log("addEventListener successful", "debug");
-    } else if (window.attachEvent) {
+    }else if(window.attachEvent) {
     window.attachEvent("onmessage", messageListener);
     log("attachEvent successful", "debug");
-    } else {
+    }else{
     log("Could not attach message listener", "debug");
     throw new Error("Can't attach message listener");
     }

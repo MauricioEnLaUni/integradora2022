@@ -49,11 +49,6 @@
                 Inscribirse
             </a>
         </div>
-        <div id="noneBasic">
-            <div id="acceder">
-
-            </div>
-        </div>
         <div id="hiddenNav" class="hider">
             <button onclick="location.href='iindex.html'" type="button">
                 Inicio

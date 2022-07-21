@@ -12,6 +12,9 @@
 </head>
 <body>
     <?php
+      include_once "modules/modal.php";
+    ?>
+    <?php
         include_once "modules/header.php";
     ?>
     <div class="container-fluid">
@@ -127,5 +130,8 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
         defer
-      ></script>
+    ></script>
+    <?php
+        include_once "modules/meta/scripts.html";
+    ?>
 </body>
