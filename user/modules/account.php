@@ -1,6 +1,6 @@
 <div class="container mt-4">
 <div class="row">
-  <p><a href="../user.php">Mi Cuenta</a> > Datos Personales y Seguridad</p>
+  <p><a href="user.php">Mi Cuenta</a> > Datos Personales y Seguridad</p>
 </div>
 
 <div class="row text-center">

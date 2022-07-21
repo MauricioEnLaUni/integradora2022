@@ -5,18 +5,18 @@
 <button>
   Bienvenido
 </button>
-<a href="modules/orders.php">
+<a href="orders.php">
   Órdenes
 </a>
-<a href="modules/userPage/account.php">
+<a href="account.php">
   Manejo de Cuenta
 </a>
-<a href="modules/userPage/address.php">
+<a href="address.php">
   Direcciones
 </a>
-<a href="modules/userPage/pay.php">
+<a href="pay.php">
   Pagos
 </a>
-<a href="modules/userPage/support.php">
+<a href="support.php">
   Atención al Cliente
 </a>

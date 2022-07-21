@@ -1,6 +1,6 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-5">
 <div class="row">
-  <p><a href="../user.php">Mi Cuenta</a> > Órdenes</p>
+  <p><a href="user.php">Mi Cuenta</a> > Órdenes</p>
 </div>
 
 <div class="row text-center">

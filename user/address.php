@@ -6,23 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manejo de Cuenta</title>
   <?php
-    include_once "meta/stylesheets.php";
+    include_once "modules/userStyle.php";
   ?>
 </head>
+
 <body>
 <?php
-  include_once "header.php";
+  include_once "../modules/header.php";
 ?>
 
 <?php
-  include_once "userPage/orden.php";
+  include_once "modules/address.php";
 ?>
 
 <?php
-  include_once "footer.php";
+  include_once "../modules/footer.php";
+?>
+
+<?php
+  include_once "../modules/meta/scripts.html";
 ?>
 </body>
 </html>
-<?php
-  include_once "meta/scripts.html";
-?>
