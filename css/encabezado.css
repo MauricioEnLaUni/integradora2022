@@ -1,6 +1,7 @@
 #logo picture img{
   height: 80px;
-  width: 80px;
+  margin-top: 40px;
+  width: calc(100vw / 4);
 }
 #upperBar div
 {

@@ -23,9 +23,9 @@
     <div class="row">
         <p id="itemDesc"></p>
     </div>
-    <div class="row">
-        <div class="col-2">
-            Tallas
+    <div class="row align-items-center">
+        <div class="col-2 text-center">
+            <h3>Tallas</h3>
         </div>
         <div class="col-10">
             <div class="row buttonRow">
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row mt-3 mb-5">
         <button class="btn btn-info">Comprar Ahora</button>
     </div>
 </div>
@@ -75,7 +75,7 @@
     <div class="row">
         <div class="h3 text-center svgTitle">Marca</div>
     </div>
-    <div class="row" id="marca"></div>
+    <div class="rowr" id="marca"></div>
     </div>
 </div>
 </div>

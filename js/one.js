@@ -57,11 +57,20 @@ function drawOrder(id,nm,un,qt)
 function picture(where,srcOne,srcTwo,def,altText){
   let content = document.getElementById(where);
   let picture = `<picture>
-  <source srcset="` + srcOne + ` 767w,` + srcTwo + `, 767w"
-  size="(max-width:767px) 767px,768px"
+  <source srcset="` + srcOne + ` 767w,` + srcTwo + `, 768w"
+  size="(max-width:767px) 0px,768px"
   src="` + def +  `"
   alt="` + altText + `"/>
   <img src="` + def + `"/>
+  </picture>`;
+  content.innerHTML+=picture;
+}
+function pictureSVG(where,srcOne,srcTwo,def,altText){
+  let content = document.getElementById(where);
+  let picture = `<picture>
+  <source type="image/svg+xml" srcset="` + srcOne + `" media="(min-width:768px)" alt="`+altText+`"/>
+  <source type="image/svg+xml" srcset="` + srcTwo + `" media="(max-width:767px)" alt="`+altText+`"/>
+  <img src="` + def + `" alt="`+altText+`"/>
   </picture>`;
   content.innerHTML+=picture;
 }
