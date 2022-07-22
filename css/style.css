@@ -23,6 +23,7 @@
     grid-template-areas: 'encabezado'
                          'principal'
                          'footer';
+    grid-template-rows: 80px 1fr 415px;
     margin: 0;
     padding: 0;
 }
@@ -46,10 +47,11 @@ header
 }
 main
 {
-    background: var(--dark-green);
+    background: var(--wild-blue-yonder);
     display: flex;
     grid-area: principal;
     flex-direction: column;
+    padding: 2vh 0 6vh 0;
 }
 
 footer
@@ -72,7 +74,7 @@ footer
     }
     footer
     {
-        background-color: var(--pale-purple);
+        background-color: var(--persian-blue);
         display: grid;
     }
 }

@@ -8,6 +8,7 @@
     <?php
       include_once 'modules/meta/stylesheets.php';
     ?>
+    <link rel="stylesheet" href="css/parallax.css">
     <link
     rel="shortcut icon"
     href="img/logo/favicon.ico"
@@ -18,11 +19,8 @@
   <body>
     <?php
       require_once "modules/session.php";
-    ?>
-    <?php
       include_once "modules/modal.php";
     ?>
-    <!-- Inicia la barra de navegación. -->
     <div class="content-wrapper">
       <?php
         include_once 'modules/header.php';
@@ -31,12 +29,10 @@
       <main>
         <?php
           include_once 'modules/index/carrusel.php';
+          //include_once 'modules/ofertas.php';
         ?>
-
-        <?php
-          include_once 'modules/ofertas.php';
-        ?>
-
+        <div class="mt-1" id="parallax">
+        </div>
         <div id="card">
         </div>
 
@@ -44,18 +40,14 @@
 
       <?php
         include_once 'modules/footer.php';
+        include_once "modules/meta/scripts.html";
+        echo '<script>
+        picture("logo","img/logo/Fictichos.png","img/logo/bigF.png",
+        "img/logo/Fictichos.png","Logo Test");
+        </script>';
+        include_once 'modules/index/card.php';
       ?>
 
     </div>
-
-    <!-- Scripts -->
-    <?php
-      include_once "modules/meta/scripts.html";
-      echo '<script>
-      picture("logo","img/logo/Fictichos.png","img/logo/bigF.png",
-      "img/logo/Fictichos.png","Logo Test");
-      </script>';
-      include_once 'modules/index/card.php';
-    ?>
   </body>
 </html>
