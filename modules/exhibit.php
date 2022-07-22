@@ -1,29 +1,32 @@
-<div class="container">
+<div class="container mt-3">
 <div class="row">
-<div class="col-md-4">
-    <img src="img/placeholderRAT.jpg" alt="" width="100%"/>
+<div class="col-md-4" id="itemImage">
 </div>
 <div class="col-md-8">
-    <div class="row">
-        <h1>This is a title</h1>
+    <div class="row text-center">
+        <h1 id="itemName"></h1>
     </div>
     <div class="row">
         rating
     </div>
     <div class="row">
     <div class="col-6">
-        <h2>Precio</h2>
+        <h2 >Precio</h2>
     </div>
     <div class="col-6">
-        <h2>$cash</h2>
+        <h2 id="itemPrice"></h2>
     </div>
-    <div class="d-none"></div>
+    <!-- Ofertas -->
+    <div class="d-none"></div> 
+    <!-- Ends Ofertas -->
     </div>
     <div class="row">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laboriosam quo officiis ipsa neque quis, iure, voluptas alias ratione omnis consequuntur. Vel, modi consequuntur voluptate ullam nihil fugiat optio libero?</p>
+        <p id="itemDesc"></p>
     </div>
     <div class="row">
-        talla
+        <div>
+            Tallas Modulo
+        </div>
     </div>
     <div class="row">
         <button class="btn btn-info">Comprar Ahora</button>
@@ -35,19 +38,24 @@
 <div class="row">
     <div class="col-md-3">
     <div class="row">Estilo</div>
-    <div class="row">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ex porro quisquam soluta amet animi sed vitae quos laudantium tenetur, odit harum id deleniti quas aut vero est quasi necessitatibus.</div>
+    <div class="row" id="itemIcon"></div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
     <div class="row">Género</div>
-    <div class="row">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga hic beatae, consectetur quisquam amet corrupti quae voluptatibus laborum, quibusdam optio autem doloribus voluptates. Laboriosam quae iusto porro, maxime omnis labore?</div>
+    <div class="row">
+        <img src="img/svg/genders/man.svg" class="col-md-3" id="man"/>
+        <img src="img/svg/genders/woman.svg" class="col-md-3" id="woman"/>
+        <img src="img/svg/genders/unisex.svg" class="col-md-6" id="genderless"/>
+        <img src="img/svg/genders/boy.svg" class="col-md-3" id="boy"/>
+        <img src="img/svg/genders/girl.svg" class="col-md-3" id="girl"/>
+        <img src="img/svg/genders/child.svg" class="col-md-6" id="child"/>
+    </div>
     </div>
     <div class="col-md-3">
-    <div class="row">Marca</div>
-    <div class="row">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eaque magni sequi suscipit non, deserunt ducimus obcaecati expedita neque beatae amet fuga quis! Nemo eveniet in quas facilis! At, iusto.</div>
+    <div class="row">
+        <div class="h5">Marca</div>
     </div>
-    <div class="col-md-3">
-    <div class="row">Color</div>
-    <div class="row">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti expedita rem ab sunt explicabo earum itaque facilis, praesentium dolores vel doloremque illo eius harum eaque debitis sequi! Voluptate, deserunt explicabo.</div>
+    <div class="row" id="marca"></div>
     </div>
 </div>
 </div>

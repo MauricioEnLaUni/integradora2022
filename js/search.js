@@ -8,12 +8,7 @@ function estiloForm()
     'Sandalia',
     'Slipper',
     'Atlético',
-    'Trabajo',
-    'Mocasín',
-    'Vestir',
-    'Tacones',
-    'Mary Janes',
-    'Ortopédico'
+    'Trabajo'
     ];
   let content = document.getElementById('estilo');
     for(i = 0; i < typeArray.length;i++)

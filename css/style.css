@@ -37,10 +37,7 @@
 header
 {
     border-bottom: 0.6vh double var(--dark-purple);
-    display: grid;
     grid-area: encabezado;
-    grid-template-areas: 'logo navButtons';
-    grid-template-columns: 96px 1fr;
     margin: 0;
     padding: 0;
     position: sticky;
