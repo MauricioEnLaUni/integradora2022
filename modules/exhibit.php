@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3" id="exCont">
 <div class="row">
 <div class="col-md-4" id="itemImage">
 </div>
@@ -24,25 +24,45 @@
         <p id="itemDesc"></p>
     </div>
     <div class="row">
-        <div>
-            Tallas Modulo
+        <div class="col-2">
+            Tallas
+        </div>
+        <div class="col-10">
+            <div class="row buttonRow">
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+            </div>
+            <div class="row buttonRow">
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+                <button class="col-2">sizea</button>
+            </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
         <button class="btn btn-info">Comprar Ahora</button>
     </div>
 </div>
 </div>
 
 
-<div class="row">
+<div class="row" id="svgHell">
     <div class="col-md-3">
-    <div class="row">Estilo</div>
+    <div class="row">
+        <p class="h3 text-center svgTitle">Estilo</p>
+    </div>
     <div class="row" id="itemIcon"></div>
     </div>
     <div class="col-md-6">
-    <div class="row">Género</div>
     <div class="row">
+        <p class="h3 text-center svgTitle sideBorder">Género</p>
+        </div>
+    <div class="row" id="shoesWhose">
         <img src="img/svg/genders/man.svg" class="col-md-3" id="man"/>
         <img src="img/svg/genders/woman.svg" class="col-md-3" id="woman"/>
         <img src="img/svg/genders/unisex.svg" class="col-md-6" id="genderless"/>
@@ -53,7 +73,7 @@
     </div>
     <div class="col-md-3">
     <div class="row">
-        <div class="h5">Marca</div>
+        <div class="h3 text-center svgTitle">Marca</div>
     </div>
     <div class="row" id="marca"></div>
     </div>
