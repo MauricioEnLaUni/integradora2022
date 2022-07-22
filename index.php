@@ -50,9 +50,11 @@
 
     <!-- Scripts -->
     <?php
-      include_once 'modules/meta/scripts.html';
-    ?>
-    <?php
+      include_once "modules/meta/scripts.html";
+      echo '<script>
+      picture("logo","img/logo/Fictichos.png","img/logo/bigF.png",
+      "img/logo/Fictichos.png","Logo Test");
+      </script>';
       include_once 'modules/index/card.php';
     ?>
   </body>

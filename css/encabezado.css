@@ -1,50 +1,43 @@
-#logo
-{
-    background: url(../img/logo/bigF.svg) right top no-repeat;
-    background-color: var(--pale-green);
-    background-size: 100% 100%;
-    border-right: 0.3vh solid var(--dark-purple);
-    display: grid;
-    grid-area: logo;
-    height: 96px;
-    transition: .25s;
-    width: 96px;
+#logo picture img{
+  height: 80px;
+  width: 80px;
 }
-#navBarButtons
+#upperBar div
 {
-    background: var(--pale-green);
-    display: grid;
-    grid-template-areas: 'usuario carrito busqueda lista';
-    grid-area: navButtons;
+    display: flex;
 }
-#usuario
+.navBCont
 {
-    display: grid;
-    grid-area: usuario;
+    height: 100%;
+    overflow:hidden;
 }
-#buscar
+.navButtons
 {
-    display: grid;
-    grid-area: busqueda;
+    border-left: 3px double white;
+    color: var(--gainsboro);
 }
-#carrito
+.navButtons:hover,
+.navButtons:hover
 {
-    display: grid;
-    grid-area: carrito;
+    background: var(--oxford-blue);
+    color: var(--persian-blue);
 }
-#lista
+.logButtons:hover
 {
-    display: grid;
-    grid-area: lista;
+    color: var(--resolution-blue);
+}
+.navButtons:first-child
+{
+  border-left: initial;
 }
 #hiddenNav
 {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    height: calc(100vh - 96px);
+    height: calc(100vh - 80px);
     position: fixed;
     text-align: center;
-    top: 96px;
+    top: 80px;
     transition: .25s;
     width: 70%;
     z-index: 3;
@@ -64,6 +57,25 @@
 .hider
 {
     right: -100%;
+}
+.logButtons
+{
+  color: var(--lavender-web);
+}
+.navButtons
+{
+  background-color: var(--blue-ryb);
+}
+.navButtons
+{
+  text-decoration: none;
+}
+.navContainer
+{
+  background: var(--cornflower-blue);
+  font-size: 24px;
+  font-weight: 700;
+  overflow: hidden;
 }
 .shower
 {
@@ -112,14 +124,6 @@
         font-size: 1em;
         height: 100%;
         padding: 1.4vh 1vw;
-    }
-    #logo
-    {
-        background: url(../img/logo/Fictichos.png) center no-repeat;
-        background-size: cover;
-        background-color: var(--pale-green);
-        max-height: 96px;
-        min-width: 100%;
     }
     #navBarButtons
     {

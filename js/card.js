@@ -10,8 +10,8 @@ function drawer(nombre,precio,desc,id){
     <div class="col-12 mainCardImage">
     <img class="" src="img/items/`+id+`.jpg" alt="Producto `+nombre+`"/>
     </div>
-    <h3 class="col-12 mainCardTitle"><a href="big.html">`+
-    capitalizeWords(nombre)+`</a></h3>
+    <h3 class="col-12 mainCardTitle"><a href="exhibit.php?product=`+
+    id+`">`+capitalizeWords(nombre)+`</a></h3>
     <button class="col-4 btn mainCardButton">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="curr
     entColor" class="bi bi-cart-plus" viewBox="0 0 16 16">

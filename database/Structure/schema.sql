@@ -333,3 +333,5 @@ SHOW GRANTS FOR 'invitado'@'localhost';
 -- GRANT select ON  proyecto_bd1.stock TO 'provider'@'localhost';
 -- GRANT select,update,delete ON  proyecto_bd1.users TO 'provider'@'localhost';
 -- FLUSH PRIVILEGES;
+
+mysqldump `fict` > 'C:\xampp\htdocs\Integradora\database\localDump\22072022.sql';

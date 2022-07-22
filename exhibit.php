@@ -9,27 +9,37 @@
     <?php
         include_once "modules/meta/stylesheets.php";
     ?>
+    <link rel="stylesheet" href="css/exhibit.css">
 </head>
 
 <body>
     <?php
+      require_once "modules/session.php";
+      require_once "../../ssl/connector.php";
       include_once "modules/modal.php";
-    ?>
-    <?php
-        include_once "modules/header.php";
-    ?>
-    
-    <?php
-        include_once "modules/exhibit.php";
-    ?>
-    <?php
-        include_once "modules/footer.php";
+      include_once "modules/modal.php";
+      include_once "modules/header.php";
+      include_once "modules/exhibit.php";
+      include_once "modules/footer.php";
     ?>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
         defer
     ></script>
     <?php
-        include_once "modules/meta/scripts.html";
+    include_once "modules/meta/scripts.html";
+    $id = $_GET['product'];
+
+    $stmt = $conn->prepare('SELECT `it_nm`,`it_ds`,`it_ot`,`it_br`,`it_mt`,`it_cl`,`it_tp`,`it_wh`,`it_of`
+                            FROM `ITEM`
+                            WHERE `it_id` = :i');
+    $stmt->bindParam('i',$id);
+    $stmt->execute();
+    while($row = $stmt->fetch()){
+        $loljson = json_encode($row);
+        echo "<script>exhibit('itemImage',$loljson,$id)</script>";
+        
+    }
     ?>
 </body>
+</html>

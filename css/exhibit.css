@@ -1,0 +1,39 @@
+#itemImage picture img{
+  width: calc(100vw / 4);
+}
+.selectedIcon
+{
+  filter: invert(57%) sepia(98%) saturate(819%) hue-rotate(360deg) brightness(102%) contrast(104%);
+}
+.zapatoORANG
+{
+  filter: invert(57%) sepia(98%) saturate(819%) hue-rotate(360deg) brightness(102%) contrast(104%);
+}
+.zapatoGREEN
+{
+  filter: invert(25%) sepia(81%) saturate(1894%) hue-rotate(101deg) brightness(96%) contrast(107%);
+}
+.zapatoBLACK
+{
+  filter: invert(0%) sepia(100%) saturate(7434%) hue-rotate(211deg) brightness(115%) contrast(115%);
+}
+.zapatoYELLW
+{
+  filter: invert(88%) sepia(59%) saturate(7500%) hue-rotate(357deg) brightness(107%) contrast(105%);
+}
+.zapatoBLUE
+{
+  filter: invert(8%) sepia(100%) saturate(7418%) hue-rotate(248deg) brightness(93%) contrast(144%);
+}
+.zapatoRED
+{
+  filter: invert(12%) sepia(80%) saturate(6947%) hue-rotate(3deg) brightness(105%) contrast(116%);
+}
+.zapatoBROWN
+{
+  filter: invert(26%) sepia(66%) saturate(2105%) hue-rotate(338deg) brightness(75%) contrast(95%);
+}
+.zapatoWHITE
+{
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(317deg) brightness(107%) contrast(105%);
+}

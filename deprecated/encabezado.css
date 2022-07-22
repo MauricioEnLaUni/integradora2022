@@ -1,44 +1,50 @@
 #logo
 {
+    background: url(../img/logo/bigF.svg) right top no-repeat;
     background-color: var(--pale-green);
+    background-size: 100% 100%;
     border-right: 0.3vh solid var(--dark-purple);
+    display: grid;
+    grid-area: logo;
+    height: 96px;
+    transition: .25s;
+    width: 96px;
 }
-#logo picture img{
-  height: 80px;
-  width: 80px;
-}
-.navBCont
+#navBarButtons
 {
-    height: 100%;
-    overflow:hidden;
+    background: var(--pale-green);
+    display: grid;
+    grid-template-areas: 'usuario carrito busqueda lista';
+    grid-area: navButtons;
 }
-.navButtons
+#usuario
 {
-    border-left: 3px double white;
-    color: var(--gainsboro);
+    display: grid;
+    grid-area: usuario;
 }
-.navButtons:hover,
-.navButtons:hover
+#buscar
 {
-    background: var(--oxford-blue);
-    color: var(--persian-blue);
+    display: grid;
+    grid-area: busqueda;
 }
-.logButtons:hover
+#carrito
 {
-    color: var(--resolution-blue);
+    display: grid;
+    grid-area: carrito;
 }
-.navButtons:first-child
+#lista
 {
-  border-left: initial;
+    display: grid;
+    grid-area: lista;
 }
 #hiddenNav
 {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    height: calc(100vh - 80px);
+    height: calc(100vh - 96px);
     position: fixed;
     text-align: center;
-    top: 80px;
+    top: 96px;
     transition: .25s;
     width: 70%;
     z-index: 3;
@@ -58,21 +64,6 @@
 .hider
 {
     right: -100%;
-}
-.logButtons
-{
-  color: var(--lavender-web);
-}
-.navButtons
-{
-  background-color: var(--blue-ryb);
-}
-.navContainer
-{
-  background: var(--cornflower-blue);
-  font-size: 24px;
-  font-weight: 700;
-  overflow: hidden;
 }
 .shower
 {
@@ -121,6 +112,14 @@
         font-size: 1em;
         height: 100%;
         padding: 1.4vh 1vw;
+    }
+    #logo
+    {
+        background: url(../img/logo/Fictichos.png) center no-repeat;
+        background-size: cover;
+        background-color: var(--pale-green);
+        max-height: 96px;
+        min-width: 100%;
     }
     #navBarButtons
     {
