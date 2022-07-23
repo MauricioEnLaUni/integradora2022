@@ -29,21 +29,21 @@
     <div class="carousel-inner">
     <div class="carousel-item active">
         <img
-        src="img\smol\carrusel\carouselCoupleSmall.webp"
+        src="img/celebrate.webp"
         class="d-block w-100"
         alt="..."
         />
     </div>
     <div class="carousel-item">
         <img
-        src="img\smol\carrusel\shoeCarouselSmall.webp"
+        src="img/shoeline.jpg"
         class="d-block w-100"
         alt="..."
         />
     </div>
     <div class="carousel-item">
         <img
-        src="img\smol\carrusel\trainSmall.webp"
+        src="img/mexico.webp"
         class="d-block w-100"
         alt="..."
         />

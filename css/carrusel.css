@@ -9,13 +9,13 @@
 }
 .carousel-control-prev
 {
-    background: var(--dark-purple);
-    width:10%;
+    background: var(--persian-blue);
+    width:4%;
 }
 .carousel-control-next
 {
-    background: var(--dark-purple);
-    width:10%;
+    background: var(--persian-blue);
+    width:4%;
 }
 
 @media all and (min-width: 576px)
