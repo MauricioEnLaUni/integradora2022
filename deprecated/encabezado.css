@@ -1,139 +1,144 @@
-#logo
-{
-    background: url(../img/logo/bigF.svg) right top no-repeat;
-    background-color: var(--pale-green);
-    background-size: 100% 100%;
-    border-right: 0.3vh solid var(--dark-purple);
-    display: grid;
-    grid-area: logo;
-    height: 96px;
-    transition: .25s;
-    width: 96px;
-}
-#navBarButtons
-{
-    background: var(--pale-green);
-    display: grid;
-    grid-template-areas: 'usuario carrito busqueda lista';
-    grid-area: navButtons;
-}
-#usuario
-{
-    display: grid;
-    grid-area: usuario;
-}
-#buscar
-{
-    display: grid;
-    grid-area: busqueda;
-}
-#carrito
-{
-    display: grid;
-    grid-area: carrito;
-}
-#lista
-{
-    display: grid;
-    grid-area: lista;
-}
-#hiddenNav
-{
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    height: calc(100vh - 96px);
-    position: fixed;
-    text-align: center;
-    top: 96px;
-    transition: .25s;
-    width: 70%;
-    z-index: 3;
-}
-#hiddenNav button
-{
-    background: var(--pale-purple);
-    border: 2px double var(--pale-green);
-    cursor: pointer;
-    display: hidden;
-    color: var(--whitish);
-    font-size: 32px;
-    font-weight: 900;
-    padding: 5.5vh;
+#logo picture img{
+    height: 80px;
+    margin-top: 40px;
+    width: calc(100vw / 4);
+  }
+  #upperBar div
+  {
+      display: flex;
+  }
+  .navBCont
+  {
+      height: 100%;
+      overflow:hidden;
+  }
+  .navButtons
+  {
+      border-left: 3px double white;
+      color: var(--gainsboro);
+  }
+  .navButtons:hover,
+  .navButtons:hover
+  {
+      background: var(--oxford-blue);
+      color: var(--persian-blue);
+  }
+  .logButtons:hover
+  {
+      color: var(--resolution-blue);
+  }
+  .navButtons:first-child
+  {
+    border-left: initial;
+  }
+  #hiddenNav
+  {
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      height: calc(100vh - 80px);
+      position: fixed;
+      text-align: center;
+      top: 80px;
+      transition: .25s;
+      width: 70%;
+      z-index: 3;
+  }
+  #hiddenNav button
+  {
+      background: var(--pale-purple);
+      border: 2px double var(--pale-green);
+      cursor: pointer;
+      display: hidden;
+      color: var(--whitish);
+      font-size: 32px;
+      font-weight: 900;
+      padding: 5.5vh;
+      text-decoration: none;
+  }
+  .hider
+  {
+      right: -100%;
+  }
+  .logButtons
+  {
+    color: var(--lavender-web);
+  }
+  .navButtons
+  {
+    background-color: var(--blue-ryb);
+  }
+  .navButtons
+  {
     text-decoration: none;
-}
-.hider
-{
-    right: -100%;
-}
-.shower
-{
-    right: 0;
-}
-.topbar
-{
-    background: var(--dark-purple);
-    border: 0.6vh double var(--pale-purple);
-    border-radius: 50vh;
-    margin: auto;
-}
-.topbar:hover
-{
-    background: #000;
-}
-.topbar img
-{
-    --size: calc(100vw - 48px);
-    cursor: pointer;
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
-    padding: 1vh 1vh;
-    width: calc(var(--size) / 7);
-}
-
-@media all and (min-width: 575px)
-{
-    .topbar img
-{
-    --size: calc(100vw - 19vh);
-}
-}
-
-@media all and (min-width: 768px)
-{
-    #hiddenNav
-    {
-        position: static;
-        height: initial;
-        grid-template-columns: repeat(6,1fr);
-        grid-template-rows: initial;
-        grid-area: buttons;
-    }
-    #hiddenNav button
-    {
-        font-size: 1em;
-        height: 100%;
-        padding: 1.4vh 1vw;
-    }
-    #logo
-    {
-        background: url(../img/logo/Fictichos.png) center no-repeat;
-        background-size: cover;
-        background-color: var(--pale-green);
-        max-height: 96px;
-        min-width: 100%;
-    }
-    #navBarButtons
-    {
-        display: none;
-    }
-    .hider
-    {
-        display: grid;
-    }
-    nav
-    {
-        display: grid;
-        grid-area: navButtons;
-        grid-template-areas: ". access"
-                             "buttons buttons";
-    }
-}
+  }
+  .navContainer
+  {
+    background: var(--cornflower-blue);
+    font-size: 24px;
+    font-weight: 700;
+    overflow: hidden;
+  }
+  .shower
+  {
+      right: 0;
+  }
+  .topbar
+  {
+      background: var(--dark-purple);
+      border: 0.6vh double var(--pale-purple);
+      border-radius: 50vh;
+      margin: auto;
+  }
+  .topbar:hover
+  {
+      background: #000;
+  }
+  .topbar img
+  {
+      --size: calc(100vw - 48px);
+      cursor: pointer;
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+      padding: 1vh 1vh;
+      width: calc(var(--size) / 7);
+  }
+  
+  @media all and (min-width: 575px)
+  {
+      .topbar img
+  {
+      --size: calc(100vw - 19vh);
+  }
+  }
+  
+  @media all and (min-width: 768px)
+  {
+      #hiddenNav
+      {
+          position: static;
+          height: initial;
+          grid-template-columns: repeat(6,1fr);
+          grid-template-rows: initial;
+          grid-area: buttons;
+      }
+      #hiddenNav button
+      {
+          font-size: 1em;
+          height: 100%;
+          padding: 1.4vh 1vw;
+      }
+      #navBarButtons
+      {
+          display: none;
+      }
+      .hider
+      {
+          display: grid;
+      }
+      nav
+      {
+          display: grid;
+          grid-area: navButtons;
+          grid-template-areas: ". access"
+                               "buttons buttons";
+      }
+  }
