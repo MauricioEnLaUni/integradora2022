@@ -59,16 +59,16 @@
           </div>
         </div>
         <div class="row d-none d-md-flex text-center navBCont g-0">
-          <a class="navButtons col-md-3" href="index.php">
+          <a class="navButtons col-md-3" href="http://localhost/Integradora/index.php">
             INICIO
           </a>
           <a class="navButtons col-md-3" href="">
             NOVEDADES
           </a>
-          <a class="navButtons col-md-3" href="about.php">
+          <a class="navButtons col-md-3" href="http://localhost/Integradora/about.php">
             NOSOTROS
           </a>
-          <a class="navButtons col-md-3" href="contact.php">
+          <a class="navButtons col-md-3" href="http://localhost/Integradora/contact.php">
             CONTACTO
           </a>
         </div>
