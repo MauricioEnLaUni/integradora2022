@@ -12,7 +12,9 @@ function drawer(nombre,precio,desc,id,where){
     </div>
     <h3 class="col-12 mainCardTitle"><a href="exhibit.php?product=`+
     id+`">`+capitalizeWords(nombre)+`</a></h3>
-    <button class="col-4 btn mainCardButton">
+    <form method="POST" action="confirm.php">
+    <button class="col-4 btn mainCardButton" type="submit" name="sale" 
+    value="`+id+`">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="curr
     entColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
     <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V
@@ -24,6 +26,7 @@ function drawer(nombre,precio,desc,id,where){
      0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
     </svg>
     </button>
+    </form>
     <h4 class="col-8 mainCardPrice">$&emsp;`+precio+`</h4>
     <p class="col-12 mainCardText">`+desc+`</p>
     </div>

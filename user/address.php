@@ -11,12 +11,23 @@
 </head>
 
 <body>
-<?php
-  include_once "../modules/session.php";
-  include_once "../modules/header.php";
-  include_once "modules/address.php";
-  include_once "../modules/footer.php";
-?>
+  <header>
+    <?php
+      include_once "../modules/session.php";
+      require_once "logged.php";
+      include_once "../modules/header.php";
+    ?>
+  </header>
+  <main>
+    <?php
+      include_once "modules/address.php";
+    ?>
+  </main>
+  <footer>
+    <?php
+      include_once "../modules/footer.php";
+    ?>
+  </footer>
 <?php
   include_once "../modules/meta/scripts.html";
 ?>

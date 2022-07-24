@@ -1,20 +1,20 @@
 <div id="inscribir" class="d-none d-md-block col-md-2">
-  <img src="img/svg/pencil-square.svg" alt="" />
   <button
-  class="btn btn-link logButtons"
+  class="btn btn-link logButtons d-flex"
   data-bs-toggle="modal"
   href="#logInModal2"
   role="button">
+    <img src="img/svg/pencil-square.svg" alt="" />
       Inscribirse
 </button>
 </div>
 <div id="acceder" class="d-none d-md-block col-md-2">
-  <img src="img/svg/personFill.svg" alt="" />
   <button
-  class="btn btn-link logButtons"
+  class="btn btn-link logButtons d-flex"
   data-bs-toggle="modal"
   href="#logInModal"
   role="button">
+    <img src="img/svg/personFill.svg" alt="" />
       Acceder
 </button>
 </div>
