@@ -21,23 +21,24 @@
       require_once "modules/session.php";
       include_once "modules/modal.php";
     ?>
+    <header>
+      <?php include_once 'modules/header.php'; ?>
+    </header>
     <div class="content-wrapper">
-      <?php
-        include_once 'modules/header.php';
-      ?>
-
-      <main>
-        <?php
-          include_once 'modules/index/carrusel.php';
-          //include_once 'modules/ofertas.php';
-        ?>
-        <div class="mt-1" id="parallax">
-        </div>
-        <div id="card">
-        </div>
-
+      <main class="pt-3 pb-4">
+        <?php include_once 'modules/index/carrusel.php'; ?>
+        <aside class="row">
+          <div class="col-md-9">
+            <div class="row" id="card1">
+            </div>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </aside>
+        <div id="parallax" class="row"></div>
+        <div id="card2" class="row"></div>
       </main>
-
+      <footer></footer>
       <?php
         include_once 'modules/footer.php';
         include_once "modules/meta/scripts.html";
@@ -47,7 +48,6 @@
         </script>';
         include_once 'modules/index/card.php';
       ?>
-
     </div>
   </body>
 </html>

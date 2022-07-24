@@ -1,6 +1,8 @@
-#card
+#card1,
+#card2
 {
     --size: 100%;
+    margin-left: .25vw;
     margin-top: 0.4em;
     display: flex;
     flex-direction: row;
@@ -70,24 +72,18 @@
     margin-right: 0.25em;
     text-align:justify;
 }
-article
+#card1 article,
+#card2 article
 {
     background: var(--resolution-blue);
-    border: .2em solid #141259;
+    border: .15em solid #141259;
+    box-sizing: border-box;
     text-justify: center;
-    margin: auto;
 }
-article img
+#card1 article img,
+#card2 article img
 {
     width: 100%;
-}
-
-@media all and (min-width: 576px)
-{
-    .mainCardSettings
-    {
-        width: calc((var(--size) / 2) - .1em);
-    }
 }
 
 @media all and (min-width: 768px)
@@ -96,18 +92,4 @@ article img
     {
         margin: 0.4em 1.5% 0.6em 1.5%;
     }
-    .mainCardSettings
-    {
-        margin-top: .25em;
-        width: calc((var(--size) / 3) - .25em)
-    }
-}
-
-@media all and (min-width: 992px)
-{
-    .mainCardSettings
-    {
-        margin-top: .25em;
-        width: calc((var(--size) / 4) - .15em)
-    }   
 }

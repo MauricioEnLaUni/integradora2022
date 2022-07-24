@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body class="bodyq">
-    <?php
-        include_once "modules/session.php";
-        include_once "modules/header.php";
-        include_once "modules/modal.php";
-    ?>
+    <header>
+        <?php
+            include_once "modules/session.php";
+            include_once "modules/header.php";
+            include_once "modules/modal.php";
+        ?>
+    </header>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-4 mt-4">

@@ -38,6 +38,7 @@ tabindex="-1">
                                 type="text"
                                 name="usuario"
                                 maxlength="16"
+                                autofocus
                                 />
                             </label>
                             <label class="row">
@@ -124,6 +125,7 @@ tabindex="-1">
                                 type="text"
                                 name="usuario"
                                 maxlength="16"
+                                autofocus
                                 />
                             </label>
                             <label class="row">

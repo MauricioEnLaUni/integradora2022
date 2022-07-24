@@ -2,9 +2,9 @@ function capitalizeWords(string) {
     return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 };
 
-function drawer(nombre,precio,desc,id){
+function drawer(nombre,precio,desc,id,where){
     let card =`
-    <article class="mainCardSettings">
+    <article class="mainCardSettings col-12 col-sm-6 col-md-4 col-lg-3 g-3">
     <div class="container">
     <div class="row">
     <div class="col-12 mainCardImage">
@@ -24,11 +24,11 @@ function drawer(nombre,precio,desc,id){
      0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
     </svg>
     </button>
-    <h4 class="col-8 mainCardPrice">`+precio+`</h4>
+    <h4 class="col-8 mainCardPrice">$&emsp;`+precio+`</h4>
     <p class="col-12 mainCardText">`+desc+`</p>
     </div>
     </div>
     </article>`;
-    var content = document.getElementById('card');
+    var content = document.getElementById(where);
     content.innerHTML+=card;
 }
