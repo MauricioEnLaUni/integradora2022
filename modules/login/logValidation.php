@@ -15,7 +15,7 @@ if(submitError($_POST['submit'],$_POST['usuario'],$_POST['password'],$usr,$pwd) 
   header("Location: http://localhost/Integradora/index.php?error=password");
   exit();
 }else{
-  setAccess($dbc,$usr);
+  setAccess($conn,$usr);
 }
 echo "Log In succesful" . $_SESSION['user'];
 ?>

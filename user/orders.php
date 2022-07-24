@@ -11,14 +11,9 @@
 </head>
 <body>
 <?php
+  include_once "../modules/session.php";
   include_once "../modules/header.php";
-?>
-
-<?php
   include_once "modules/orden.php";
-?>
-
-<?php
   include_once "../modules/footer.php";
 ?>
 </body>

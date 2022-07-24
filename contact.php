@@ -14,6 +14,7 @@
 </head>
 <body class="bodyq">
     <?php
+        include_once "modules/session.php";
         include_once "modules/header.php";
         include_once "modules/modal.php";
     ?>

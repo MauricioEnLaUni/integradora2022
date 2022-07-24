@@ -42,26 +42,10 @@
               <img src="img/svg/list.svg" alt="" />
             </button>
           </div>
-          <div id="inscribir" class="noneBasic d-none d-md-block col-md-2">
-            <img src="img/svg/pencil-square.svg" alt="" />
-            <a
-            class="btn btn-link logButtons"
-            data-bs-toggle="modal"
-            href="#logInModal2"
-            role="button">
-                Inscribirse
-            </a>
-          </div>
-          <div id="acceder" class="noneBasic d-none d-md-block col-md-2">
-            <img src="img/svg/personFill.svg" alt="" />
-            <a
-            class="btn btn-link logButtons"
-            data-bs-toggle="modal"
-            href="#logInModal"
-            role="button">
-                Acceder
-            </a>
-          </div>
+          <?php
+          if($_SESSION['user'] != 4) include_once "C:/xampp/htdocs/Integradora/modules/header/logged.php";
+          else include_once "C:/xampp/htdocs/Integradora/modules/header/logIn.php";
+          ?>
           <div class="search-bar col-md-4 d-none d-md-block">
             <input
                 type="search"
