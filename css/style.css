@@ -19,7 +19,7 @@
 }
 main
 {
-    background: var(--oxford-blue);
+    background: var(--rich-black);
 }
 footer
 {
@@ -41,7 +41,7 @@ footer
     }
     footer
     {
-        background-color: var(--persian-blue);
+        background-color: var(--blueU);
         display: grid;
     }
 }

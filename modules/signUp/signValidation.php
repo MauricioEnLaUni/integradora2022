@@ -12,7 +12,7 @@
   $_POST['repeat'],
   $_POST['email'],
   $usr,$pwd,$rpt,$eml) !== false){
-    header("Location: http://localhost/Integradora/index.php?error=submit");
+    header("refresh:3;Location: http://localhost/Integradora/index.php?error=submit");
     exit();
   }elseif(emptyError($usr,$pwd,$rpt,$eml) !== true){
     header("Location: http://localhost/Integradora/index.php?error=input");
@@ -35,5 +35,5 @@
   }else{
     createUser($conn,$usr,$pwd,$eml);
   }
-  echo "Log In succesful" . $_SESSION['user'];
+  header("Location:/Integradora/index.php");
 ?>

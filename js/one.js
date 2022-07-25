@@ -161,3 +161,51 @@ function exhibit(where,row,id){
   }
   document.getElementById("marca").innerHTML+=brand;
 }
+
+function accModal(which){
+  let inputs = "";
+  switch(which){
+    case 0:
+      inputs = `
+      <label>
+        Nombre de la Cuenta
+        <input type="text" maxlength="32" placeholder="Alias"/>
+      </label>
+      <label>
+        Primer Nombre
+        <input type="text" maxlength="16" placeholder="Nombre"/>
+      </label>
+      <label>
+        Apellido
+        <input type="text" maxlength="32" placeholder="Apellidos">
+      </label>
+      `;
+      break;
+    case 1:
+      inputs = `
+        <label>
+          Email
+          <input type="email" maxlength="128" placeholder="Email"/>
+        </label>
+        `;
+      break;
+    case 2:
+      inputs = `
+        <label>
+          Teléfono
+          <input type="tel" minlength="15" maxlength="15" placeholder="Teléfono"/>
+        </label>
+            `;
+      break;
+    case 3:
+      inputs = `
+        <label>
+          Password
+          <input type="password" minlength="16" maxlength="64" placeholder="Password"/>
+        </label>
+      `;
+      break;
+  };
+  document.getElementById("accSend").setAttribute('value',which);
+  document.getElementById("mField").innerHTML = inputs;
+}

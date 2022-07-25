@@ -1,7 +1,7 @@
 header
 {
   --width-logo: calc(100vw / 4);
-  background: var(--wild-blue-yonder);
+  background: var(--blueU);
   box-sizing: border-box;
   display: flex;
   height: 80px;
@@ -60,9 +60,9 @@ nav div
 }
 .navButtons
 {
-  background: var(--blue-ryb);
-  border-left: 1vh solid var(--wild-blue-yonder);
-  color: var(--persian-blue);
+  background: var(--oxford-blue);
+  border-left: 1vh solid var(--blueU);
+  color: var(--electric-blue);
   line-height: 160%;
   text-decoration: none;
 }

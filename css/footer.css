@@ -2,7 +2,7 @@
     line-height: 200%;
 }
 #conn li a nobr{
-    color: #212529;
+    color: var(--midnightblue);
 }
 #copyr{
     text-align: justify;
@@ -20,11 +20,11 @@
     font-weight: 600;
 }
 #fLists ul li a{
-    color: #FFF;
+    color: var(--blue-ryb);
     text-decoration: none;
 }
 #ftitle{
-    color: #FFF;
+    color: var(--resolution-blue);
     font-family: 'Righteous', sans-serif;
     font-size: 32px;
     font-weight: 600;
@@ -44,12 +44,13 @@
     font-family: 'Righteous', sans-serif;
 }
 #terms a{
-    color: yellow;
+    color: var(--rich-black);
     font-weight: 600;
+    text-decoration: none;
 }
 .fh5{
-    color: #FFF;
+    color:var(--resolution-blue);
     font-family: 'Righteous', sans-serif;
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 600;
 }

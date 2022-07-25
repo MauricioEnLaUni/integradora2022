@@ -55,7 +55,8 @@ tabindex="-1">
                                 <button
                                 type="submit"
                                 name="submit"
-                                class="btn btn-primary mt-3 col-6">
+                                class="btn btn-primary mt-3 col-6"
+                                value="1">
                                     Enviar
                                 </button>
                                 <button

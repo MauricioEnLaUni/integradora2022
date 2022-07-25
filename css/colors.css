@@ -9,6 +9,10 @@
   --maximum-blue:hsl(190, 39%, 59%);
   --wild-blue-yonder:hsl(221, 43%, 69%);
   --opal:hsl(164, 21%, 65%);
+  --blueU: hsl(201,70%,82%);
+  --mangoTago: hsl(22,83%,58%);
+  --red-crayola:hsl(347,86%,56%);
+  --emerald:hsl(147,61%,47%);
   /* GREEN */
   --spanish-green: hsl(145, 81%, 33%);
   --shiny-shamrock:hsl(133, 21%, 55%);
@@ -28,7 +32,8 @@
   /* YELLOW */
   --deep-saffron:hsl(30, 95%, 62%);
   /* BLACK */
-  --rich-black:hsl(210, 50%, 1%);
+  --rich-black:hsl(211, 53%, 11%);
+  --raisin:hsl(236,21%,14%);
   
   /* MonoBlue */ 
   --lavender-web:hsl(229, 89%, 93%);

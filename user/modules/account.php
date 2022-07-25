@@ -28,7 +28,12 @@
   </div>
 </div>
 <div class="col-4">
-  <button>
+  <button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#mAcc"
+  onclick="accModal(0)">
     Modificar
   </button>
 </div>
@@ -44,8 +49,13 @@
   </div>
 </div>
 <div class="col-4">
-  <button>
-    Modificar
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#mAcc"
+    onclick="accModal(1)">
+      Modificar
   </button>
 </div>
 </div>
@@ -56,12 +66,17 @@
     <strong>Teléfono</strong>
   </div>
   <div class="row">
-    <?php echo $phone; ?>
+    <?php echo $_SESSION['phone']; ?>
   </div>
 </div>
 <div class="col-4">
-  <button>
-    Modificar
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#mAcc"
+    onclick="accModal(2)">
+      Modificar
   </button>
 </div>
 </div>
@@ -76,8 +91,13 @@
   </div>
 </div>
 <div class="col-4">
-  <button>
-    Modificar
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#mAcc"
+    onclick="accModal(3)">
+      Modificar
   </button>
 </div>
 </div>

@@ -17,5 +17,5 @@ if(submitError($_POST['submit'],$_POST['usuario'],$_POST['password'],$usr,$pwd) 
 }else{
   setAccess($conn,$usr);
 }
-echo "Log In succesful" . $_SESSION['user'];
+header("Location:/Integradora/index.php");
 ?>
