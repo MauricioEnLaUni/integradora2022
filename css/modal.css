@@ -1,0 +1,40 @@
+.bttn{
+    background-color:hsl(230, 88%, 52%);
+    border: none;
+    color: white;
+    width: 40%;
+    height: 40px;
+    margin: 5px 5px 5px 15px;
+    border-radius: 5px;
+}
+
+#snd1{
+    background-color:hsl(230, 88%, 52%);
+    color: white;
+    width: 45%;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#snd2{
+    background-color:hsl(230, 88%, 52%);
+    color: white;
+    width: 45%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#cerrar{
+    width: 30%;
+    height: 40px;
+    margin-left: 7%;
+}
+#osc{
+    padding-top: 22px;
+    width: 50%;
+}
+
+#eml{
+    padding-left: 22%;
+}
