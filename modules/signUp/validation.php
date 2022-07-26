@@ -73,16 +73,12 @@ function passValidation($pwd,$rpt){
 function createUser($conn,$usr,$pwd,$eml){
   $hash = password_hash($pwd,PASSWORD_ARGON2I);
   $a = 2;
-  $stmt = $conn->prepare('INSERT INTO `USERS` (`us_id`,`us_an`,`us_pw`,`us_al`)
-                          VALUES("",:u,:p,:a);');
-  $stmt->bindParam('u',$usr);
-  $stmt->bindParam('p',$hash);
-  $stmt->bindParam('a',$a);
-  $stmt->execute();
-  $stmt = $conn->prepare('INSERT INTO `EMAIL` (`em_id`,`em_us`,`em_em`)
-                          VALUES("",:u,:e);');
-  $stmt->bindParam('u',$usr);
-  $stmt->bindParam('e',$eml);
-  $stmt->execute();
+  $stmt = $conn->prepare('INSERT INTO `USERS` (`us_an`,`us_pw`,`us_al`)
+                          VALUES(?,?,?);');
+  $stmt->execute([$usr,$hash,$a]);
+  $id = $conn->lastInsertId();
+  $stmt = $conn->prepare('INSERT INTO `EMAIL` (`em_us`,`em_em`)
+                          VALUES(?,?);');
+  $stmt->execute([$id,$eml]);
 }
 ?>

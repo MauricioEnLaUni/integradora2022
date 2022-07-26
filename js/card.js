@@ -1,8 +1,11 @@
 function capitalizeWords(string) {
     return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 };
-
-function drawer(nombre,precio,desc,id,where){
+function drawer(nombre,precio,desc,id,where,dis){
+    let att = "";
+    // if(dis == 4 || dis == 2){
+    //     att = "disabled";
+    // }
     let card =`
     <article class="mainCardSettings col-12 col-sm-6 col-md-4 col-lg-3 g-3">
     <div class="container">
@@ -13,8 +16,7 @@ function drawer(nombre,precio,desc,id,where){
     <h3 class="col-12 mainCardTitle"><a href="exhibit.php?product=`+
     id+`">`+capitalizeWords(nombre)+`</a></h3>
     <form method="POST" action="confirm.php">
-    <button class="col-4 btn mainCardButton" type="submit" name="sale" 
-    value="`+id+`">
+    <button class="col-4 btn mainCardButton" `+att+` type="submit" name="sale" value="`+id+`">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="curr
     entColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
     <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V
