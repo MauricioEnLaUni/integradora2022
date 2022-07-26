@@ -19,9 +19,13 @@
       include_once "modules/modal.php";
       include_once "modules/modal.php";
       include_once "modules/header.php";
-      include_once "modules/exhibit.php";
-      include_once "modules/footer.php";
     ?>
+    <main>
+        <?php include_once "modules/exhibit.php";?>
+    </main>
+    <footer>
+        <?php include_once "modules/footer.php";?>
+    </footer>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
         defer
@@ -42,11 +46,11 @@
     }
     ?>
     <?php
-      include_once "modules/meta/scripts.html";
-      echo '<script>
-      pictureSVG("logo","img/logo/logoLong.svg","img/logo/bigF.svg",
-      "img/logo/bigF.png","Logo Test");
-      </script>';
+        include_once "modules/meta/scripts.html";
+    //   echo '<script>
+    //   pictureSVG("logo","img/logo/logoLong.svg","img/logo/bigF.svg",
+    //   "img/logo/bigF.png","Logo Test");
+    //   </script>';
     ?>
 </body>
 </html>

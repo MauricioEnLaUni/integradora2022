@@ -1,7 +1,6 @@
-<!-- Empieza Carrusel -->
 <div
     id="carrusel"
-    class="carousel slide"
+    class="carousel slide row"
     data-bs-ride="true"
 >
     <div class="carousel-indicators">
@@ -68,4 +67,3 @@
     <span class="visually-hidden">Next</span>
     </button>
 </div>
-<!-- Fin Carrusel -->

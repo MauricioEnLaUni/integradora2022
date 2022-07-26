@@ -38,6 +38,7 @@ tabindex="-1">
                                 type="text"
                                 name="usuario"
                                 maxlength="16"
+                                autofocus
                                 />
                             </label>
                             <label class="row">
@@ -54,7 +55,8 @@ tabindex="-1">
                                 <button
                                 type="submit"
                                 name="submit"
-                                class="btn btn-primary mt-3 col-6">
+                                class="btn btn-primary mt-3 col-6"
+                                value="1">
                                     Enviar
                                 </button>
                                 <button
@@ -124,6 +126,7 @@ tabindex="-1">
                                 type="text"
                                 name="usuario"
                                 maxlength="16"
+                                autofocus
                                 />
                             </label>
                             <label class="row">

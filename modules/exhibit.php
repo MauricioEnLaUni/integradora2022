@@ -75,7 +75,7 @@
     <div class="row">
         <div class="h3 text-center svgTitle">Marca</div>
     </div>
-    <div class="rowr" id="marca"></div>
+    <div class="row" id="marca"></div>
     </div>
 </div>
 </div>

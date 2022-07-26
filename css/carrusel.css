@@ -1,6 +1,6 @@
 #carrusel
 {
-    --height: 64vh;
+    --height:64vh;
     height: var(--height);
 }
 #carrusel img
@@ -17,11 +17,14 @@
     background: var(--persian-blue);
     width:4%;
 }
-
+.carousel-indicators
+{
+    margin-left: 0;
+}
 @media all and (min-width: 576px)
 {
     #carrusel
     {
-        --height: 48vh;
+        --height: 64vh;
     }
 }

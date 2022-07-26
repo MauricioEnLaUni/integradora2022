@@ -2,9 +2,9 @@ function capitalizeWords(string) {
     return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 };
 
-function drawer(nombre,precio,desc,id){
+function drawer(nombre,precio,desc,id,where){
     let card =`
-    <article class="mainCardSettings">
+    <article class="mainCardSettings col-12 col-sm-6 col-md-4 col-lg-3 g-3">
     <div class="container">
     <div class="row">
     <div class="col-12 mainCardImage">
@@ -12,7 +12,9 @@ function drawer(nombre,precio,desc,id){
     </div>
     <h3 class="col-12 mainCardTitle"><a href="exhibit.php?product=`+
     id+`">`+capitalizeWords(nombre)+`</a></h3>
-    <button class="col-4 btn mainCardButton">
+    <form method="POST" action="confirm.php">
+    <button class="col-4 btn mainCardButton" type="submit" name="sale" 
+    value="`+id+`">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="curr
     entColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
     <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V
@@ -24,11 +26,12 @@ function drawer(nombre,precio,desc,id){
      0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
     </svg>
     </button>
-    <h4 class="col-8 mainCardPrice">`+precio+`</h4>
+    </form>
+    <h4 class="col-8 mainCardPrice">$&emsp;`+precio+`</h4>
     <p class="col-12 mainCardText">`+desc+`</p>
     </div>
     </div>
     </article>`;
-    var content = document.getElementById('card');
+    var content = document.getElementById(where);
     content.innerHTML+=card;
 }

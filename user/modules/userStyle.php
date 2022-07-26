@@ -5,13 +5,12 @@
     crossorigin="anonymous"
 />
 <link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/encabezado.css" />
-<link rel="stylesheet" href="../css/usuario.css" />
+<link rel="stylesheet" href="../css/header.css" />
+<link rel="stylesheet" href="../css/colors.css" />
 <link rel="stylesheet" href="../css/search.css">
-<link rel="stylesheet" href="../css/carrusel.css">
-<link rel="stylesheet" href="../css/offers.css">
 <link rel="stylesheet" href="../css/card.css">
-<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="/Integradora/css/footer.css">
+<link rel="stylesheet" href="/Integradora/css/accounts.css">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">

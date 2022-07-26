@@ -62,23 +62,6 @@ function newEmail($eml,$conn){
   }
   if(!isset($result)) $result = true;
   return $result;
-
-// $stmt = mysqli_prepare($dbc,'SELECT `em_em` FROM `EMAIL` WHERE `em_em` = ?;');
-// mysqli_stmt_bind_param($stmt,"s",$eml);
-// mysqli_stmt_execute($stmt);
-
-// $resultData = mysqli_stmt_get_result($stmt);
-// $result;
-// while($row = mysqli_fetch_assoc($resultData)){
-//     if($row['em_em'] == $eml){
-//         $result = false;
-//     }
-// }
-// if(!isset($result)){
-//     $result = true;
-// }
-// mysqli_stmt_close($stmt);
-// return $result;
 }
 
 function passValidation($pwd,$rpt){
