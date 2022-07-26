@@ -1,4 +1,5 @@
 <?php
+ini_set('session.gc_maxlifetime', 1800);
 session_start();
 function manageSessions(){
     if(!isset($_SESSION['user'])){

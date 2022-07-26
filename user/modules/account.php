@@ -33,7 +33,7 @@
   class="btn btn-primary"
   data-bs-toggle="modal"
   data-bs-target="#mAcc"
-  onclick="accModal(0)">
+  onclick="accModal(1)">
     Modificar
   </button>
 </div>
@@ -54,7 +54,7 @@
     class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#mAcc"
-    onclick="accModal(1)">
+    onclick="accModal(2)">
       Modificar
   </button>
 </div>
@@ -75,7 +75,7 @@
     class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#mAcc"
-    onclick="accModal(2)">
+    onclick="accModal(3)">
       Modificar
   </button>
 </div>
@@ -96,7 +96,7 @@
     class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#mAcc"
-    onclick="accModal(3)">
+    onclick="accModal(4)">
       Modificar
   </button>
 </div>

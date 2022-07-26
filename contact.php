@@ -20,6 +20,7 @@
             include_once "modules/modal.php";
         ?>
     </header>
+    <main>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-4 mt-4">
@@ -134,6 +135,7 @@
             </div>
         </div>
     </div>
+    </main>
     <?php
         include_once "modules/footer.php";
     ?>

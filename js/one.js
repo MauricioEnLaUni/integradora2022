@@ -165,47 +165,55 @@ function exhibit(where,row,id){
 function accModal(which){
   let inputs = "";
   switch(which){
-    case 0:
+    case 1:
       inputs = `
       <label>
         Nombre de la Cuenta
-        <input type="text" maxlength="32" placeholder="Alias"/>
+        <input type="text" maxlength="32" placeholder="Alias" name="us_dn"/>
       </label>
       <label>
         Primer Nombre
-        <input type="text" maxlength="16" placeholder="Nombre"/>
+        <input type="text" maxlength="16" placeholder="Nombre" name="us_nm"/>
       </label>
       <label>
         Apellido
-        <input type="text" maxlength="32" placeholder="Apellidos">
+        <input type="text" maxlength="32" placeholder="Apellidos" name="us_ln">
       </label>
       `;
-      break;
-    case 1:
-      inputs = `
-        <label>
-          Email
-          <input type="email" maxlength="128" placeholder="Email"/>
-        </label>
-        `;
       break;
     case 2:
       inputs = `
         <label>
-          Teléfono
-          <input type="tel" minlength="15" maxlength="15" placeholder="Teléfono"/>
+          Modificar Email
+          <input type="email" maxlength="128" placeholder="Email" name="em_em0"/>
         </label>
-            `;
+        <label>
+          Agregar Email
+          <input type="email" maxlength="128" placeholder="Email" name="em_em1"/>
+        </label>
+        `;
       break;
     case 3:
       inputs = `
         <label>
+          Modificar Teléfono
+          <input type="tel" minlength="15" maxlength="15" placeholder="Teléfono" name="ph_nm0"/>
+        </label>
+        <label>
+          Agregar Teléfono
+          <input type="tel" minlength="15" maxlength="15" placeholder="Teléfono" name="ph_nm1"/>
+        </label>
+            `;
+      break;
+    case 4:
+      inputs = `
+        <label>
           Password
-          <input type="password" minlength="16" maxlength="64" placeholder="Password"/>
+          <input type="password" minlength="16" maxlength="64" placeholder="Password" name="us_pw"/>
         </label>
       `;
       break;
   };
-  document.getElementById("accSend").setAttribute('value',which);
   document.getElementById("mField").innerHTML = inputs;
+  document.getElementById("accSend").setAttribute('value',which);
 }
