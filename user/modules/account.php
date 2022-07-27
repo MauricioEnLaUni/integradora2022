@@ -1,3 +1,11 @@
+<?php
+include_once "../../../ssl/connector.php";
+$stmt = $conn->prepare('SELECT `us_dn`,`us_nm`,`us_ln`
+                        FROM `users`
+                        WHERE `us_id` = ?');
+$stmt->execute([$_SESSION['userId']]);
+if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+?>
 <div class="container pt-4">
 <div class="row">
   <p><a href="user.php">Mi Cuenta</a> > Datos Personales y Seguridad</p>
@@ -14,16 +22,14 @@
   </div>
   <div class="row">
     <?php
-      if($_SESSION['first'] == ""){
-        echo "<input value='¡Aún no configura su nombre!' disabled/>";
+    foreach($row as $a){
+      if(!is_null($a)){
+        echo "<input value='$a' disabled/>";
       }else{
-        echo "<input value='" . $_SESSION['first'] ."' disabled/>";
+        echo "<input value='¡No ha agregado su información!' disabled/>";
       }
-      if($_SESSION['last'] == ""){
-        echo "<input value='¡Aún no configura su apellido!' disabled/>";
-      }else{
-        echo "<input value='" . $_SESSION['last'] ."' disabled/>";
-      }
+    }
+  }
     ?>
   </div>
 </div>
@@ -45,7 +51,15 @@
     <strong>Correo Electrónico</strong>
   </div>
   <div class="row">
-    <?php echo $_SESSION['email']; ?>
+    <?php
+    $stmt = $conn->prepare('SELECT `em_em`
+    FROM `email`
+    WHERE `em_us` = ?');
+    $stmt->execute([$_SESSION['userId']]);
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+      echo "<input value='" . $row['em_em'] . "' disabled/>";
+    }
+    ?>
   </div>
 </div>
 <div class="col-4">
@@ -66,7 +80,15 @@
     <strong>Teléfono</strong>
   </div>
   <div class="row">
-    <?php echo $_SESSION['phone']; ?>
+    <?php
+    $stmt = $conn->prepare('SELECT `ph_nm`
+    FROM `phone`
+    WHERE `ph_us` = ?');
+    $stmt->execute([$_SESSION['userId']]);
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+      echo "<input value='" . $row['ph_nm'] . "' disabled/>";
+    }
+    ?>
   </div>
 </div>
 <div class="col-4">
