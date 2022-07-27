@@ -35,6 +35,7 @@
                         name="searchText"
                         />
                     </label>
+                    <button type="submit">A</button>
                 </form>
             </div>
         </div>
@@ -71,7 +72,7 @@
                     </legend>
                     <input    
                     class="rating rating--nojs"
-                    form="searchForm"
+                    form="searchBar"
                     max="5"
                     name="inCal"
                     step=".5"
@@ -86,6 +87,7 @@
                     <label>
                         min
                         <input
+                        form="searchBar"
                         type="number"
                         name="minNumber"
                         size="5"
@@ -97,6 +99,7 @@
                     <label>
                         max
                         <input
+                        form="searchBar"
                         type="number"
                         name="maxNumber"
                         size="5"
@@ -114,29 +117,33 @@
                     <div class="flexbox">
                         <label>
                             <input
+                            form="searchForm"
                             type="checkbox"
-                            name="genSearch"
+                            name="dama"
                             value="dama"
                             />&ensp;Dama
                         </label>
                         <label>
                             <input
+                            form="searchForm"
                             type="checkbox"
-                            name="genSearch"
+                            name="cab"
                             value="caballero"
                             />&ensp;Caballeros
                         </label>
                         <label>
                             <input
+                            form="searchForm"
                             type="checkbox"
-                            name="genSearch"
+                            name="uni"
                             value="unisex"
                             />&ensp;Unisex
                         </label>
                         <label>
                             <input
+                            form="searchForm"
                             type="checkbox"
-                            name="genSearch"
+                            name="infa"
                             value="niños"
                             />&ensp;Infantil
                         </label>

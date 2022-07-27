@@ -47,10 +47,6 @@
     ?>
     <?php
         include_once "modules/meta/scripts.html";
-    //   echo '<script>
-    //   pictureSVG("logo","img/logo/logoLong.svg","img/logo/bigF.svg",
-    //   "img/logo/bigF.png","Logo Test");
-    //   </script>';
     ?>
 </body>
 </html>
