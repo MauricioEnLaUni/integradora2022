@@ -18,10 +18,7 @@
     include_once "../modules/header.php";
   ?>
   </header>
-  <?php
-  include_once "modules/modalAcc.php";
-  ?>
-  <main>
+  <main class="py-3">
   <?php
     include_once "modules/account.php";
   ?>

@@ -2,6 +2,7 @@
 include_once "../modules/session.php";
 include_once "../../../ssl/connector.php";
 ?>
+<main id="accMain">
 <div class="container pt-4 pb-5">
 <div class="row">
   <p><a href="user.php">Mi Cuenta</a> > Mis Direcciones</p>
@@ -46,3 +47,4 @@ include_once "../../../ssl/connector.php";
 </div>
 
 </div>
+</main>

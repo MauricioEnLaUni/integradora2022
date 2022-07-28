@@ -188,3 +188,16 @@ function accModal(which){
   document.getElementById("mField").innerHTML = inputs;
   document.getElementById("accSend").setAttribute('value',which);
 }
+function modInput(id){
+  let inputs = document.getElementById(id).querySelectorAll("input");
+  if(inputs[0].hasAttribute("disabled")){
+    inputs.forEach(element => {
+      element.removeAttribute("disabled");
+    });
+  }else{
+    inputs.forEach(element => {
+      element.setAttribute("disabled","");
+    });
+  }
+  
+}
