@@ -72,7 +72,7 @@
     </div>
 
     <div class="row flex-row-reverse" id="terms">
-      <a class="col-2" href="terms.html">Términos de Servicio</a>
+      <a class="col-2" href="ToS.php">Términos de Servicio</a>
       <a class="col-2" href="privacy.html">Aviso de Privacidad</a>
     </div>
   </div>

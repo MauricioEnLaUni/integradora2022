@@ -1,32 +1,3 @@
-function appear(elem)
-{
-  let a = document.getElementById(elem);
-  if(window.getComputedStyle(a).display == "none")
-  {
-    a.style.removeProperty('display');
-    event.stopImmediatePropagation();
-  }
-  else
-  {
-    a.style.display = "none";
-  }
-};
-
-
-
-function sideBar(elem,classAdd,classRemove)
-{
-  let a = document.getElementById(elem);
-  if(a.classList.contains(classRemove)){
-    a.classList.add(classAdd);
-    a.classList.remove(classRemove);
-  }
-  else{
-    a.classList.remove(classAdd);
-    a.classList.add(classRemove);
-  }
-};
-
 function userOrder(one,two,address,button)
 {
   let d = Date(Date.now());

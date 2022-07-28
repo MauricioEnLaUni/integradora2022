@@ -10,6 +10,7 @@ function manageSessions(){
         $_SESSION['location'] = $_SERVER['REMOTE_ADDR'];
         $_SESSION['userId'] = 0;
         $_SESSION['cart'] = [];
+        $_SESSION['sPage'] = 1;
     }else{
         $_SESSION['back'] = $_SESSION['page'];
         $_SESSION['back'] = substr($_SESSION['back'], 0, strpos($_SESSION['back'], "?"));

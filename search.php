@@ -1,47 +1,7 @@
 <?php
 include_once "modules/session.php";
 include_once '../../ssl/connector.php';
-function getSearch($cond,&$array){
-  $stmt->execute([$cond]);
-  $result = $stmt->fetch(PDO::FETCH_NUM);
-  $array = $result[0];
-}
-function getArraySearch($cond,&$array){
-  $stmt->execute();
-  $result = $stmt->fetchAll(PDO::FETCH_NUM);
-
-  foreach($result as $row){
-    $fill[] = $row[0];
-  }
-}
-
-if(str_contains($_SERVER['REQUEST_URI'],'?')){
-  if($_GET['submit'] != 1){
-    $stmt = $conn->prepare("SELECT `it_id`
-                            FROM `item`
-                            WHERE `it_nm` LIKE ?;");
-    getSearch($_GET['searchText'],$fill);
-    if($of !== false){
-      $stmt = $conn->prepare('SELECT `it_id`
-                            FROM `item`
-                            WHERE `it_of` IS NOT NULL;');
-      getArraySearch($_GET['offer'],$fill);
-    }
-    
-
-  }else{
-    $stmt = $conn->prepare("SELECT `it_id`
-                            FROM `item`
-                            WHERE `it_nm` LIKE ?;");
-    getSearch($_GET['searchText'],$fill);
-  }
-}
-$nm = (isset($_GET['searchText'])) ? "%" . $_GET['searchText'] . "%" : "";
-$of = (isset($_GET['offer'])) ? True : "";
-$sc = (isset($_GET['inCal'])) ? $_GET['inCal'] : "";
-$min = (isset($_GET['minNumber'])) ? $_GET['minNumber'] : "";
-$max = (isset($_GET['maxNumber'])) ? $_GET['maxNumber'] : "";
-
+if(!isset($fill) || $fill < 10) $_SESSION['sPage'] = 1;
 $st[] = (isset($_GET['Bota'])) ? 'Bota' : "";
 $st[] = (isset($_GET['Bote'])) ? 'Bote' : "";
 $st[] = (isset($_GET['Clogs'])) ? 'Clogs' : "";
@@ -64,6 +24,86 @@ $gn[] = (isset($_GET['dama'])) ? 'Mujr' : "";
 $gn[] = (isset($_GET['cab'])) ? 'Homb' : "";
 $gn[] = (isset($_GET['uni'])) ? 'Unsx' : "";
 $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
+
+function getSearch($stmt,$cond,&$array){
+  $stmt->execute([$cond]);
+  $result = $stmt->fetchAll(PDO::FETCH_NUM);
+  foreach($result as $row){
+    $array[] = $row[0];
+  }
+}
+function getOffers($stmt,$cond,&$array){
+  $stmt->execute();
+  $result = $stmt->fetchAll(PDO::FETCH_NUM);
+
+  foreach($result as $row){
+    $fill[] = $row[0];
+  }
+}
+function getTheFors($stmt,$cond,&$array){
+  foreach($cond as $row){
+    if($row != ""){
+      $stmt->execute([$row]);
+      $result = $stmt->fetchAll(PDO::FETCH_NUM);
+      foreach($result as $row){
+        $out[] = $row[0];
+      }
+    }
+  }
+}
+
+if(str_contains($_SERVER['REQUEST_URI'],'?')){
+  if(isset($_GET['submit'])){
+    $stmt = $conn->prepare("SELECT `it_id`
+                            FROM `item`
+                            WHERE `it_nm` LIKE ?;");
+    $txt = "%" . $_GET['searchText'] . "%";
+    getSearch($stmt,$txt,$fill);
+    if($_GET['offer'] !== false){
+      $stmt = $conn->prepare('SELECT `it_id`
+                            FROM `item`
+                            WHERE `it_of` IS NOT NULL;');
+      getOffers($stmt,$_GET['offer'],$comp);
+    }
+    $stmt = $conn->prepare('SELECT `it_id`
+                        FROM `item`
+                        WHERE `it_id` IN (
+                          SELECT `sc_it`
+                          FROM `score`
+                          HAVING AVG(`sc_se`) >= ?
+                        );');
+    getSearch($stmt,$_GET['inCal'],$fill);
+
+    $stmt = $conn->prepare('SELECT `it_id`
+                        FROM `item`
+                        WHERE `it_ot` BETWEEN ? AND ?;');
+    $stmt->execute([$_GET['minNumber'],$_GET['maxNumber']]);
+    $result = $stmt->fetchAll(PDO::FETCH_NUM);
+    foreach($result as $row){
+      $fill[] = $row[0];
+    }
+    
+    $stmt = $conn->prepare('SELECT `it_id`
+                        FROM `item`
+                        WHERE `it_tp` = ?;');
+    getTheFors($stmt,$st,$fill);
+
+    $stmt = $conn->prepare('SELECT `it_id`
+                        FROM `item`
+                        WHERE `it_br` = ?;');
+    getTheFors($stmt,$br,$fill);
+
+    $stmt = $conn->prepare('SELECT `it_id`
+                        FROM `item`
+                        WHERE `it_wh` = ?;');
+    getTheFors($stmt,$br,$fill);
+  }else{
+    $stmt = $conn->prepare("SELECT `it_id`
+                            FROM `item`
+                            WHERE `it_nm` LIKE ?;");
+    getSearch($stmt,$_GET['searchText'],$fill);
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +112,6 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <!-- CSS only -->
   <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
   rel="stylesheet"
@@ -82,18 +121,28 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
   <link rel="stylesheet" href="css/rating.css">
   <link rel="stylesheet" href="css/searchPage.css">
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/encabezado.css" />
+  <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/usuario.css" />
   <link rel="stylesheet" href="css/search.css">
   <link rel="stylesheet" href="css/carrusel.css">
   <link rel="stylesheet" href="css/offers.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/searchCard.css">
 </head>
 <body>
+<header>
+  <?php
+      include_once "modules/session.php";
+      include_once "../../ssl/connector.php";
+      include_once "modules/header.php";
+  ?>
+</header>
+  <main>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12">
+      <div class="d-none d-md-block col-md-3"></div>
+      <div class="col-12 col-md-9 pt-2">
         <form action="search.php" id="searchBar" role="search" method="GET">
           <label>
               <img src="img/svg/search.svg" alt="">
@@ -102,44 +151,45 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
               name="searchText"
               />
           </label>
-          <button type="submit">A</button>
+          <button type="submit" name="submit">A</button>
         </form>
       </div>
     </div>
   
-    <div class="row">
-      <div class="col-sm-12 col-md-4 col-lg-3" id="searchForm">
+    <div class="row mt-2">
+      <div class="col-sm-12 col-md-4 col-lg-3 mb-3" id="searchForm">
         <fieldset id="estilo">
           <legend>Estilo</legend>
         </fieldset>
-          <fieldset id="oferta">
+          <fieldset id="oferta" form="searchBar">
             <legend>
               Descuentos
             </legend>
-            <label>
+            <label form="searchBar">
             Rebajas
             <input
-            form="searchForm"
+            form="searchBar"
             name="offer"
             type="radio"
             />
             </label>
-            <label>
+            <label form="searchBar">
               <input
-              form="searchForm"
+              form="searchBar"
               name="offer"
               type="radio"
+              checked
               />
               Todo
             </label>
           </fieldset>
-          <fieldset id="calificacion">
+          <fieldset id="calificacion" form="searchBar">
             <legend>
                 Calificaciones
             </legend>
-            <input    
-            class="rating rating--nojs"
+            <input
             form="searchBar"
+            class="rating rating--nojs"
             max="5"
             name="inCal"
             step=".5"
@@ -147,7 +197,7 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
             value="2"
             />
           </fieldset>
-          <fieldset id="precio">
+          <fieldset id="precio" form="searchBar">
             <legend>
                 Precio
             </legend>
@@ -177,14 +227,14 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
             </label>
           </fieldset>
 
-          <fieldset id="shoesGender">
+          <fieldset id="shoesGender" form="searchBar">
             <legend>
               Género
             </legend>
             <div class="flexbox">
               <label>
                 <input
-                form="searchForm"
+                form="searchBar"
                 type="checkbox"
                 name="dama"
                 value="dama"
@@ -192,7 +242,7 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
               </label>
               <label>
                 <input
-                form="searchForm"
+                form="searchBar"
                 type="checkbox"
                 name="cab"
                 value="caballero"
@@ -200,7 +250,7 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
               </label>
               <label>
                 <input
-                form="searchForm"
+                form="searchBar"
                 type="checkbox"
                 name="uni"
                 value="unisex"
@@ -208,7 +258,7 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
               </label>
               <label>
                 <input
-                form="searchForm"
+                form="searchBar"
                 type="checkbox"
                 name="infa"
                 value="niños"
@@ -216,12 +266,12 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
               </label>
             </div>
           </fieldset>
-          <fieldset id="marca">
+          <fieldset id="marca" form="searchBar">
             <legend>
               Marca
             </legend>
           </fieldset>
-          <fieldset id="colorFlex">
+          <fieldset id="colorFlex" form="searchBar">
             <legend>
               Color
             </legend>
@@ -230,18 +280,43 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
             </div>
           </fieldset>
         </div>
-        <div class="col-sm-12 col-md-8 col-lg-3" id="searchResults">
+        <div class="col-sm-12 col-md-8 col-lg-9" id="searchResults">
+          <?php
+          $stmt = $conn->prepare('SELECT `it_id`,`it_nm`,`it_ot`,`it_ds`
+          FROM `item`
+          WHERE `it_id` = ?;');
+          $fill = array_unique($fill);
+          $fill = array_chunk($fill,10);
+          foreach($fill[$_SESSION['sPage'] - 1] as $tmp){
+            $stmt->execute([$tmp]);
+            while($tmp = $stmt->fetch(PDO::FETCH_ASSOC)){
+            ?>
           <article class="searchArticle">
-              <img src="img/placeholderRAT.jpg" alt="" width="100vw"/>
-              <h3>Item Title</h3>
-              <h4>Precio</h4>
-              <h4>Descripción</h4>
-              <button>Agregar al carrito</button>
+            <div class="row">
+              <div class="col-2">
+                <img src="img/items/smol/<?php echo $tmp['it_id'] ?>.jpg" alt="" width="100vw" class="searchImg"/>
+              </div>
+              <div class="col-8">
+                <h3 class="searchTitle"><?php echo $tmp['it_nm'] ?></h3>
+                <h4 class="searchPrice"><?php echo $tmp['it_ot'] ?></h4>
+              </div>
+              <div class="col-2">
+                <button class="searchButton">Carrito</button>
+              </div>
+              <div class="row">
+                <h4 class="searchDesc"><?php echo $tmp['it_ds'] ?></h4>
+                <p></p>
+              </div>
           </article>
+          <?php }}?>
         </div>
       </div>
     </div>
   </div>
+  </main>
+  <?php
+    include_once "modules/footer.php";
+  ?>
   <script src="js/search.js"></script>
 </body>
 </html>
