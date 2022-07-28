@@ -73,8 +73,7 @@
     margin-right: 0.25em;
     text-align:justify;
 }
-#card1 article,
-#card2 article
+.mainCardSettings
 {
     background: var(--blue-ryb);
     border: .15em solid var(--cornflower-blue);

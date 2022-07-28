@@ -1,11 +1,9 @@
-body{
-  background: var(--lavender-web);
-}
 #itemImage picture img{
   width: calc(100vw / 4);
 }
 #exCont
 {
+  background: var(--oxford-blue);
   border: .75vw double var(--oxford-blue);
 }
 #svgHell
@@ -15,11 +13,22 @@ body{
 #itemIcon img
 {
   height: 16vw;
+  margin: auto;
+  min-height: 256px;
+  min-width: 256px;
+  width: 16vw;
 }
 #shoesWhose img
 {
-  height: 8vw;
-  padding: 0.45vh;
+  height: 16vw;
+  margin: auto;
+  min-height: 256px;
+  min-width: 256px;
+  width: 16vw;
+}
+.out
+{
+  display: none;
 }
 .buttonRow
 {
@@ -31,6 +40,7 @@ body{
 }
 .selectedIcon
 {
+  display: block;
   filter: brightness(0) saturate(100%) invert(69%) sepia(67%) saturate(5280%) hue-rotate(137deg) brightness(93%) contrast(81%);
 }
 .zapatoORANG

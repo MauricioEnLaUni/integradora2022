@@ -13,13 +13,15 @@
 </head>
 
 <body>
+    <header>
     <?php
       require_once "modules/session.php";
       require_once "../../ssl/connector.php";
-      include_once "modules/modal.php";
-      include_once "modules/modal.php";
       include_once "modules/header.php";
     ?>
+    </header>
+      <?php 
+      include_once "modules/modal.php";?>
     <main>
         <?php include_once "modules/exhibit.php";?>
     </main>
@@ -47,10 +49,6 @@
     ?>
     <?php
         include_once "modules/meta/scripts.html";
-    //   echo '<script>
-    //   pictureSVG("logo","img/logo/logoLong.svg","img/logo/bigF.svg",
-    //   "img/logo/bigF.png","Logo Test");
-    //   </script>';
     ?>
 </body>
 </html>

@@ -7,3 +7,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#pene{
+    background: red;
+    text-align: center;
+    font-size: 100%;
+}
+
+#pene button {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 70%;
+}
+
+#pene button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}

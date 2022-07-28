@@ -7,7 +7,7 @@ function estiloForm()
     'Loafer',
     'Sandalia',
     'Slipper',
-    'Atlético',
+    'Atletico',
     'Trabajo'
     ];
   let content = document.getElementById('estilo');

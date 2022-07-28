@@ -15,7 +15,6 @@
     type="image/x-icon"
     />
   </head>
-
   <body>
     <?php
       require_once "modules/session.php";
@@ -30,11 +29,12 @@
         <a href="modules/cart.php" class="btn btn-primary">Cart</a>
         <?php include_once 'modules/index/carrusel.php'; ?>
         <aside class="row">
-          <div class="col-md-9">
-            <div class="row" id="card1">
+          <div class="col-md-10">
+            <div class="row" id="card1">  
             </div>
           </div>
-          <div class="col-md-3">
+          <div id="pene" class="d-none d-md-block col-md-2 pt-2">
+            <button>hola</button>
           </div>
         </aside>
         <div id="parallax" class="row"></div>
