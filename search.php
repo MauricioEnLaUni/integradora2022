@@ -1,15 +1,15 @@
 <?php
 include_once "modules/session.php";
 include_once '../../ssl/connector.php';
-if(!isset($fill) || $fill < 10) $_SESSION['sPage'] = 1;
+if(!isset($end) || $end < 10) $_SESSION['sPage'] = 1;
 $st[] = (isset($_GET['Bota'])) ? 'Bota' : "";
 $st[] = (isset($_GET['Bote'])) ? 'Bote' : "";
 $st[] = (isset($_GET['Clogs'])) ? 'Clogs' : "";
-$st[] = (isset($_GET['Loafers'])) ? 'Loafers' : "";
-$st[] = (isset($_GET['Sandalia'])) ? 'Sandalia' : "";
-$st[] = (isset($_GET['Slipper'])) ? 'Slipper' : "";
-$st[] = (isset($_GET['Atletico'])) ? 'Atletico' : "";
-$st[] = (isset($_GET['Trabajo'])) ? 'Trabajo' : "";
+$st[] = (isset($_GET['Loafers'])) ? 'Loafr' : "";
+$st[] = (isset($_GET['Sandalia'])) ? 'Sanda' : "";
+$st[] = (isset($_GET['Slipper'])) ? 'Slipp' : "";
+$st[] = (isset($_GET['Atletico'])) ? 'Atlet' : "";
+$st[] = (isset($_GET['Trabajo'])) ? 'Work' : "";
 
 $br[] = (isset($_GET['Adidas'])) ? 'Adidas' : "";
 $br[] = (isset($_GET['Caterpillar'])) ? 'Caterpillar' : "";
@@ -37,34 +37,50 @@ function getOffers($stmt,$cond,&$array){
   $result = $stmt->fetchAll(PDO::FETCH_NUM);
 
   foreach($result as $row){
-    $fill[] = $row[0];
+    $array[] = $row[0];
   }
 }
+
 function getTheFors($stmt,$cond,&$array){
   foreach($cond as $row){
     if($row != ""){
       $stmt->execute([$row]);
       $result = $stmt->fetchAll(PDO::FETCH_NUM);
       foreach($result as $row){
-        $out[] = $row[0];
+        $array[] = $row[0];
       }
     }
   }
 }
 
+function andArray($array1,$array2,&$out){
+  foreach($array1 as $i){
+    if(in_array($i,$array2)) $out[] = $i;
+  }
+}
+
 if(str_contains($_SERVER['REQUEST_URI'],'?')){
+  $txt = [];
+  $off = [];
+  $scores = [];
+  $type = [];
+  $brand = [];
+  $whose = [];
+  $end = [];
   if(isset($_GET['submit'])){
     $stmt = $conn->prepare("SELECT `it_id`
                             FROM `item`
                             WHERE `it_nm` LIKE ?;");
-    $txt = "%" . $_GET['searchText'] . "%";
-    getSearch($stmt,$txt,$fill);
+    $tx = "%" . $_GET['searchText'] . "%";
+    getSearch($stmt,$tx,$txt);
+
     if($_GET['offer'] !== false){
       $stmt = $conn->prepare('SELECT `it_id`
                             FROM `item`
                             WHERE `it_of` IS NOT NULL;');
-      getOffers($stmt,$_GET['offer'],$comp);
+      getOffers($stmt,$_GET['offer'],$off);
     }
+
     $stmt = $conn->prepare('SELECT `it_id`
                         FROM `item`
                         WHERE `it_id` IN (
@@ -72,7 +88,7 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
                           FROM `score`
                           HAVING AVG(`sc_se`) >= ?
                         );');
-    getSearch($stmt,$_GET['inCal'],$fill);
+    getSearch($stmt,$_GET['inCal'],$scores);
 
     $stmt = $conn->prepare('SELECT `it_id`
                         FROM `item`
@@ -80,28 +96,44 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
     $stmt->execute([$_GET['minNumber'],$_GET['maxNumber']]);
     $result = $stmt->fetchAll(PDO::FETCH_NUM);
     foreach($result as $row){
-      $fill[] = $row[0];
+      $minmax[] = $row[0];
     }
     
     $stmt = $conn->prepare('SELECT `it_id`
                         FROM `item`
                         WHERE `it_tp` = ?;');
-    getTheFors($stmt,$st,$fill);
+    getTheFors($stmt,$st,$type);
 
     $stmt = $conn->prepare('SELECT `it_id`
                         FROM `item`
                         WHERE `it_br` = ?;');
-    getTheFors($stmt,$br,$fill);
+    getTheFors($stmt,$br,$brand);
 
     $stmt = $conn->prepare('SELECT `it_id`
                         FROM `item`
                         WHERE `it_wh` = ?;');
-    getTheFors($stmt,$br,$fill);
+    getTheFors($stmt,$br,$whose);
+
+    function andMe(&$t,&$t2,&$e){
+      if(empty($t)) $t[] = 0;
+      if(empty($t2)) $t2[] = 0;
+      andArray($t,$t2,$e);
+      array_unique($e);
+      unset($t);
+      unset($t2);
+    }
+    if(empty($off)) andArray($txt,$scores,$tmp1);
+    if(empty($type)) andArray($type,$minmax,$tmp2);
+    andMe($tmp1,$tmp2,$end);
+    andArray($brand,$whose,$tmp1);
+    andArray($tmp1,$end,$end);
+    array_unique($end);
+
   }else{
     $stmt = $conn->prepare("SELECT `it_id`
                             FROM `item`
                             WHERE `it_nm` LIKE ?;");
-    getSearch($stmt,$_GET['searchText'],$fill);
+    getSearch($stmt,$_GET['searchText'],$end);
   }
 }
 ?>
@@ -285,9 +317,9 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
           $stmt = $conn->prepare('SELECT `it_id`,`it_nm`,`it_ot`,`it_ds`
           FROM `item`
           WHERE `it_id` = ?;');
-          $fill = array_unique($fill);
-          $fill = array_chunk($fill,10);
-          foreach($fill[$_SESSION['sPage'] - 1] as $tmp){
+          $end = array_unique($end);
+          $end = array_chunk($end,10);
+          foreach($end[$_SESSION['sPage'] - 1] as $tmp){
             $stmt->execute([$tmp]);
             while($tmp = $stmt->fetch(PDO::FETCH_ASSOC)){
             ?>

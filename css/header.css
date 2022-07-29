@@ -97,6 +97,15 @@ nav div
 {
   height: 80px;
 }
+.logButtons
+{
+  float: left;
+  width: 40%;
+}
+.listsLogos
+{
+  float: left;
+}
 
 @media all and (max-width:992px)
 {

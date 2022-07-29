@@ -9,12 +9,12 @@
 }
 .carousel-control-prev
 {
-    background: var(--persian-blue);
+    background: var(--blueU);
     width:4%;
 }
 .carousel-control-next
 {
-    background: var(--persian-blue);
+    background: var(--blueU);
     width:4%;
 }
 .carousel-indicators

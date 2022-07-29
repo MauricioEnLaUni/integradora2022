@@ -1,4 +1,4 @@
-<div class="container mt-3" id="exCont">
+<div class="container py-3" id="exCont">
 <div class="row">
 <div class="col-md-4" id="itemImage">
 </div>
@@ -15,10 +15,6 @@
     </div>
     <div class="col-6">
         <h2 id="itemPrice"></h2>
-    </div>
-    <!-- Ofertas -->
-    <div class="d-none"></div> 
-    <!-- Ends Ofertas -->
     </div>
     <div class="row">
         <p id="itemDesc"></p>
@@ -63,12 +59,12 @@
         <p class="h3 text-center svgTitle sideBorder">Género</p>
         </div>
     <div class="row" id="shoesWhose">
-        <img src="img/svg/genders/man.svg" class="col-md-3" id="man"/>
-        <img src="img/svg/genders/woman.svg" class="col-md-3" id="woman"/>
-        <img src="img/svg/genders/unisex.svg" class="col-md-6" id="genderless"/>
-        <img src="img/svg/genders/boy.svg" class="col-md-3" id="boy"/>
-        <img src="img/svg/genders/girl.svg" class="col-md-3" id="girl"/>
-        <img src="img/svg/genders/child.svg" class="col-md-6" id="child"/>
+        <img src="img/svg/genders/man.svg" class="col-md-4 out" id="man"/>
+        <img src="img/svg/genders/woman.svg" class="col-md-4 out" id="woman"/>
+        <img src="img/svg/genders/unisex.svg" class="col-md-4 out" id="genderless"/>
+        <img src="img/svg/genders/boy.svg" class="col-md-4 out" id="boy"/>
+        <img src="img/svg/genders/girl.svg" class="col-md-4 out" id="girl"/>
+        <img src="img/svg/genders/child.svg" class="col-md-4 out" id="child"/>
     </div>
     </div>
     <div class="col-md-3">
