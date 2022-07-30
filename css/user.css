@@ -1,0 +1,47 @@
+main
+{
+  background-color: var(--rich-black);
+}
+.userNav
+{
+  background: var(--resolution-blue);
+  border: .8vh double var(--oxford-blue);
+  border-radius: 3vw;
+  color: var(--blueU);
+  margin:5%;
+}
+.userNav img
+{
+  background: var(--blueU);
+  border: .8vh double var(--blue-ryb);
+  border-radius: 20vw;
+  margin-left: 2.5%;
+  height: 10vh;
+  width: 10vh;
+}
+.accNavTxt
+{
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+@media all and (min-width: 576px)
+{
+  .userNav
+  {
+    min-height: 100px;
+    height: 8vw;
+    min-height: 150px;
+    width: 36vw;
+  }
+}
+@media all and (min-width: 768px)
+{
+  .userNav
+  {
+    min-height: 150px;
+    height: 12vw;
+    min-height: 250px;
+    width: 24vw;
+  }
+}

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../css/card.css">
 <link rel="stylesheet" href="/Integradora/css/footer.css">
 <link rel="stylesheet" href="/Integradora/css/accounts.css">
+<link rel="stylesheet" href="/Integradora/css/user.css">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">

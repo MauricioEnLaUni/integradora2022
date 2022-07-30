@@ -181,7 +181,16 @@ CREATE TABLE `pay_info` (
   PRIMARY KEY (`pi_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE ;
+CREATE TABLE `contact`(
+	`cn_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `cn_nm` VARCHAR(20),
+    `cn_ln` VARCHAR(30),
+    `cn_em` VARCHAR(128),
+    `cn_is` TINYINT UNSIGNED,
+    `cn_ph` VARCHAR(15),
+    `cn_ms` VARCHAR(255),
+    CONSTRAINT `PK_CN` PRIMARY KEY (`cn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- FOREIGN KEYS

@@ -15,12 +15,12 @@
 <form id="Out" action="modules/log.php" method="POST" display="none"></form>
 <div class="logButtons">
   <img src="img/svg/personFill.svg" alt="" />
-  <button
+  <a
   class="btn btn-link"
-  href="http://localhost/Integradora/user/user.php"
+  href="/user/user.php"
   role="button">
       Perfil
-</button>
+</a>
 </div>
 <div class="logButtons">
   <img src="img/svg/personFill.svg" alt="" />
