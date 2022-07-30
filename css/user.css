@@ -25,6 +25,58 @@ main
   flex-grow: 1;
   width: 100%;
 }
+.addField input
+{
+  background: var(--mangoTango);
+  border: .15vw solid var(--teal-blue);
+  padding: .5% 4%;
+  width: 100%;
+}
+select
+{
+  background: var(--mangoTango);
+  border: .15vw solid var(--teal-blue);
+}
+#nbAdd
+{
+  width: 60%;
+}
+.addCards
+{
+  min-height: 60vh !important;
+}
+.addCards button
+{
+  color: var(--blueU);
+}
+#addCont
+{
+  position: relative;
+}
+#addAdd
+{
+  background: transparent;
+  border: initial;
+  border-radius: initial;
+  margin: 0;
+  height: 50%;
+  filter: invert(87%) sepia(99%) saturate(7110%) hue-rotate(171deg) brightness(99%) contrast(95%);
+  padding: 3%;
+  position: absolute;
+  width: 100%;
+}
+#addTxt
+{
+  font-weight: 600;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-decoration: underline;
+  top: 75%;
+  width: 30%;
+  z-index: 3;
+}
 @media all and (min-width: 576px)
 {
   .userNav

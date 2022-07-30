@@ -16,7 +16,7 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 </div>
 
 <div class="row" id="dataCont">
-  <form action="">
+  <form action="/Integradora/user/modules/accountName.php" method="POST">
     <label class="row">
       <p class="h4"><strong>Nombre de Usuario</strong></p>
       <div class="row" id="nameInputs">
@@ -43,38 +43,47 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
           }}?>
       </div>
     </label>
-    <button
+    <div class="row">
+      <button
       type="button"
-      class="btn btn-primary mt-2"
-      onclick="modInput('nameInputs')">
+      class="btn btn-primary mt-2 col-2"
+      onclick="modInput('nameInputs','subName')">
         Modificar
       </button>
+      <button type="submit" class="btn btn-info mt-2 col-2 mx-2" disabled id="subName">Enviar</button>
+    </div>
   </form>
 
+  <form action="accountEmail.php" method="post">
     <label class="row" id="emailIn">
       <p class="h4"><strong>Correo Electrónico</strong></p>
       <div class="row">
         <?php
-        $stmt = $conn->prepare('SELECT `em_em`
+        $stmt = $conn->prepare('SELECT `em_em`,`em_id`
         FROM `email`
         WHERE `em_us` = ?');
         $stmt->execute([$_SESSION['userId']]);
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-          echo "<input value='" . $row['em_em'] . "' disabled/>";
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach($result as $row){
+          echo "<input id='em" . $row['em_id'] . "' value='" . $row['em_em'] . "' name='email[]' disabled/>";
         }
         ?>
       </div>
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#mAcc"
-        onclick="modInput('emailIn')">
-          Modificar
-      </button>
     </label>
+    <div class="row">
+      <button type="button" class="btn btn-info m-2 mb-5 col-2">Insertar</button>
+      <button
+      type="button"
+      class="btn btn-primary m-2 mb-5 col-2"
+      onclick="modInput('emailIn')">
+        Modificar
+      </button>
+      <button type="submit" class="btn btn-info m-2 mb-5 col-2">Enviar</button>
+    </div>
+  </form>
     
-    <label class="row">
+  <form action="accountUpdate.php" method="post">
+    <label class="row" id="phoneIn">
       <div class="row">
         <p class="h4"><strong>Teléfono</strong></p>
       </div>
@@ -84,35 +93,44 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         FROM `phone`
         WHERE `ph_us` = ?');
         $stmt->execute([$_SESSION['userId']]);
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-          echo "<input value='" . $row['ph_nm'] . "' disabled/>";
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach($result as $row){
+          echo "<input value='" . $row['ph_nm'] . " name='phone[]'  disabled/>";
+          echo "<input value='" . $row['ph_nm'] . " name='phone[]' disabled/>";
         }
         ?>
       </div>
+    </label>
+    
+    <div class="row">
+    <button type="button" class="btn btn-info m-2 mb-5 col-2">Insertar</button>
+    <button
+      type="button"
+      class="btn btn-primary m-2 mb-5 col-2"
+      onclick="modInput('phoneIn')">
+        Modificar
+    </button>
+    <button type="submit" class="btn btn-info m-2 mb-5 col-2">Enviar</button>
+    </div>
+  </form>
+
+  <form action="/Integradora/user/modules/accountPwd.php" method="post">
+    <label class="row" id="passIn">
+      <div class="row">
+        <p class="h4"><strong>Contraseña</strong></p>
+      </div>
+      <div class="row">
+        <input value="********" name="pwd" type="password" disabled minlength="16" maxlength="32"/>
+      </div>
+    </label>
+    <div class="row">
       <button
         type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#mAcc"
-        onclick="modInput('phoneIn')">
+        class="btn btn-primary m-2 mb-5 col-2"
+        onclick="modInput('passIn','subPass')">
           Modificar
       </button>
-    </label>
-
-    <label class="row mb-5">
-    <div class="row">
-      <p class="h4"><strong>Contraseña</strong></p>
+      <button type="submit" class="btn btn-info m-2 mb-5 col-2" disabled id="subPass">Enviar</button>
     </div>
-    <div class="row">
-      ********
-    </div>
-    <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#mAcc"
-        onclick="modInput('passIn')">
-          Modificar
-      </button>
-    </label>
+  </form>
 </div>

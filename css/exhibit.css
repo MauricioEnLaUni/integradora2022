@@ -4,11 +4,13 @@
 #exCont
 {
   background: var(--oxford-blue);
-  border: .75vw double var(--oxford-blue);
+  border: .75vw double var(--blueU);
+  border-radius: 3vw;
+  color: var(--blueU);
 }
 #svgHell
 {
-  border-top: .5vw double var(--oxford-blue);
+  border-top: .5vw double var(--blueU);
 }
 #itemIcon img
 {
@@ -36,7 +38,7 @@
 }
 .svgTitle
 {
-  border-bottom: .5vw double var(--oxford-blue);
+  border-bottom: .5vw double var(--blueU);
 }
 .selectedIcon
 {

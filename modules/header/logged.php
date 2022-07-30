@@ -17,7 +17,7 @@
   <img src="img/svg/personFill.svg" alt="" />
   <a
   class="btn btn-link"
-  href="/user/user.php"
+  href="/Integradora/user/user.php"
   role="button">
       Perfil
 </a>

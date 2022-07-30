@@ -7,9 +7,6 @@
         <h1 id="itemName"></h1>
     </div>
     <div class="row">
-        rating
-    </div>
-    <div class="row">
     <div class="col-6">
         <h2 >Precio</h2>
     </div>
@@ -39,6 +36,22 @@
                 <button class="col-2">sizea</button>
             </div>
         </div>
+        <div class="row">
+    <fieldset id="calificacion" form="searchBar">
+      <legend>
+          Calificaciones
+      </legend>
+      <input
+      form="searchBar"
+      class="rating rating--nojs"
+      max="5"
+      name="inCal"
+      step=".5"
+      type="range"
+      value="2"
+      />
+    </fieldset>
+    </div>
     </div>
     <div class="row mt-3 mb-5">
         <button class="btn btn-info">Comprar Ahora</button>

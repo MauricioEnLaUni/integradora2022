@@ -188,16 +188,22 @@ function accModal(which){
   document.getElementById("mField").innerHTML = inputs;
   document.getElementById("accSend").setAttribute('value',which);
 }
-function modInput(id){
+function modInput(id,submit){
   let inputs = document.getElementById(id).querySelectorAll("input");
+  let sub = document.getElementById(submit);
   if(inputs[0].hasAttribute("disabled")){
     inputs.forEach(element => {
       element.removeAttribute("disabled");
+      sub.removeAttribute("disabled");
     });
   }else{
     inputs.forEach(element => {
       element.setAttribute("disabled","");
+      sub.setAttribute("disabled","");
     });
   }
-  
+}
+
+function rmvInput(id){
+  let inputs = document.getElementById(id);
 }

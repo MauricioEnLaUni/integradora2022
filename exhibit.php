@@ -10,6 +10,7 @@
     include_once "modules/meta/stylesheets.php";
 ?>
 <link rel="stylesheet" href="css/exhibit.css">
+<link rel="stylesheet" href="css/rating.css">
 </head>
 
 <body>
@@ -24,9 +25,11 @@ include_once "modules/modal.php";
 ?>
 </header>
 
-<main>
+<main class="py-3">
   <?php include_once "modules/exhibit.php";?>
 </main>
+<div class="row" id="card1">
+</div>
 <footer>
   <?php include_once "modules/footer.php";?>
 </footer>
@@ -48,6 +51,7 @@ include_once "modules/modal.php";
   echo "<script>exhibit('itemImage',$loljson,$id)</script>";
 }
   include_once "modules/meta/scripts.html";
+  include_once "modules/index/card.php";
 ?>
 </body>
 </html>
