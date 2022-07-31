@@ -26,6 +26,7 @@ CREATE TABLE `ADDRESS`(
     `ad_zn` VARCHAR(25), -- Zone/Colony
     `ad_cy` VARCHAR(16), -- City
     `ad_ct` CHAR(2), -- Country
+    `ad_pf` TINYINT, -- Preferred Address
     CONSTRAINT `PK_AD` PRIMARY KEY (`ad_id`),
     INDEX `IX_PS`(`ad_ps`,`ad_cy`),
     INDEX `IX_CY`(`AD_CY`)
@@ -110,7 +111,10 @@ CREATE TABLE `ORDERS`(
     `or_us` int, -- User who owns this, foreign key
     `or_in` DATETIME, -- Date the order was made
     `or_fl` DATETIME, -- Date order was fulfilled
-    `or_is` TINYINT, -- Issues with the order
+    `or_cu` VARCHAR(5), -- Currency
+    `or_tx` FLOAT, -- TAX
+    `or_sp` FLOAT, -- Shipping
+    `or_fe` FLOAT, -- Paypal Fee
     `or_py` SMALLINT, -- Order price
     `or_pd` BOOL, -- If the order's been paid. Not sure.
     CONSTRAINT `PK_OR` PRIMARY KEY (`or_id`),
