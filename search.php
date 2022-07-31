@@ -1,6 +1,7 @@
 <?php
-include_once "modules/session.php";
-include_once '../../ssl/connector.php';
+include_once 'config.php';
+include_once ROOT . '/modules/session.php';
+include_once CONN . '/connector.php';
 if(!isset($end) || $end < 10) $_SESSION['sPage'] = 1;
 $st[] = (isset($_GET['Bota'])) ? 'Bota' : "";
 $st[] = (isset($_GET['Bote'])) ? 'Bote' : "";
@@ -164,11 +165,7 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
 </head>
 <body>
 <header>
-  <?php
-      include_once "modules/session.php";
-      include_once "../../ssl/connector.php";
-      include_once "modules/header.php";
-  ?>
+  <?php include_once ROOT . '/modules/header.php'; ?>
 </header>
   <main>
   <div class="container-fluid">
@@ -347,7 +344,7 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
   </div>
   </main>
   <?php
-    include_once "modules/footer.php";
+    include_once ROOT . '/modules/footer.php';
   ?>
   <script src="js/search.js"></script>
 </body>

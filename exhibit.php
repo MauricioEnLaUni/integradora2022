@@ -1,3 +1,6 @@
+<?php
+include_once "config.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +10,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <title>Fictichos</title>
 <?php
-    include_once "modules/meta/stylesheets.php";
+    include_once  ROOT . '/modules/meta/stylesheets.php';
 ?>
 <link rel="stylesheet" href="css/exhibit.css">
 <link rel="stylesheet" href="css/rating.css">
@@ -15,9 +18,9 @@
 
 <body>
 <?php
-require_once "modules/session.php";
-require_once "../../ssl/connector.php";
-include_once "modules/modal.php";
+require_once  ROOT . '/modules/session.php';
+require_once CONN . '/connector.php';
+include_once  ROOT . '/modules/modal.php';
 ?>
 <header>
 <?php

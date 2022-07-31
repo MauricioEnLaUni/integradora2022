@@ -43,8 +43,8 @@
         </div>
         <div class="d-none d-md-block col-md-5 flex-row-reverse">
           <?php
-          if($_SESSION['user'] != 4) include_once "C:/xampp/htdocs/Integradora/modules/header/logged.php";
-          else include_once "C:/xampp/htdocs/Integradora/modules/header/logIn.php";
+          if($_SESSION['user'] != 4) include_once ROOT . "/modules/header/logged.php";
+          else include_once ROOT . "/modules/header/logIn.php";
           ?>
         </div>
         <div class="search-bar col-md-4 d-none d-md-block">

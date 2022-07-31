@@ -27,7 +27,7 @@ tabindex="-1">
                     </p>
                     <form
                     class="mt-3 mx-4"
-                    action="modules/login/logValidation.php"
+                    action="<?php echo ROOT;?>/modules/login/logValidation.php"
                     method="POST">
                         <fieldset class="mb-3">
                             <label class="row">
@@ -115,7 +115,7 @@ tabindex="-1">
                     </p>
                     <form
                     class="mt-3 mx-4"
-                    action="modules/signUp/signValidation.php"
+                    action="<?php echo ROOT;?>/modules/signUp/signValidation.php"
                     method="POST">
                         <fieldset class="mb-3">
                             <label class="row">

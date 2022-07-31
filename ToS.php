@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fictichos</title>
     <?php
-      include_once 'modules/meta/stylesheets.php';
+      include_once 'config.php';
+      include_once ROOT . '/modules/meta/stylesheets.php';
     ?>
     <link rel="stylesheet" href="css/terms.css">
     <link
@@ -19,8 +20,8 @@
   <body>
     <header>
     <?php
-    include_once "modules/session.php";
-    include_once "modules/header.php";
+    include_once ROOT . '/modules/session.php';
+    include_once ROOT . '/modules/header.php';
     ?>
     </header>
     <main>
@@ -155,6 +156,6 @@
       </div>
     </main>
   <?php
-  include_once "modules/footer.php";
+  include_once ROOT . '/modules/footer.php';
   ?>
   </body>

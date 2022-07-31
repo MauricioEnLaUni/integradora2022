@@ -4,7 +4,7 @@
   data-bs-toggle="modal"
   href="#logInModal"
   role="button">
-    <img src="img/svg/personFill.svg" alt="" />
+    <img src="/Integradora/img/svg/personFill.svg" alt="" />
       Acceder
 </button>
 </div>
@@ -14,7 +14,7 @@
   data-bs-toggle="modal"
   href="#logInModal2"
   role="button">
-    <img src="img/svg/pencil-square.svg" alt="" />
+    <img src="/Integradora/img/svg/pencil-square.svg" alt="" />
       Inscribirse
 </button>
 </div>

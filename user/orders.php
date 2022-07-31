@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manejo de Cuenta</title>
-  <?php
-    include_once "modules/userStyle.php";
-  ?>
-</head>
-<body>
-  <header>
-    <?php
-      include_once "../modules/session.php";
-      require_once "logged.php";
-      include_once "../modules/header.php";
-    ?>
-  </header>
-  <main>
-    <?php
-      include_once "modules/orden.php";
-    ?>
-  </main>
-  <footer>
-    <?php
-      include_once "../modules/footer.php";
-    ?>
-  </footer>
-</body>
-</html>
-<?php
-  include_once "../modules/meta/scripts.html";
-?>
+<div class="container pt-4 pb-5">
+<div class="row">
+  <p><a href="user.php">Mi Cuenta</a> > Órdenes</p>
+</div>
+
+<div class="row text-center">
+  <p class="h1">Órdenes</p>
+</div>
+
+<div class="row">
+<div class="row">
+  <div class="col-4"><p class="h5">Fecha de Órden</p></div>
+  <div class="col-4"><p class="h5">Total</p></div>
+  <div class="col-4"><p class="h5">Número de Órden</p></div>
+</div>
+<div class="row">
+  <div class="col-4"><p class="h5">Some date</p></div>
+  <div class="col-4"><p class="h5">$$variable</p></div>
+  <div class="col-4"><a class="h5" href="">Detalles</a></div>
+</div>
+</div>
+
+</div>
