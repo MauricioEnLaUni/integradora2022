@@ -123,7 +123,7 @@ CREATE TABLE `STOCK`(
     `st_it` int UNSIGNED NOT NULL, -- FK ITEM ID
     `st_st` TINYINT, -- Amount of shoes in this stock position
     `st_lc` TINYINT, -- Where the item is currently OUTOFSTOCK,TRANSITIN,TRANSITOUT,FRONT,STORE,WAREHOUSE
-    `st_sz` TINYINT, -- Hexadecimal Operation DETERMINES SHOE SIZE 00 TO FF Only the first 
+    `st_sz` VARCHAR(5), -- Hexadecimal Operation DETERMINES SHOE SIZE 00 TO FF Only the first 
     CONSTRAINT `PK_ST` PRIMARY KEY (`st_id`),
     INDEX `IX_STSZ`(`ST_SZ`)
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
