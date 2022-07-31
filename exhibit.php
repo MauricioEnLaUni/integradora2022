@@ -1,5 +1,22 @@
 <?php
 include_once "config.php";
+require_once  ROOT . '/modules/session.php';
+require_once CONN . '/connector.php';
+$id = $_GET['product'];
+
+$stmt = $conn->prepare('SELECT `it_id`,`it_nm`,`it_ds`,`it_in`,`it_br`,`it_cl`,`it_tp`,`it_wh`,`it_of`
+FROM `ITEM`
+WHERE `it_id` = :i;');
+$stmt->bindParam('i',$id);
+$stmt->execute();
+$item = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$stmt = $conn->prepare('SELECT *
+FROM `stock`
+WHERE `st_it` = :i;');
+$stmt->bindParam('i',$id);
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,12 +31,11 @@ include_once "config.php";
 ?>
 <link rel="stylesheet" href="css/exhibit.css">
 <link rel="stylesheet" href="css/rating.css">
+<link rel="stylesheet" href="css/parallax.css">
 </head>
 
 <body>
 <?php
-require_once  ROOT . '/modules/session.php';
-require_once CONN . '/connector.php';
 include_once  ROOT . '/modules/modal.php';
 ?>
 <header>
@@ -29,10 +45,16 @@ include_once  ROOT . '/modules/modal.php';
 </header>
 
 <main class="py-3">
-  <?php include_once "modules/exhibit.php";?>
-</main>
-<div class="row" id="card1">
+  <div class="container-fluid">
+    <div class="row">
+      <?php include_once "modules/exhibit.php";?>
+      <div class="col-2"></div>
+    </div>
+  <div id="parallax" class="row"></div>
+  <div class="row" id="card1">
+  </div>
 </div>
+</main>
 <footer>
   <?php include_once "modules/footer.php";?>
 </footer>
@@ -42,17 +64,8 @@ include_once  ROOT . '/modules/modal.php';
 ></script>
 <?php
   include_once "modules/meta/scripts.html";
-  $id = $_GET['product'];
-
-  $stmt = $conn->prepare('SELECT `it_nm`,`it_ds`,`it_ot`,`it_br`,`it_mt`,`it_cl`,`it_tp`,`it_wh`,`it_of`
-                          FROM `ITEM`
-                          WHERE `it_id` = :i');
-  $stmt->bindParam('i',$id);
-  $stmt->execute();
-  while($row = $stmt->fetch()){
-  $loljson = json_encode($row);
+  $loljson = json_encode($item);
   echo "<script>exhibit('itemImage',$loljson,$id)</script>";
-}
   include_once "modules/meta/scripts.html";
   include_once "modules/index/card.php";
 ?>

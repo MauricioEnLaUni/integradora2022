@@ -19,10 +19,8 @@
           <button
           class="btn btn-primary d-md-none col-3 d-flex"
           type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas"
-          aria-controls="offcanvas">
-            <img src="img/svg/list.svg" alt="" />
+          onclick="location.href='cart.php'">
+            <img src="img/svg/cart.svg" alt="" />
           </button>
           <button
           class="btn btn-primary d-md-none col-3 d-flex"

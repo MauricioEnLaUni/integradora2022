@@ -350,7 +350,7 @@ INSERT INTO STOCK VALUES('','50',1,1,8.5);
 
 INSERT INTO PROVIDER VALUES(0,'Ficticho','fictichos.com');
 
-INSERT INTO USERS VALUES(0,'momo','admin','momomo','Test','$argon2i$v=19$m=65536,t=4,p=1$ZWJRb1NILzlvV2IwVUY4dQ$4RZS2fAWk8XIF9WXinHrmHJFfu55fzMmC9gZ9DI1HY8',md5('key'),1,1,0);
+INSERT INTO USERS VALUES('','momo','admin','momomo','Test','$argon2i$v=19$m=65536,t=4,p=1$ZWJRb1NILzlvV2IwVUY4dQ$4RZS2fAWk8XIF9WXinHrmHJFfu55fzMmC9gZ9DI1HY8',md5('key'),1,1,0);
 INSERT INTO USERS VALUES('','Mary4283','green smolt','Mary','Curry','xWrbTUIlI6yuaD1xrya4nvsySRGFlKOQ','wbYEZESwHgXsdbNoeOo9dIdIvopB7ohC',NULL,NULL,3);
 INSERT INTO USERS VALUES('','Carolyn1486','picayune economics','Carolyn','Drake','aUopgRuReFmbMzzWj9DgZxtw64SjJ10c','XDJ3wt4xsZqpDbCzd5RguZyEomTsS2db',NULL,NULL,3);
 INSERT INTO USERS VALUES('','Lucy4598','fanatical netsuke','Lucy','Panek','yNc3Xi4FDpPZ0ooq5GEJl1yL4ov4qGMl','fw662lZUe3CpirM2OZV9BbqEadqqCv3L',NULL,NULL,3);

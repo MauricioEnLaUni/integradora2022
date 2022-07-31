@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `fict` CHARACTER SET utf8mb4 COLLATE utf8mb4;
-USE `fict`;
+CREATE DATABASE IF NOT EXISTS `ficticho_fict` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `ficticho_fict`;
 SET NAMES 'utf8mb4';
 
 CREATE TABLE `ACCOUNTING`(
@@ -49,21 +49,19 @@ CREATE TABLE `ITEM`(
 	`it_id` INT UNSIGNED NOT NULL AUTO_INCREMENT, -- IDENTIFIER
 	`it_nm` VARCHAR(30), -- NAME
     `it_ds` VARCHAR(255), -- DESCRIPTION
-	`it_in` FLOAT, -- PRICE BUY
-    `it_ot` FLOAT, -- PRICE SALE
+	`it_in` FLOAT(10,2), -- PRICE BUY
 	`it_br` VARCHAR(12), -- BRAND FOREIGN KEY
-	`it_mt` CHAR(4), -- LEAT, CANV, TEXT, RUBR, SYNT, FOAM, DENM
 	`it_cl` CHAR(5), -- WHITE,BLACK,RED,BLUE,GREEN,YELLW,ORANG,PURPL,BROWN
 	`it_tp` CHAR(7), -- Bota,Clogs,Loafer,Atlético,Trabajo,Mocasin,Vestir,Tacones
 	`it_wh` CHAR(4), -- Niño, Niña, Infa, Unsx, Homb, Mujr
 	`it_rd` DATE, -- RELEASE DATE
     `it_of` INT UNSIGNED NOT NULL, -- Oferta
-    `it_tx` FLOAT, -- Impuestos
+    `it_tx` FLOAT(6,2), -- Impuestos
     `it_ft` BOOL, -- Si es promovido
     CONSTRAINT `PK_IT` PRIMARY KEY (`it_id`),
     INDEX `IX_NM`(`it_nm`),
     INDEX `IX_BR`(`it_br`),
-    INDEX `IX_OT`(`it_ot`)
+    INDEX `IX_OT`(`it_in`)
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `OFFERS`(
@@ -83,9 +81,9 @@ CREATE TABLE `ORDERS`(
     `or_in` DATETIME, -- Date the order was made
     `or_fl` DATETIME, -- Date order was fulfilled
     `or_cu` VARCHAR(5), -- Currency
-    `or_sp` FLOAT, -- Shipping
-    `or_fe` FLOAT, -- Paypal Fee
-    `or_py` SMALLINT, -- Order price
+    `or_sp` FLOAT(10,2) UNSIGNED, -- Shipping
+    `or_fe` FLOAT(10,2) UNSIGNED, -- Paypal Fee
+    `or_py` SMALLINT UNSIGNED, -- Order price
     `or_pd` BOOL, -- If the order's been paid. Not sure.
     `or_ad` DATETIME, -- When the order was paid
     CONSTRAINT `PK_OR` PRIMARY KEY (`or_id`),
@@ -114,15 +112,15 @@ create table `SCORE`(
 	`sc_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,-- ID
 	`sc_it` INT UNSIGNED NOT NULL,-- FK ITEM
 	`sc_us` INT UNSIGNED NOT NULL,-- FK USER
-	`sc_se` INT,-- SCORE?
+	`sc_se` TINYINT UNSIGNED,-- SCORE?
 	CONSTRAINT `PK_SC` PRIMARY KEY (`sc_id`)
 )engine = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `STOCK`(
 	`st_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- IDENTIFIER
     `st_it` int UNSIGNED NOT NULL, -- FK ITEM ID
-    `st_st` TINYINT, -- Amount of shoes in this stock position
-    `st_lc` TINYINT, -- Where the item is currently OUTOFSTOCK,TRANSITIN,TRANSITOUT,FRONT,STORE,WAREHOUSE
+    `st_st` TINYINT UNSIGNED, -- Amount of shoes in this stock position
+    `st_lc` TINYINT UNSIGNED, -- Where the item is currently OUTOFSTOCK,TRANSITIN,TRANSITOUT,FRONT,STORE,WAREHOUSE
     `st_sz` VARCHAR(5), -- Hexadecimal Operation DETERMINES SHOE SIZE 00 TO FF Only the first 
     CONSTRAINT `PK_ST` PRIMARY KEY (`st_id`),
     INDEX `IX_STSZ`(`ST_SZ`)
@@ -137,8 +135,8 @@ CREATE TABLE `USERS`(
     `us_pw` VARCHAR(100), -- Password Encrypted with ARGON2I in PHP
     `us_cs` VARCHAR(32), -- Checksum, unique ID, used for email verification.
     `us_vf` BOOL DEFAULT NULL, -- Si el usuario está verificado
-    `us_pr` INT, -- FK Proveedor 
-    `us_al` INT, -- Nivel de acceso al sitio
+    `us_pr` INT UNSIGNED, -- FK Proveedor 
+    `us_al` INT UNSIGNED, -- Nivel de acceso al sitio
     CONSTRAINT `PK_UR` PRIMARY KEY (`us_id`),
     CONSTRAINT `UQ_USAN` UNIQUE (`us_an`),
     CONSTRAINT `UQ_USDN` UNIQUE (`us_dn`),

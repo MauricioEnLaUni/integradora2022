@@ -39,94 +39,16 @@ $row = $stmt->fetch();
   include_once "modules/header.php";
   ?>
   </header>
-  <main>
-  <div class="container-fluid mt-2 mb-5" id="orderPage">
+<main>
+<div class="container-fluid mt-2 mb-5" id="orderPage">
   <div class="row">
       <h1 id="titleSale">Confirmación de Compra</h1>
   </div>
-  <div class="row container" id="datosSale">
-    <div class="row" id="printSale">
-      <div class="col-6">
-        <div class="row">
-          <div class="col-3"><p class="h4">Nombre: </p></div>
-          <div class="col-8"><?php echo $row['us_nm'] . " " . $row['us_ln'];?></div>
-        </div>
-        <div class="row">
-          <div class="col-3"><p class="h4">Órden: </p></div>
-          <div class="col-8"><?php echo $row['us_nm'] . " " . $row['us_ln'];?></div>
-        </div>
-        <div class="row">
-          <div class="col-3"><p class="h4">Fecha: </p></div>
-          <div class="col-8"><?php echo date("Y-m-d H:i:s");?></div>
-        </div>
-        <div class="row">
-          <p class="h3">Dirección:</p>
-            <button class="col-3">Cambiar</button>
-          <p class="col-9"><?php echo $row['ad_nb'] . " " . $row['ad_st'] . " " . $row['ad_zn'] . "<br />" . $row['ad_cy'] . ", " . $row['ad_ct'];?></p>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="accordion" id="payments">
-          <div id="ppplus"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="row">
-    <table class="table table-dark table-stripped">
-      <thead>
-        <tr>
-          <th scope="col">No.</th>
-          <th scope="col">Producto</th>
-          <th scope="col">Precio Unidad</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Quitar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        $i = 1;
-        $stmt = $conn->prepare('SELECT `it_nm`,(`it_ot`*.85) AS `price`,`it_id`
-                                FROM `item`
-                                WHERE `it_nm` = :n');
-        $stmt->bindParam('n',$j);
-        foreach($_SESSION['cart'] as $j=>$v){
-          $stmt->execute();
-          if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-          ?>
-        <tr>
-          <th scope="row"><?php echo $i++;?></th>
-          <td><?php echo $row['it_nm'];?></td>
-          <td><?php echo $row['price'];?></td>
-          <td><input type="number" min="0" value="<?php echo $v;?>" /></td>
-          <form action="modules/rmvItem.php" method="POST">
-            <td><button type="submit" name="rmv" value="<?php echo $row['it_nm']?>">Quitar</button></td>
-          </form>
-        </tr>
-        <?php }}?>
-      </tbody>
-    </table>
-  </div>
-  <div class="row">
-    <form action="confirmación.php" method="POST">
-      <label>
-        <input type="checkbox" name="acuerdo" id="" required/> He leido y acepto los Términos y Condiciones de compra.
-      </label>
-      <label>
-        <input type="checkbox" name="suscribir" id="" /> Suscribirme para obtener más ofertas.
-      </label>
-      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-      <br/>
-      <button
-      type="submit"
-      value="Comfirmar Pedido"
-      id="continueButton"
-      onclick="ppp.doContinue();return false;"></button>
-      <input type="reset" value="Cancelar" />
-      </form>
-    </div>
-  </div>
+  <?php
+  include_once 'modules/cart/userData.php';
+  include_once 'modules/cart/orderTable.php';
+  include_once 'modules/cart/submit.php';
+  ?>
 </div>
 </main>
 <?php

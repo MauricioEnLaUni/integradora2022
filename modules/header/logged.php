@@ -9,7 +9,8 @@ foreach($_SESSION['cart'] as $c){
   class="btn btn-link position-relative"
   href="cart.php">
     <img src="img/svg/cart.svg" alt="Cart Button" />
-    <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger"><?php echo $cartSize;?></span>
+    <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger"><?php
+    if($cartSize > 0) echo $cartSize;?></span>
   </a>
 </div>
 <div class="listsLogos">

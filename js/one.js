@@ -1,17 +1,3 @@
-function userOrder(one,two,address,button)
-{
-  let d = Date(Date.now());
-  let orderTime = d.toString();
-  var content = document.getElementById('printSale');
-  let datos = `<h3 class="col-2">Usuario:</h3><p class="col-10">`+one+`</p>
-                <h3 class="col-2">No.Orden:</h3><p class="col-10">`+two+`</p>
-                <h3 class="col-2">Fecha:</h3><p class="col-10">`+orderTime.slice(0,33)+`</p>
-                <button class="col-1">Cambiar Dirección</button>
-                <h3 class="col-2">Dirección:</h3><p class="col-9">`+address+`</p>
-            </div>`;
-  content.innerHTML+=datos;
-}
-
 function drawOrder(id,nm,un,qt)
 {
   let content = document.getElementById('salesTable');
@@ -50,9 +36,6 @@ function exhibit(where,row,id){
   let p0 = "img/items/"+id+".jpg";
   let p1 = "img/smol/items/"+id+".jpg";
   picture(where,p0,p1,p0,row["it_ds"]);
-  document.getElementById("itemName").innerHTML+=capitalizeWords(row["it_nm"]);
-  capitalizeWords(document.getElementById("itemPrice").innerHTML+=row["it_ot"]);
-  capitalizeWords(document.getElementById("itemDesc").innerHTML+=row["it_ds"]);
   let icon = "";
   switch(row["it_tp"]){
     case "Bota":

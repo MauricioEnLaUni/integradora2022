@@ -77,7 +77,12 @@ function createUser($conn,$usr,$pwd,$eml){
   $stmt = $conn->prepare('INSERT INTO `USERS` (`us_an`,`us_pw`,`us_al`)
   VALUES(?,?,?);');
   $stmt->execute([$usr,$hash,$a]);
-  $id = $conn->lastInsertId();
+  $stmt = $conn->prepare('INSERT INTO `us_id`
+  FROM `USERS`
+  WHERE `us_an` = :a
+  LIMIT 1;');
+  $stmt->execute([$usr]);
+  $id = $stmt->fetch();
   $stmt = $conn->prepare('INSERT INTO `EMAIL` (`em_us`,`em_em`,`em_key`)
     VALUES(?,?,?);');
   $stmt->execute([$id,$eml,$vkey]);
