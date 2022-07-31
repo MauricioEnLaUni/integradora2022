@@ -10,6 +10,6 @@ if(isset($_POST['sale'])){
   if($row = $stmt->fetch()){
   $_SESSION['cart'][$row['it_nm']] += 1;
   }
-  header("Location:" . ROOT . "index.php");
+  header("Location:index.php");
 }else header("Location:index.php");
 ?>

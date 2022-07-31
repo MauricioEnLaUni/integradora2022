@@ -3,16 +3,16 @@ require_once "../session.php";
 require_once "validation.php";
 require_once "../../../../ssl/connector.php";
 if(submitError($_POST['submit'],$_POST['usuario'],$_POST['password'],$usr,$pwd) !== false){
-  header("Location: http://localhost/Integradora/index.php?error=submit");
+  header("Location:" . ROOT . "/index.php?error=submit");
   exit();
 }elseif(emptyError($usr,$pwd) !== true){
-  header("Location: http://localhost/Integradora/index.php?error=input");
+  header("Location:" . ROOT . "/index.php?error=input");
   exit();
 }elseif(newUser($usr,$conn) !== false){
-  header("Location: http://localhost/Integradora/index.php?error=newUser");
+  header("Location:" . ROOT . "/index.php?error=newUser");
   exit();
 }elseif(passValidation($usr,$pwd,$conn)){
-  header("Location: http://localhost/Integradora/index.php?error=password");
+  header("Location:" . ROOT . "/index.php?error=password");
   exit();
 }else{
   setAccess($conn,$usr);

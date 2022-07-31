@@ -26,11 +26,11 @@ def pgen():
     num = digits
     #combine the data
     suma = lower + upper + num
-    choices = numpy.random.choice([char for char in suma], size = 64, replace=True)
+    choices = numpy.random.choice([char for char in suma], size = 32, replace=True)
     # use random 
     # temp = sample(all,64)
     return "".join(choices)
     
 for i in range(1,11,1):
-    toFile("user.txt","INSERT INTO USERS VALUES("+str(i)+","+personal()+
-    pgen()+"\',NULL,3);\n")
+    toFile("user.txt","INSERT INTO USERS VALUES(\'\',"+personal()+
+    pgen()+"\',\'"+pgen()+"\',NULL,NULL,3);\n")

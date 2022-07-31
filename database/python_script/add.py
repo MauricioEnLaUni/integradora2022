@@ -15,16 +15,6 @@ countries = {
     'CU' : 'La Habana',
     'CA' : 'Ottawa'
 }
-
-def I(a):
-    x = a+1
-    if(x<10):
-        a = "00"+str(x)
-    elif(x<100):
-        a = "0"+str(x)
-    else:
-        a = str(x)
-    return "\'AD0"+a+"\',"
     
 def inO(x,y):
     from random import randint
@@ -52,4 +42,4 @@ for i in range(16):
     cy = "\'"+countries[ct]+"\'"
     toFile("address.txt","INSERT INTO ADDRESS VALUES("+str(i+1)+","+
     whose()+inO(100,1500)+nameMe()+","+inO(1000,64000)+nameMe()+","+
-    cy+",\'"+ct+"\');\n")
+    cy+",\'"+ct+"\',\'\');\n")

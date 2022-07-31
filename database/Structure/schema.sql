@@ -1,16 +1,12 @@
 CREATE DATABASE IF NOT EXISTS `fict` CHARACTER SET utf8mb4 COLLATE utf8mb4;
 USE `fict`;
 SET NAMES 'utf8mb4';
-SELECT @@GLOBAL.TIME_ZONE;
-SHOW GRANTS FOR 'ficticho_loggedUser'@'localhost';
 
 CREATE TABLE `ACCOUNTING`(
 	`ac_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- ID
     `ac_ct` VARCHAR(12), -- Concepto
     `ac_am` DECIMAL(11,2), -- Cantidad
     `ac_dt` DATETIME,  -- Fecha de cambio
-    `ac_or` INT, -- Cuenta de procedencia
-    `ac_ds` int, -- Cuenta destino
     `ac_md` CHAR(4), -- Modo de Pago
     CONSTRAINT `PK_ACC` PRIMARY KEY (`ac_id`),
     INDEX `IX_DT`(`ac_dt`), -- Indice para buscar por fechas
@@ -19,7 +15,7 @@ CREATE TABLE `ACCOUNTING`(
 
 CREATE TABLE `ADDRESS`(
 	`ad_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	`ad_us` INT, -- FK a usuarios
+	`ad_us` INT UNSIGNED NOT NULL, -- FK a usuarios
     `ad_nb` SMALLINT, -- Exterior number
     `ad_st` VARCHAR(25), -- Street
     `ad_ps` SMALLINT UNSIGNED, -- Postal Code
@@ -32,35 +28,9 @@ CREATE TABLE `ADDRESS`(
     INDEX `IX_CY`(`AD_CY`)
 ) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
-CREATE TABLE `BANK`(
-	`bk_id` INT UNSIGNED AUTO_INCREMENT,
-	`bk_us` INT, -- FK Usuario
-    `bk_br` VARCHAR(20), -- Nombre del banco
-    `bk_nm` VARCHAR(16), -- Account number
-	CONSTRAINT `PK_BK` PRIMARY KEY (`bk_id`),
-    CONSTRAINT `UQ_NM` UNIQUE (`bk_nm`)
-) ENGINE=InnoDB CHARACTER SET utf8mb4;
-
--- might not be used at all
-CREATE TABLE `CART`(
-	`ct_id` int UNSIGNED AUTO_INCREMENT,
-    `ct_us` int,
-    `ct_ds` TINYINT, -- Destino del carro, compra, inactividad, cancelacion
-    CONSTRAINT `PK_CT` PRIMARY KEY (`CT_ID`),
-    INDEX `IX_CT`(`ct_ds`)
-) ENGINE = InnoDB CHARACTER SET utf8mb4;
-
--- Tabla muchos a muchos
--- might not be used at all
-CREATE TABLE `CT_IT`(
-	`ct_id` int UNSIGNED AUTO_INCREMENT,
-	`it_id` int,
-    `ct_am` TINYINT -- Amount
-) ENGINE = InnoDB CHARACTER SET utf8mb4;
-
 CREATE TABLE `EMAIL`(
 	`em_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	`em_us` INT,
+	`em_us` INT UNSIGNED NOT NULL,
     `em_em` VARCHAR(128),
 	CONSTRAINT `PK_EM` PRIMARY KEY (`em_id`),
     CONSTRAINT `UQ_EM` UNIQUE (`em_em`),
@@ -70,9 +40,9 @@ CREATE TABLE `EMAIL`(
 -- Tabla muchos a muchos
 -- Tabla de órdenes e items
 CREATE TABLE `it_or`(
-	`or_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+	`or_id` int UNSIGNED NOT NULL,
     `it_id` int,
-    `io_am` TINYINT
+    `io_am` TINYINT -- Cantidad
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `ITEM`(
@@ -87,7 +57,8 @@ CREATE TABLE `ITEM`(
 	`it_tp` CHAR(7), -- Bota,Clogs,Loafer,Atlético,Trabajo,Mocasin,Vestir,Tacones
 	`it_wh` CHAR(4), -- Niño, Niña, Infa, Unsx, Homb, Mujr
 	`it_rd` DATE, -- RELEASE DATE
-    `it_of` INT,
+    `it_of` INT UNSIGNED NOT NULL, -- Oferta
+    `it_tx` FLOAT, -- Impuestos
     `it_ft` BOOL, -- Si es promovido
     CONSTRAINT `PK_IT` PRIMARY KEY (`it_id`),
     INDEX `IX_NM`(`it_nm`),
@@ -108,22 +79,22 @@ CREATE TABLE `OFFERS`(
 
 CREATE TABLE `ORDERS`(
 	`or_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- Identifier PK
-    `or_us` int, -- User who owns this, foreign key
+    `or_us` int UNSIGNED NOT NULL , -- User who owns this, foreign key
     `or_in` DATETIME, -- Date the order was made
     `or_fl` DATETIME, -- Date order was fulfilled
     `or_cu` VARCHAR(5), -- Currency
-    `or_tx` FLOAT, -- TAX
     `or_sp` FLOAT, -- Shipping
     `or_fe` FLOAT, -- Paypal Fee
     `or_py` SMALLINT, -- Order price
     `or_pd` BOOL, -- If the order's been paid. Not sure.
+    `or_ad` DATETIME, -- When the order was paid
     CONSTRAINT `PK_OR` PRIMARY KEY (`or_id`),
     INDEX `IX_ORPY`(`OR_PY`)
 ) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `PHONE`(
 	`ph_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	`ph_us` INT,
+	`ph_us` INT UNSIGNED NOT NULL,
     `ph_nm` VARCHAR(15),
 	CONSTRAINT `PK_PH` PRIMARY KEY (`ph_id`),
     CONSTRAINT `UQ_PH` UNIQUE (`PH_NM`),
@@ -141,15 +112,15 @@ CREATE TABLE `PROVIDER`(
 
 create table `SCORE`(
 	`sc_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,-- ID
-	`sc_it` INT,-- FK ITEM
-	`sc_us` INT,-- FK USER
+	`sc_it` INT UNSIGNED NOT NULL,-- FK ITEM
+	`sc_us` INT UNSIGNED NOT NULL,-- FK USER
 	`sc_se` INT,-- SCORE?
 	CONSTRAINT `PK_SC` PRIMARY KEY (`sc_id`)
 )engine = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `STOCK`(
 	`st_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- IDENTIFIER
-    `st_it` int, -- FK ITEM ID
+    `st_it` int UNSIGNED NOT NULL, -- FK ITEM ID
     `st_st` TINYINT, -- Amount of shoes in this stock position
     `st_lc` TINYINT, -- Where the item is currently OUTOFSTOCK,TRANSITIN,TRANSITOUT,FRONT,STORE,WAREHOUSE
     `st_sz` TINYINT, -- Hexadecimal Operation DETERMINES SHOE SIZE 00 TO FF Only the first 
@@ -198,45 +169,10 @@ CREATE TABLE `contact`(
 
 
 -- FOREIGN KEYS
-ALTER TABLE `ACCOUNTING`
-ADD CONSTRAINT `FK_ACBK00`
-FOREIGN KEY (`ac_od`) 
-REFERENCES `BANK`(`bk_id`)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
-
 ALTER TABLE `ADDRESS`
 ADD CONSTRAINT `FK_ADUS00`
 FOREIGN KEY (`ad_us`)
 REFERENCES `USERS`(`US_ID`)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
-
-ALTER TABLE `BANK`
-ADD CONSTRAINT `FK_BKUS00`
-FOREIGN KEY (`bk_us`)
-REFERENCES `USERS`(`US_ID`)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
-
-ALTER TABLE `CART`
-ADD CONSTRAINT `FK_CTUS00`
-FOREIGN KEY (`ct_us`)
-REFERENCES `USERS`(`US_ID`)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
-
-ALTER TABLE `CT_IT`
-ADD CONSTRAINT `FK_CTIT00`
-FOREIGN KEY (`IT_ID`)
-REFERENCES `ITEM`(`IT_ID`)
-ON DELETE CASCADE
-ON UPDATE CASCADE;
-
-ALTER TABLE `CT_IT`
-ADD CONSTRAINT `FK_CTIT01`
-FOREIGN KEY (`CT_ID`)
-REFERENCES `CART`(`CT_ID`)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
 
@@ -247,7 +183,7 @@ REFERENCES `USERS`(`US_ID`)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
 
-ALTER TABLE `IT_OR`
+ALTER TABLE `it_or`
 ADD CONSTRAINT `FK_ITOR01`
 FOREIGN KEY (`OR_ID`)
 REFERENCES `ORDERS`(`OR_ID`)
@@ -275,17 +211,17 @@ REFERENCES `USERS`(`US_ID`)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
 
-alter table `score`
+alter table `SCORE`
 add constraint `FK_SCIT00`
 foreign key (`sc_it`)
-references `item` (`IT_ID`)
+references `ITEM` (`IT_ID`)
 on delete cascade
 on update cascade;
 
-alter table `score`
+alter table `SCORE`
 add constraint `FK_SCUS00`
 foreign key (`sc_us`)
-references `users` (`US_ID`)
+references `USERS` (`US_ID`)
 on delete cascade
 on update cascade;
 
@@ -303,7 +239,7 @@ REFERENCES `PROVIDER`(`PR_ID`)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
 
-delimiter $$
+delimiter $$PROVIDER
 create procedure users_bank (id int)
 begin
 select address.ad_nb,address.ad_st,address.ad_ps,address.ad_zn,address.ad_cy,address.ad_ct,bank.bk_nm,cart.ct_ds,email.em_em,orders.or_in,orders.or_fl,orders.or_is,orders.or_py,orders.or_pd,phone.ph_nm,users.us_an,users.us_dn,users.us_nm,users.us_ln,users.us_pw,users.us_pr from users 

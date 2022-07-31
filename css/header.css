@@ -93,6 +93,10 @@ nav div
   width: 16vw;
   max-width: 70px;
 }
+.badge
+{
+  font-size: 10px;
+}
 #upperBar
 {
   height: 80px;
@@ -100,7 +104,7 @@ nav div
 .logButtons
 {
   float: left;
-  width: 40%;
+  width: 30%;
 }
 .listsLogos
 {

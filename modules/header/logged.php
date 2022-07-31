@@ -1,15 +1,21 @@
+<?php
+$cartSize = 0;
+foreach($_SESSION['cart'] as $c){
+  $cartSize += $c;
+}
+?>
 <div class="listsLogos">
   <a
-  class="btn btn-link"
+  class="btn btn-link position-relative"
   href="cart.php">
     <img src="img/svg/cart.svg" alt="Cart Button" />
-    <span class="badge text-bg-secondary"><?php echo count($_SESSION['cart'])?></span>
+    <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger"><?php echo $cartSize;?></span>
   </a>
 </div>
 <div class="listsLogos">
   <a
   class="btn btn-link"
-  href="modules/cart.php">
+  href="wish.php">
     <img src="img/svg/heart-fill.svg" alt="Cart Button" />
   </a>
 </div>

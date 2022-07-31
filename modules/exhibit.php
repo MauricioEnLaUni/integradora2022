@@ -75,8 +75,6 @@
         <img src="img/svg/genders/man.svg" class="col-md-4 out" id="man"/>
         <img src="img/svg/genders/woman.svg" class="col-md-4 out" id="woman"/>
         <img src="img/svg/genders/unisex.svg" class="col-md-4 out" id="genderless"/>
-        <img src="img/svg/genders/boy.svg" class="col-md-4 out" id="boy"/>
-        <img src="img/svg/genders/girl.svg" class="col-md-4 out" id="girl"/>
         <img src="img/svg/genders/child.svg" class="col-md-4 out" id="child"/>
     </div>
     </div>
