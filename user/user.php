@@ -9,7 +9,7 @@
       1=>['Manejo de Cuenta','Cambien sus datos personales.','user.php?page=a','account.svg'],
       2=>['Direcciones','Maneje las direcciones de envio.','user.php?page=d','address.svg'],
       3=>['Pagos','Revise la información de pagos registrada.','user.php?page=p','pay.svg'],
-      4=>['Atención al Clientes','¿Dudas? ¡Contactenos!',ROOT . '/contact.php','contact.svg'],
+      4=>['Atención al Clientes','¿Dudas? ¡Contactenos!','contact.php','contact.svg'],
     ];
     foreach($content as $c){
     ?>

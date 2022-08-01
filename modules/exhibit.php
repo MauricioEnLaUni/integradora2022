@@ -44,7 +44,7 @@
         $score = $stmt->fetchColumn();
         ?>
         <input
-        class="rating rating--nojs"
+        class="rating rating--nojs bg-blue"
         max="5"
         name="inCal"
         step=".5"
@@ -65,7 +65,8 @@
     <div class="row">
         <p class="h3 text-center svgTitle">Estilo</p>
     </div>
-    <div class="row" id="itemIcon"></div>
+    <div class="row text-center" id="itemIcon"></div>
+      <p class="h5 text-center"><?php echo $item['it_tp'] . $item['it_cl'];?></p>
     </div>
     <div class="col-md-6">
     <div class="row">
@@ -76,6 +77,7 @@
         <img src="img/svg/genders/woman.svg" class="col-md-4 out" id="woman"/>
         <img src="img/svg/genders/unisex.svg" class="col-md-4 out" id="genderless"/>
         <img src="img/svg/genders/child.svg" class="col-md-4 out" id="child"/>
+        <h4 class="text-center"><?php echo $item['it_wh'];?></h4>
     </div>
     </div>
     <div class="col-md-3">

@@ -11,6 +11,7 @@
 #svgHell
 {
   border-top: .5vw double var(--blueU);
+  color: var(--red-crayola);
 }
 #itemIcon img
 {
@@ -20,6 +21,7 @@
   min-width: 256px;
   width: 16vw;
 }
+#shoesWhose,
 #shoesWhose img
 {
   height: 16vw;
@@ -27,6 +29,10 @@
   min-height: 256px;
   min-width: 256px;
   width: 16vw;
+}
+.bg-blue
+{
+  background-color: var(--oxford-blue) !important;
 }
 .out
 {
@@ -43,7 +49,7 @@
 .selectedIcon
 {
   display: block;
-  filter: brightness(0) saturate(100%) invert(69%) sepia(67%) saturate(5280%) hue-rotate(137deg) brightness(93%) contrast(81%);
+  filter: invert(63%) sepia(90%) saturate(1860%) hue-rotate(330deg) brightness(101%) contrast(101%);
 }
 .zapatoORANG
 {

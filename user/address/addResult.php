@@ -13,6 +13,6 @@ if(isset($_POST['submit'])){
   $stmt->bindParam('t',$_POST['ct']);
   $stmt->bindParam('i',$_POST['submit']);
   $stmt->execute();
-  header("Location:/Integradora/user/address.php");
-}else header("Location:/Integradora/index.php");
+  header("Location:../../user.php?page=d");
+}else header("Location:../../index.php");
 ?>

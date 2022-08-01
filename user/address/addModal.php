@@ -6,7 +6,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/Integradora/user/modules/addInsert.php" method="post" id="insertAddress">
+      <form action="user/address/addInsert.php" method="post" id="insertAddress">
         <label class="col-7 addField">
           <p class="h4">Calle:</p>
           <input type="text" name="st"/>
@@ -36,6 +36,14 @@
             <option value="US">US</option>
           </select>
         </label>
+        <?php
+        if(count($result) < 1) echo '<input type="checkbox" value="1" name="pf" checked hidden/>';
+        else{?>
+        <label class="col-12 addField">
+          <input type="checkbox" value="2" name="pf"/>
+          <p class="h4">¿Hacer esta mi dirección predeterminada?</p>
+        </label>
+        <?php }?>
       </form>
       </div>
       <div class="modal-footer">

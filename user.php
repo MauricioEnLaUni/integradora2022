@@ -7,40 +7,42 @@
   <title>Manejo de Cuenta</title>
   <?php
   include_once 'config.php';
-  include_once ROOT . '/user/userStyle.php';
+  include_once 'user/userStyle.php';
   ?>
 </head>
 <body>
   <header>
     <?php
-      include_once ROOT . '/modules/session.php';
-      include_once ROOT .'/modules/header.php';
+      include_once 'modules/session.php';
+      include_once 'modules/header.php';
     ?>
   </header>
   <main>
   <?php
   if($_SESSION['user'] == 4){
-    header("Location:" . ROOT . "index.php");
+    header("Location:" . "index.php");
     exit();
   }else{
     if(!isset($_GET['page'])){
-      include_once ROOT . '/user/user.php';
+      include_once 'user/user.php';
     }else{
       switch($_GET['page']){
         case 'o':
-          include_once ROOT . '/user/orders.php';
+          include_once 'user/orders.php';
           break;
         case 'a':
-          include_once ROOT . '/user/account.php';
+          include_once 'user/account.php';
+          include_once 'user/accManager/addModal.php';
+          include_once 'user/accManager/addPhone.php';
           break;
         case 'd':
-          include_once ROOT . '/user/address.php';
+          include_once 'user/address.php';
           break;
         case 'p':
-          include_once ROOT . '/user/pay.php';
+          include_once 'user/pay.php';
           break;
         default:
-          include_once ROOT . '/user/user.php';
+          include_once 'user/user.php';
       }
     }
   }
@@ -48,11 +50,11 @@
   </main>
   <footer>
     <?php
-      include_once ROOT . '/modules/footer.php';
+      include_once 'modules/footer.php';
     ?>
   </footer>
 </body>
 </html>
 <?php
-  include_once ROOT . '/modules/meta/scripts.html';
+  include_once 'modules/meta/scripts.html';
 ?>

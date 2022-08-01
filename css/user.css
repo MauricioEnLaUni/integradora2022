@@ -43,7 +43,7 @@ select
 }
 .addCards
 {
-  min-height: 60vh !important;
+  min-height: 60vh;
 }
 .addCards button
 {
@@ -77,13 +77,19 @@ select
   width: 30%;
   z-index: 3;
 }
+#tinyImg
+{
+  border: initial;
+  height: initial;
+  width: initial;
+}
 @media all and (min-width: 576px)
 {
   .userNav
   {
     min-height: 100px;
     height: 8vw;
-    min-height: 150px;
+    min-height: 300px;
     width: 36vw;
   }
 }
@@ -92,8 +98,8 @@ select
   .userNav
   {
     min-height: 150px;
-    height: 12vw;
-    min-height: 250px;
+    height: 21vw;
+    min-height: 480px;
     width: 24vw;
   }
 }

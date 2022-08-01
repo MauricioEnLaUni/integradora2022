@@ -28,5 +28,5 @@ if(isset($_POST['last'])){
   $stmt->bindParam('u',$_SESSION['userId']);
   $stmt->execute();
 }
-header("Location:/Integradora/user/account.php");
+header("Location:../../user.php?page=a");
 ?>
