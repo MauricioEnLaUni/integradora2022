@@ -12,28 +12,28 @@
   $_POST['repeat'],
   $_POST['email'],
   $usr,$pwd,$rpt,$eml) !== false){
-    header("refresh:3;Location: http://localhost/Integradora/index.php?error=submit");
+    header("refresh:3;Location:../../index.php?error=submit");
     exit();
   }elseif(emptyError($usr,$pwd,$rpt,$eml) !== true){
-    header("Location: http://localhost/Integradora/index.php?error=input");
+    header("Location:../../index.php?error=input");
     exit();
   }elseif(userValidation($usr) !== true){
-    header("Location: http://localhost/Integradora/index.php?error=usr");
+    header("Location:../../index.php?error=usr");
     exit();
   }elseif(newUser($usr,$conn) !== true){
-    header("Location: http://localhost/Integradora/index.php?error=newUser");
+    header("Location:../../index.php?error=newUser");
     exit();
   }elseif(emailValidation($eml) !== true){
-    header("Location: http://localhost/Integradora/index.php?error=email");
+    header("Location:../../index.php?error=email");
     exit();
   }elseif(newEmail($eml,$conn) !== true){
-    header("Location: http://localhost/Integradora/index.php?error=newEmail");
+    header("Location:../../index.php?error=newEmail");
     exit();
   }elseif(passValidation($pwd,$rpt) !== false){
-    header("Location: http://localhost/Integradora/index.php?error=password");
+    header("Location:../../index.php?error=password");
     exit();
   }else{
     createUser($conn,$usr,$pwd,$eml);
   }
-  header("Location:/Integradora/index.php");
+  header("Location:../../index.php");
 ?>

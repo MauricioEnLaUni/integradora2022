@@ -10,3 +10,8 @@ main
   background: var(--oxford-blue);
   color: var(--lavender-web);
 }
+
+.input-names input{
+  width:100%;
+  
+}

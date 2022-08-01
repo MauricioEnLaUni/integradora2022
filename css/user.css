@@ -10,7 +10,27 @@ main
   color: var(--blueU);
   margin:5%;
 }
+
+.cardNav
+{
+  background: var(--resolution-blue);
+  border: .8vh double var(--oxford-blue);
+  border-radius: 3vw;
+  color: var(--blueU);
+  margin:5%;
+  min-height: calc(100vh / 4);
+  min-width: calc(100vw / 4);
+}
 .userNav img
+{
+  background: var(--blueU);
+  border: .8vh double var(--blue-ryb);
+  border-radius: 20vw;
+  margin-left: 2.5%;
+  height: 10vh;
+  width: 10vh;
+}
+.cardNav img
 {
   background: var(--blueU);
   border: .8vh double var(--blue-ryb);
@@ -92,6 +112,9 @@ select
     min-height: 300px;
     width: 36vw;
   }
+  .cardNav
+  {
+  }
 }
 @media all and (min-width: 768px)
 {
@@ -101,5 +124,11 @@ select
     height: 21vw;
     min-height: 480px;
     width: 24vw;
+  }
+  .cardNav
+  {
+    height: fit-content(300px);
+    padding: 5% 0;
+    width: 100%;
   }
 }

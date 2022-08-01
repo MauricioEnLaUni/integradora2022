@@ -6,16 +6,16 @@
     <?php
     $content = [
       0=>['Órdenes','Revise su historial de compras.','user.php?page=o','orden.svg'],
-      1=>['Manejo de Cuenta','Cambien sus datos personales.','user.php?page=a','account.svg'],
+      1=>['Usuario','Cambien sus datos personales.','user.php?page=a','account.svg'],
       2=>['Direcciones','Maneje las direcciones de envio.','user.php?page=d','address.svg'],
-      3=>['Pagos','Revise la información de pagos registrada.','user.php?page=p','pay.svg'],
+      3=>['Pagos','Información de pagos registrada.','user.php?page=p','pay.svg'],
       4=>['Atención al Clientes','¿Dudas? ¡Contactenos!','contact.php','contact.svg'],
     ];
     foreach($content as $c){
     ?>
     <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center align-items-center">
       <a href="<?php echo $c[2];?>">
-        <div class="row userNav d-flex">
+        <div class="row cardNav d-flex">
             <img src="img/account/<?php echo $c[3];?>" alt="" class="col-4 align-self-center">
             <div class="col-8 align-self-center">
               <p class="h3 accNavTxt"><?php echo $c[0];?></p>
