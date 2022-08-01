@@ -1,41 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manejo de Cuenta</title>
-  <?php
-    include_once "modules/userStyle.php";
-  ?>
-</head>
+<?php
+include_once CONN . "/connector.php";
+$stmt = $conn->prepare('SELECT `us_dn`,`us_nm`,`us_ln`
+                        FROM `users`
+                        WHERE `us_id` = ?');
+$stmt->execute([$_SESSION['userId']]);
+if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+?>
+<div class="container pt-2 px-5" id="accMain">
+<div class="row">
+  <p><a href="user.php">Mi Cuenta</a> > Datos Personales y Seguridad</p>
+</div>
 
-<body>
-  <header>
+<div class="row text-center">
+  <p class="h1">Datos Personales y Seguridad</p>
+</div>
+
+<div class="row" id="dataCont">
+  <form action="user/accManager/accountName.php" method="POST">
+    <label class="row">
+      <p class="h4"><strong>Nombre de Usuario</strong></p>
+      <div class="row" id="nameInputs">
+          <?php
+          $i = 0;
+          foreach($row as $a){
+            if(!is_null($a)){
+              switch($i){
+                case 0:
+                  $out = "display";
+                  break;
+                case 1:
+                  $out = "first";
+                  break;
+                case 2:
+                  $out = "last";
+                  break;
+              }
+              $i++;
+              echo "<input value='$a' name='$out' disabled/>";
+            }else{
+              echo "<input value='¡No ha agregado su información!' disabled/>";
+            }
+          }}?>
+      </div>
+    </label>
+    <div class="row">
+      <button
+      type="button"
+      class="btn btn-primary mt-2 col-2"
+      onclick="modInput('nameInputs','subName')">
+        Modificar
+      </button>
+      <button type="submit" class="btn btn-info mt-2 col-2 mx-2" disabled id="subName">Enviar</button>
+    </div>
+  </form>
+
+  <form action="user/accManager/accountEmail.php" method="post" id="mailForm"></form>
+  <form action="user/accManager/rmvEmail.php" method="POST" id="rmvEmail"></form>
+    <p class="h4"><strong>Correo Electrónico</strong></p>
+      <div class="row" id="emailIn">
+        <?php
+        $stmt = $conn->prepare('SELECT `em_em`,`em_id`
+        FROM `email`
+        WHERE `em_us` = ?');
+        $stmt->execute([$_SESSION['userId']]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $emailCount = count($result);
+        foreach($result as $row){
+          echo "<input form='mailForm' id='em" . $row['em_id'] . "' value='" . $row['em_em'] . "' name='email[]' hidden />";
+          echo "<input class='col-9' form='mailForm' id='em" . $row['em_id'] . "' value='" . $row['em_em'] . "' name='email[]' disabled />";
+          if($emailCount > 1){
+            echo "<input type='number' name='rmv' form='rmvEmail' value='" . $row['em_id'] . "' hidden/>";
+            echo "<input class='col-3' type='submit' form='rmvEmail' value='Eliminar' />";
+          }
+        }
+        ?>
+      </div>
+    <div class="row">
+      <button
+      type="button"
+      class="btn btn-primary m-2 mb-5 col-2"
+      onclick="modInput('emailIn','subEmail')">
+        Modificar
+      </button>
+      <button type="submit" class="btn btn-info m-2 mb-5 col-2" form='mailForm' id="subEmail" disabled>Enviar</button>
+    </div>
   <?php
-    include_once "../modules/session.php";
-    require_once "logged.php";
-    include_once "../modules/header.php";
-  ?>
-  </header>
+  if($emailCount < 3){?>
+  <button class="row justify-content-center align-items-center" id="emailMod" data-bs-toggle="modal" data-bs-target="#addEmailModal"> Añadir Email
+  </button>
+  <?php }?>
+    
+  <form action="user/accManager/updatePhone.php" method="post" id="phoneForm"></form>
+  <form action="user/accManager/rmvPhone.php" method="post" id="rmvPhone"></form>
+    <div class="row">
+      <p class="h4"><strong>Teléfono</strong></p>
+    </div>
+    <div class="row" id="phoneIn">
+      <?php
+      $stmt = $conn->prepare('SELECT *
+      FROM `phone`
+      WHERE `ph_us` = ?');
+      $stmt->execute([$_SESSION['userId']]);
+      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $phoneCount = count($result);
+      foreach($result as $row){
+        echo "<input form='phoneForm' value='" . $row['ph_nm'] . "' name='phone[]'  hidden/>";
+        echo "<input form='phoneForm' class='col-3' value='" . $row['ph_nm'] . "' name='phone[]' disabled/>";
+        if($phoneCount < 2){
+          echo "<input type='number' name='rmv' form='rmvPhone' value='" . $row['ph_id'] . "' hidden/>";
+          echo "<input class='col-3' type='submit' form='rmvPhone' value='Eliminar' />";
+        }
+      }
+      ?>
+    </div>
+    
+    <div class="row">
+    <button
+      type="button"
+      class="btn btn-primary m-2 mb-5 col-2"
+      onclick="modInput('phoneIn','phoneMod')">
+        Modificar
+    </button>
+    <button type="submit" class="btn btn-info m-2 mb-5 col-2" form="phoneForm">Enviar</button>
+    </div>
   <?php
-  include_once "modules/modalAcc.php";
-  ?>
-  <main>
-  <?php
-    include_once "modules/account.php";
-  ?>
-  </main>
-  <footer>
-    <?php
-      include_once "../modules/footer.php";
-    ?>
-  </footer>
-</body>
-</html>
-<script src="/Integradora/js/one.js"></script>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-  crossorigin="anonymous"
-></script>
+  $phoneCount = 0;
+  if($phoneCount < 3){?>
+  <button class="row justify-content-center align-items-center" id="phoneMod" data-bs-toggle="modal" data-bs-target="#addPhoneModal"> Añadir Teléfono</button>
+  <?php }?>
+
+  <form action="user/accManager/accountPwd.php" method="post">
+    <label class="row" id="passIn">
+      <div class="row">
+        <p class="h4"><strong>Contraseña</strong></p>
+      </div>
+      <div class="row">
+        <input value="********" name="pwd" type="password" disabled minlength="16" maxlength="32"/>
+      </div>
+    </label>
+    <div class="row">
+      <button
+        type="button"
+        class="btn btn-primary m-2 mb-5 col-2"
+        onclick="modInput('passIn','subPass')">
+          Modificar
+      </button>
+      <button type="submit" class="btn btn-info m-2 mb-5 col-2" disabled id="subPass">Enviar</button>
+    </div>
+  </form>
+</div>

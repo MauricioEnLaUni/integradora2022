@@ -27,8 +27,8 @@ def rrN():
     
 def inO():
     from random import randint,random
-    gd = randint(300,1999)+random()
-    return str(gd)+","+str(round(gd*1.22,2))
+    gd = randint(300,1899)+random()
+    return str(round(gd,2))
     
 def toFile(x,y):
     from sys import stdout
@@ -45,23 +45,6 @@ def nameMe(x):
     elif(x == 2):
         return "\'"+r.word(include_parts_of_speech=["adjective"])+" "+r.word(include_parts_of_speech=["noun","verb"])+"\'"
 
-def mat():
-    from random import randint
-    match(randint(1,7)):
-        case 1:
-            return "\'PIEL\'"
-        case 2:
-            return "\'CANV\'"
-        case 3:
-            return "\'TEXT\'"
-        case 4:
-            return "\'RUBR\'"
-        case 5:
-            return "\'SYNT\'"
-        case 6:
-            return "\'FOAM\'"
-        case 7:
-            return "\'DENM\'"
 def col():
     from random import randint
     match(randint(1,10)):
@@ -106,23 +89,28 @@ def tp():
         case 8:
             return "\'Work\'"
 
+def ft():
+    from random import randint
+    if(randint(1,100) > 80):
+        out = str(1)
+    else:
+        out = 'NULL'
+    return out
 def gd():
     from random import randint
-    match(randint(1,6)):
+    match(randint(1,4)):
         case 1:
-            return "\'Niño\'"
-        case 2:
-            return "\'Niña\'"
-        case 3:
             return "\'Infa\'"
-        case 4:
+        case 2:
             return "\'Unsx\'"
-        case 5:
+        case 3:
             return "\'Homb\'"
-        case 6:
+        case 4:
             return "\'Mujr\'"
-            
+
+a = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare interdum velit a rutrum. In sodales dui in diam fringilla blandit ac ut justo. Etiam fringilla quam nunc, id fringilla felis sapien"
+
 for i in range(1,51,1):
-    toFile("items.txt","INSERT INTO ITEM VALUES("+str(i)+","+nameMe(2)+
-    ","+"\'0\',"+inO()+","+rrN()+","+mat()+","+col()+","+tp()+
-    ","+gd()+","+rrD(2010,1,1,2022,6,1)+","+str(randint(1,6))+");\n")
+    toFile("items.txt","INSERT INTO ITEM VALUES('',"+nameMe(2)+
+    ","+"\'"+a+"\',"+inO()+","+rrN()+","+col()+","+tp()+
+    ","+gd()+","+rrD(2010,1,1,2022,6,1)+","+str(randint(2,6))+",15,"+ft()+");\n")

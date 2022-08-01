@@ -55,7 +55,7 @@
                 <input type="email" class="form-control mb-2" name="emailMailing" />
             </label>
           <div class="mb-2 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <input type="checkbox" class="form-check-input" required>
             <label class="form-check-label" for="exampleCheck1">¡Suscribirme a la newsletter!</label>
           </div>
           <button type="submit" class="btn btn-primary mb-3">Enviar</button>
@@ -72,7 +72,7 @@
     </div>
 
     <div class="row flex-row-reverse" id="terms">
-      <a class="col-2" href="terms.html">Términos de Servicio</a>
+      <a class="col-2" href="ToS.php">Términos de Servicio</a>
       <a class="col-2" href="privacy.html">Aviso de Privacidad</a>
     </div>
   </div>

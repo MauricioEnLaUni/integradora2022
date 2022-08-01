@@ -20,6 +20,7 @@
 main
 {
     background: var(--rich-black);
+    overflow-x: hidden;
 }
 footer
 {
@@ -38,6 +39,7 @@ footer
         grid-template-areas: 'logo navButtons';
         grid-template-columns: 3fr 5fr;
         height: 96px;
+        overflow-x: hidden;
     }
     footer
     {

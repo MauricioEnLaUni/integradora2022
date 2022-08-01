@@ -10,19 +10,16 @@
 }
 .mainCardButton
 {
-    background: var(--dark-purple);
-    border: .3em solid var(--lavender-web);
-    color: var(--lavender-web);
+    background: var(--blueU);
+    border: .3em solid var(--oxford-blue);
     font-size: 2.25ch;
     font-weight: bold;
     margin-left: 3%;
-    width: 30%;
 }
 .mainCardButton:hover
 {
-    
-    background: var(--pale-purple);
-    border: .3em solid var(--whitish);
+    background: var(--resolution-blue);
+    border: .3em solid var(--blueU);
     color: var(--lavender-web);
 }
 .mainCardImage

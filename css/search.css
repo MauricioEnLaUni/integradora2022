@@ -45,7 +45,7 @@
   width: calc(var(--size) - 5px);
 }
 .search-bar:focus-within {
-  width: 60%;
+  width: 45%;
   padding-top: 10px;
 }
 .search-bar:focus-within .search-bar__input {

@@ -1,8 +1,9 @@
 <?php
+
 $sql = 'SELECT `it_id`,`it_nm`,`it_ot`,`it_ds`
         FROM `ITEM`
         WHERE `it_ft`
-        LIMIT 16;';
+        LIMIT 12';
 $i = 1;
 $u = $_SESSION['user'];
 foreach($conn->query($sql) as $row){

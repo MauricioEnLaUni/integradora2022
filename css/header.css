@@ -93,9 +93,22 @@ nav div
   width: 16vw;
   max-width: 70px;
 }
+.badge
+{
+  font-size: 10px;
+}
 #upperBar
 {
   height: 80px;
+}
+.logButtons
+{
+  float: left;
+  width: 30%;
+}
+.listsLogos
+{
+  float: left;
 }
 
 @media all and (max-width:992px)

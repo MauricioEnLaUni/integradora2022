@@ -1,3 +1,12 @@
-[data-mdb-toggle="modal"] i {
-  pointer-events: none;
+#accMain
+{
+  background-color: var(--rich-black);
+  border: .35vw double var(--cornflower-blue);
+  border-radius: 3vw;
+}
+
+main
+{
+  background: var(--oxford-blue);
+  color: var(--lavender-web);
 }

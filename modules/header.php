@@ -1,11 +1,11 @@
 <div class="container-fluid g-0">
   <div class="row">
-    <div class="col-md-3 col-3 g-0" id="logoCont">
+    <div class="col-md-2 col-2 g-0" id="logoCont">
       <a href="index.php">
         <div id="logo"></div>
       </a>
     </div>
-    <nav class="col-md-9 d-md-block col-9 g-0">
+    <nav class="d-md-block col-10 g-0">
       <div class="row flex-md-row-reverse g-0">
         <div id="hButtons" class="d-md-none d-flex row justify-content-around">
           <button
@@ -19,10 +19,8 @@
           <button
           class="btn btn-primary d-md-none col-3 d-flex"
           type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas"
-          aria-controls="offcanvas">
-            <img src="img/svg/list.svg" alt="" />
+          onclick="location.href='cart.php'">
+            <img src="img/svg/cart.svg" alt="" />
           </button>
           <button
           class="btn btn-primary d-md-none col-3 d-flex"
@@ -41,10 +39,12 @@
             <img src="img/svg/list.svg" alt="" />
           </button>
         </div>
-        <?php
-        if($_SESSION['user'] != 4) include_once "C:/xampp/htdocs/Integradora/modules/header/logged.php";
-        else include_once "C:/xampp/htdocs/Integradora/modules/header/logIn.php";
-        ?>
+        <div class="d-none d-md-block col-md-5 flex-row-reverse">
+          <?php
+          if($_SESSION['user'] != 4) include_once ROOT . "/modules/header/logged.php";
+          else include_once ROOT . "/modules/header/logIn.php";
+          ?>
+        </div>
         <div class="search-bar col-md-4 d-none d-md-block">
           <input
               type="search"
@@ -58,16 +58,16 @@
         </div>
       </div>
       <div class="row d-none d-md-flex text-center navBCont g-0">
-        <a class="navButtons col-md-3" href="http://localhost/Integradora/index.php">
+        <a class="navButtons col-md-3" href="index.php">
           INICIO
         </a>
-        <a class="navButtons col-md-3" href="">
+        <a class="navButtons col-md-3" href="search.php">
           NOVEDADES
         </a>
-        <a class="navButtons col-md-3" href="http://localhost/Integradora/about.php">
+        <a class="navButtons col-md-3" href="about.php">
           NOSOTROS
         </a>
-        <a class="navButtons col-md-3" href="http://localhost/Integradora/contact.php">
+        <a class="navButtons col-md-3" href="contact.php">
           CONTACTO
         </a>
       </div>

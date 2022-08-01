@@ -3,7 +3,7 @@
 {
     flex: 100%;
     flex-direction: row;
-    height: 32vh;
+    max-height: 32vh;
     overflow: scroll;
     scrollbar-width: none;
 }
@@ -15,14 +15,14 @@
 #estilo label
 {
     border-top: 2px solid black;
-    color: var(--midnight-blue);
+    color: var(--oxford-blue);
     display: flex;
     font-size: 1.8vw;
     font-weight: 700;
-    height: 3vw;
+    max-height: 3vw;
     padding-left: 1.3em;
     text-align: center;
-    text-shadow: .5px .5px 0em var(--gainsboro),.1px .1px 2.8em var(--gainsboro);
+    text-shadow: .5px .5px 0em var(--blueU),.1px .1px 4em var(--blueU);
 }
 #marca input,
 #color input,
@@ -40,7 +40,7 @@
 }
 #oferta label
 {
-    color: var(--midnight-blue);
+    color: var(--oxford-blue);
     display: block;
     float:left;
     font-weight: 600;
@@ -48,15 +48,9 @@
     padding-left: 12%;
     width: 50%;
 }
-#oferta label:focus-within
-{
-    font-weight: 700;
-    text-shadow:
-    .1px .1px 0em var(--gainsboro);
-}
 #searchForm
 {
-    background: var(--teal-blue);
+    background: var(--blue-ryb);
     padding: 0;
 }
 .flexbox
@@ -97,6 +91,9 @@
 :checked + img
 {
     display: flex;
+    background-color: var(--emerald);
+    border: 2px double var(--red-crayola);
+    border-radius: 100vh;
 }
 .flexbox label
 {
@@ -105,25 +102,25 @@
 }
 :checked + span
 {
-    color: var(--eton-blue);
+    color: var(--blueU);
     text-shadow:
       .5px .5px 0em var(--rich-black),
       .1px .1px 2.8em var(--rich-black);
 }
 fieldset
 {
-  border: .45vw solid var(--maximum-blue);
+  border: .25vw solid var(--rich-black);
 }
 legend
 {
-    color: var(--midnight-blue);
+    color: var(--blueU);
     font-size: 2vw;
     font-weight: 800;
     letter-spacing: .22vw;
     margin: .3em 0 .3em 0;
     text-align: center;
     text-shadow:
-      .5px .5px 0em var(--gainsboro),
-      .05px .05px 1.4em var(--persian-plum);
+      .5px .5px 0em var(--rich-black),
+      .05px .05px .25em var(--emerald);
     
 }
