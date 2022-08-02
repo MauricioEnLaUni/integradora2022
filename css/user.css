@@ -10,6 +10,25 @@ main
   color: var(--blueU);
   margin:5%;
 }
+.cardNav
+{
+  background: var(--resolution-blue);
+  border: .8vh double var(--oxford-blue);
+  border-radius: 3vw;
+  color: var(--blueU);
+  margin:5%;
+  min-height: calc(100vh / 4);
+  min-width: calc(100vw / 4);
+}
+.cardNav img
+{
+  background: var(--blueU);
+  border: .8vh double var(--blue-ryb);
+  border-radius: 20vw;
+  margin-left: 2.5%;
+  height: 10vh;
+  width: 10vh;
+}
 .userNav img
 {
   background: var(--blueU);
@@ -103,3 +122,9 @@ select
     width: 24vw;
   }
 }
+.cardNav
+  {
+    height: fit-content(300px);
+    padding: 5% 0;
+    width: 100%;
+  }

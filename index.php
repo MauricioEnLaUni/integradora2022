@@ -1,6 +1,6 @@
 <?php
   include_once "config.php";
-  require_once ROOT."/modules/session.php";
+  require_once 'modules/session.php';
   include_once CONN . '/connector.php';
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fictichos</title>
     <?php
-      include_once ROOT . '/modules/meta/stylesheets.php';
+      include_once 'modules/meta/stylesheets.php';
     ?>
     <link rel="stylesheet" href="css/parallax.css">
     <link
@@ -23,10 +23,10 @@
 
   <body>
     <?php
-      include_once ROOT . '/modules/modal.php';
+      include_once 'modules/modal.php';
     ?>
     <header>
-      <?php include_once ROOT . '/modules/header.php'; ?>
+      <?php include_once 'modules/header.php'; ?>
     </header>
     <div class="content-wrapper">
       <main class="pt-3 pb-4">
@@ -44,13 +44,13 @@
       </main>
       <footer></footer>
       <?php
-        include_once ROOT . '/modules/footer.php';
-        include_once ROOT . '/modules/meta/scripts.html';
+        include_once 'modules/footer.php';
+        include_once 'modules/meta/scripts.html';
         echo '<script>
         picture("logo","img/logo/Fictichos.png","img/logo/bigF.png",
         "img/logo/Fictichos.png","Logo Test");
         </script>';
-        include_once ROOT . '/modules/index/card.php';
+        include_once 'modules/index/card.php';
       ?>
     </div>
   </body>

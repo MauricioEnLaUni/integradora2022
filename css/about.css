@@ -1,0 +1,13 @@
+.hero{
+  background-color: blue;
+  height: 64vh;
+}
+
+.blueU{
+  color: var(--blueU);
+}
+
+#abouTtitle{
+  font-size: 72px;
+  font-weight: 700;
+} 

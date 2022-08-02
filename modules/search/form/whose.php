@@ -1,0 +1,39 @@
+<fieldset id="shoesGender" form="searchBar">
+  <legend>
+    Género
+  </legend>
+  <div class="flexbox">
+    <label>
+      <input
+      form="searchBar"
+      type="checkbox"
+      name="dama"
+      value="dama"
+      />&ensp;Dama
+    </label>
+    <label>
+      <input
+      form="searchBar"
+      type="checkbox"
+      name="cab"
+      value="caballero"
+      />&ensp;Caballeros
+    </label>
+    <label>
+      <input
+      form="searchBar"
+      type="checkbox"
+      name="uni"
+      value="unisex"
+      />&ensp;Unisex
+    </label>
+    <label>
+      <input
+      form="searchBar"
+      type="checkbox"
+      name="infa"
+      value="niños"
+      />&ensp;Infantil
+    </label>
+  </div>
+</fieldset>

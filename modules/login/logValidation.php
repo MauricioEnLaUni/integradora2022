@@ -3,19 +3,19 @@ require_once "../session.php";
 require_once "validation.php";
 require_once "../../../../ssl/connector.php";
 if(submitError($_POST['submit'],$_POST['usuario'],$_POST['password'],$usr,$pwd) !== false){
-  header("Location:" . ROOT . "/index.php?error=submit");
+  header("Location:../../index.php?error=submit");
   exit();
 }elseif(emptyError($usr,$pwd) !== true){
-  header("Location:" . ROOT . "/index.php?error=input");
+  header("Location:../../index.php?error=input");
   exit();
 }elseif(newUser($usr,$conn) !== false){
-  header("Location:" . ROOT . "/index.php?error=newUser");
+  header("Location:../../index.php?error=newUser");
   exit();
 }elseif(passValidation($usr,$pwd,$conn)){
-  header("Location:" . ROOT . "/index.php?error=password");
+  header("Location:../../index.php?error=password");
   exit();
 }else{
   setAccess($conn,$usr);
 }
-header("Location:/Integradora/index.php");
+header("Location:../../index.php");
 ?>
