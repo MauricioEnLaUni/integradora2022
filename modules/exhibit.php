@@ -7,17 +7,25 @@
         <h1 id="itemName"><?php echo ucwords($item['it_nm']); ?></h1>
     </div>
     <div class="row">
-    <div class="col-6">
+      <div class="col-3">
         <h2 >Precio</h2>
-    </div>
-    <div class="col-6">
+      </div>
+      <div class="col-4">
         <h2 id="itemPrice"><?php echo ($item['it_in'] * 1.2); ?></h2>
-    </div>
+      </div>
+      <?php
+      if($item['it_of'] != NULL){
+        $stmt = $conn->prepare('SELECT `of_am`
+        FROM `OFFERS`
+        WHERE `of_id` = ? ;');
+        $stmt->execute([$item['it_of']]);
+        $offerVal = $stmt->fetch();
+        echo '<div class="col-4">' . number_format((float)($item['it_in'] * 1.2 * $offerVal[0]),2,'.',''); '</div>';
+      }?>
+      </div>
     <div class="row">
-        <p id="itemDesc"><?php echo $item['it_ds'] . $item['it_id']; ?></p>
-    </div>
-    <div class="row">
-    <form method="POST" action="confirm.php" class="col-4">
+        <p id="itemDesc" class="col-8"><?php echo $item['it_ds']; ?></p>
+        <form method="POST" action="confirm.php" class="col-4">
       <button class="btn mainCardButton" type="submit" name="sale" value="<?php echo $item['it_id'];?>">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="curr
         entColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
@@ -34,7 +42,7 @@
     </div>
         <div class="row">
     <form action="modules/rating.php" method="post">
-      <fieldset id="calificacion">
+      <fieldset id="calificacion" class="row">
         <?php
         $stmt = $conn->prepare('SELECT AVG(`sc_se`) AS `score`
         FROM `SCORE`
@@ -44,14 +52,14 @@
         $score = $stmt->fetchColumn();
         ?>
         <input
-        class="rating rating--nojs bg-blue"
+        class="rating rating--nojs bg-blue col-8"
         max="5"
         name="inCal"
         step=".5"
         type="range"
         value="<?php echo $score;?>"
         />
-        <button type="submit" class="btn btn-info" name="submit" value="<?php echo $item['it_id'];?>">¡Calificar!</button>
+        <button type="submit" class="btn btn-info col-4" name="id" value="<?php echo $item['it_id'];?>">¡Calificar!</button>
       </fieldset>
     </form>
     </div>

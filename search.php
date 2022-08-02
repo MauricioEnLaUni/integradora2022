@@ -2,7 +2,9 @@
 include_once 'config.php';
 include_once 'modules/session.php';
 include_once CONN . '/connector.php';
+include_once 'modules/search/allItems.php';
 if(!isset($end) || $end < 10) $_SESSION['sPage'] = 1;
+
 
 function getSearch($stmt,$cond,&$array){
   $stmt->execute([$cond]);
@@ -32,28 +34,17 @@ function getTheFors($stmt,$cond,&$array){
   }
 }
 
-function andArray($array1,$array2,&$out){
-  foreach($array1 as $i){
-    if(in_array($i,$array2)) $out[] = $i;
-  }
-}
-
 if(str_contains($_SERVER['REQUEST_URI'],'?')){
-  $txt = [];
-  $off = [];
-  $scores = [];
-  $type = [];
-  $brand = [];
-  $whose = [];
   $end = [];
-  $full = 1;
   include_once 'modules/search/brand.php';
+  include_once 'modules/search/colors.php';
   include_once 'modules/search/names.php';
   include_once 'modules/search/offer.php';
   include_once 'modules/search/price.php';
   include_once 'modules/search/rating.php';
   include_once 'modules/search/style.php';
   include_once 'modules/search/whose.php';
+  include_once 'modules/search/join.php';
 }
 ?>
 <!DOCTYPE html>
@@ -98,7 +89,7 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
               name="searchText"
               />
           </label>
-          <button type="submit" name="submit">A</button>
+          <button type="submit" name="submit">Buscar</button>
         </form>
       </div>
     </div>
@@ -106,156 +97,19 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
     <div class="row mt-2">
       <div class="col-sm-12 col-md-4 col-lg-3 mb-3" id="searchForm">
         <?php
-          include 'modules/search/form/estilo.php';
+          include_once 'modules/search/form/estilo.php';
+          include_once 'modules/search/form/discount.php';
+          include_once 'modules/search/form/ratings.php';
+          include_once 'modules/search/form/price.php';
+          include_once 'modules/search/form/whose.php';
+          include_once 'modules/search/form/brand.php';
+          include_once 'modules/search/form/color.php';
         ?>
-          <fieldset id="oferta" form="searchBar">
-            <legend>
-              Descuentos
-            </legend>
-            <label form="searchBar">
-            Rebajas
-            <input
-            form="searchBar"
-            name="offer"
-            type="radio"
-            />
-            </label>
-            <label form="searchBar">
-              <input
-              form="searchBar"
-              name="offer"
-              type="radio"
-              checked
-              />
-              Todo
-            </label>
-          </fieldset>
-          <fieldset id="calificacion" form="searchBar">
-            <legend>
-                Calificaciones
-            </legend>
-            <input
-            form="searchBar"
-            class="rating rating--nojs"
-            max="5"
-            name="inCal"
-            step=".5"
-            type="range"
-            value="2"
-            />
-          </fieldset>
-          <fieldset id="precio" form="searchBar">
-            <legend>
-                Precio
-            </legend>
-            <label>
-            min
-            <input
-            form="searchBar"
-            type="number"
-            name="minNumber"
-            size="5"
-            min="150"
-            max="2999"
-            value="150"
-            />
-            </label>
-            <label>
-            max
-            <input
-            form="searchBar"
-            type="number"
-            name="maxNumber"
-            size="5"
-            min="150"
-            max="2999"
-            value="2999"
-            />
-            </label>
-          </fieldset>
-
-          <fieldset id="shoesGender" form="searchBar">
-            <legend>
-              Género
-            </legend>
-            <div class="flexbox">
-              <label>
-                <input
-                form="searchBar"
-                type="checkbox"
-                name="dama"
-                value="dama"
-                />&ensp;Dama
-              </label>
-              <label>
-                <input
-                form="searchBar"
-                type="checkbox"
-                name="cab"
-                value="caballero"
-                />&ensp;Caballeros
-              </label>
-              <label>
-                <input
-                form="searchBar"
-                type="checkbox"
-                name="uni"
-                value="unisex"
-                />&ensp;Unisex
-              </label>
-              <label>
-                <input
-                form="searchBar"
-                type="checkbox"
-                name="infa"
-                value="niños"
-                />&ensp;Infantil
-              </label>
-            </div>
-          </fieldset>
-          <fieldset id="marca" form="searchBar">
-            <legend>
-              Marca
-            </legend>
-          </fieldset>
-          <fieldset id="colorFlex" form="searchBar">
-            <legend>
-              Color
-            </legend>
-            <div class="flexbox" id="color">
-
-            </div>
-          </fieldset>
         </div>
         <div class="col-sm-12 col-md-8 col-lg-9" id="searchResults">
           <?php
-          $stmt = $conn->prepare('SELECT `it_id`,`it_nm`,`it_ot`,`it_ds`
-          FROM `item`
-          WHERE `it_id` = ?;');
-          $end = array_unique($end);
-          $end = array_chunk($end,10);
-          foreach($end[$_SESSION['sPage'] - 1] as $tmp){
-            $stmt->execute([$tmp]);
-            while($tmp = $stmt->fetch(PDO::FETCH_ASSOC)){
-            ?>
-          <article class="searchArticle">
-            <div class="row">
-              <div class="col-2">
-                <img src="img/items/smol/<?php echo $tmp['it_id'] ?>.jpg" alt="" width="100vw" class="searchImg"/>
-              </div>
-              <div class="col-8">
-                <h3 class="searchTitle"><?php echo $tmp['it_nm'] ?></h3>
-                <h4 class="searchPrice"><?php echo $tmp['it_ot'] ?></h4>
-              </div>
-              <div class="col-2">
-                <button class="searchButton">Carrito</button>
-              </div>
-              <div class="row">
-                <h4 class="searchDesc"><?php echo $tmp['it_ds'] ?></h4>
-                <p></p>
-              </div>
-          </article>
-          <?php }}?>
+          include_once 'modules/search/results/card.php';
+          ?>
         </div>
       </div>
     </div>
@@ -264,6 +118,5 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
   <?php
     include_once 'modules/footer.php';
   ?>
-  <script src="js/search.js"></script>
 </body>
 </html>

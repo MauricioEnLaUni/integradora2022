@@ -2,7 +2,7 @@
 include_once "../../modules/session.php";
 include_once "../../../../ssl/connector.php";
 if(isset($_POST['submit'])){
-  $stmt = $conn->prepare("UPDATE `address`
+  $stmt = $conn->prepare("UPDATE `ADDRESS`
   SET `ad_nb` = :n , `ad_st` = :s , `ad_ps` = :p , `ad_zn` = :z , `ad_cy` = :y , `ad_ct` = :t
   WHERE `ad_id` = :i");
   $stmt->bindParam('n',$_POST['nb']);

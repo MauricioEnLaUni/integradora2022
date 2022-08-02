@@ -6,9 +6,9 @@
     <?php
     $content = [
       0=>['Órdenes','Revise su historial de compras.','user.php?page=o','orden.svg'],
-      1=>['Usuario','Cambien sus datos personales.','user.php?page=a','account.svg'],
+      1=>['Manejo de Cuenta','Información personal.','user.php?page=a','account.svg'],
       2=>['Direcciones','Maneje las direcciones de envio.','user.php?page=d','address.svg'],
-      3=>['Pagos','Información de pagos registrada.','user.php?page=p','pay.svg'],
+      3=>['Pagos','Información de pagos.','user.php?page=p','pay.svg'],
       4=>['Atención al Clientes','¿Dudas? ¡Contactenos!','contact.php','contact.svg'],
     ];
     foreach($content as $c){

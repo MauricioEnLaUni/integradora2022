@@ -1,0 +1,29 @@
+<fieldset id="precio" form="searchBar">
+  <legend>
+      Precio
+  </legend>
+  <label>
+  min
+  <input
+  form="searchBar"
+  type="number"
+  name="minNumber"
+  size="5"
+  min="150"
+  max="2999"
+  value="150"
+  />
+  </label>
+  <label>
+  max
+  <input
+  form="searchBar"
+  type="number"
+  name="maxNumber"
+  size="5"
+  min="150"
+  max="2999"
+  value="2999"
+  />
+  </label>
+</fieldset>

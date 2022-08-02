@@ -2,7 +2,7 @@
 include_once "../../modules/session.php";
 include_once "../../../../ssl/connector.php";
 if(isset($_POST['display'])){
-  $stmt = $conn->prepare("UPDATE `users`
+  $stmt = $conn->prepare("UPDATE `USERS`
   SET `us_dn` = :d
   WHERE `us_id` = :u
   LIMIT 1;");
@@ -11,7 +11,7 @@ if(isset($_POST['display'])){
   $stmt->execute();
 }
 if(isset($_POST['first'])){
-  $stmt = $conn->prepare("UPDATE `users`
+  $stmt = $conn->prepare("UPDATE `USERS`
   SET `us_nm` = :n
   WHERE `us_id` = :u
   LIMIT 1;");
@@ -20,7 +20,7 @@ if(isset($_POST['first'])){
   $stmt->execute();
 }
 if(isset($_POST['last'])){
-  $stmt = $conn->prepare("UPDATE `users`
+  $stmt = $conn->prepare("UPDATE `USERS`
   SET `us_ln` = :l
   WHERE `us_id` = :u
   LIMIT 1;");

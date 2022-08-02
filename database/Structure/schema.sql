@@ -56,7 +56,7 @@ CREATE TABLE `ITEM`(
 	`it_wh` CHAR(4), -- Niño, Niña, Infa, Unsx, Homb, Mujr
 	`it_rd` DATE, -- RELEASE DATE
     `it_of` INT UNSIGNED NOT NULL, -- Oferta
-    `it_tx` FLOAT(6,2), -- Impuestos
+    `it_tx` DECIMAL(6,2), -- Impuestos
     `it_ft` BOOL, -- Si es promovido
     CONSTRAINT `PK_IT` PRIMARY KEY (`it_id`),
     INDEX `IX_NM`(`it_nm`),
@@ -86,6 +86,7 @@ CREATE TABLE `ORDERS`(
     `or_py` SMALLINT UNSIGNED, -- Order price
     `or_pd` BOOL, -- If the order's been paid. Not sure.
     `or_ad` DATETIME, -- When the order was paid
+    `or_dv` INT UNSIGNED, -- Delivery Address FK
     CONSTRAINT `PK_OR` PRIMARY KEY (`or_id`),
     INDEX `IX_ORPY`(`OR_PY`)
 ) ENGINE=InnoDB CHARACTER SET utf8mb4;

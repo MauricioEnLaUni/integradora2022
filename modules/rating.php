@@ -1,16 +1,19 @@
 <?php
+// INSERTS RATING
 include_once '../config.php';
 include_once "session.php";
 include_once CONN . "/connector.php";
 
-$stmt = $conn->prepare('SELECT COUNT(`sc_us`)
+$stmt = $conn->prepare('SELECT COUNT(`sc_id`)
 FROM `SCORE`
-WHERE `sc_us` = ? AND `sc_it` = ?;');
-$stmt->execute([$_SESSION['userId'],$_POST['submit']]);
-$result = $stmt->fetchColumn();
-if($result != 0){
+WHERE `sc_it` = ? AND `sc_us` = ? ;');
+$stmt->execute([$_POST['id'],$_SESSION['userId']]);
+$res = $stmt->fetch(PDO::FETCH_NUM);;
+
+if($res !== NULL){
+  header('Location:../exhibit.php?product=' . $_POST['id'] . '&e=already');
+} else{
   $stmt = $conn->prepare("INSERT INTO `SCORE` VALUES('',?,?,?);");
-  $stmt->execute([$_POST['submit'],$_SESSION['userId'],$_POST['inCal']]);
+  $stmt->execute([$_POST['id'],$_SESSION['userId'],$_POST['inCal']]);
 }
-header("Location:exhibit.php?product=" . $_POST['submit']);
 ?>

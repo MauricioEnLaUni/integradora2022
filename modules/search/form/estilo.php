@@ -1,13 +1,13 @@
 <?php
 $style = [
-  'Bota',
   'Bote',
+  'Bota',
   'Clogs',
-  'Loafer',
-  'Sandalia',
-  'Slipper',
-  'Atletico',
-  'Trabajo'
+  'Loafr',
+  'Sanda',
+  'Slipp',
+  'Atlet',
+  'Work'
   ];
 ?>
 <fieldset id="estilo">
@@ -19,8 +19,8 @@ $style = [
     <input
     type="checkbox"
     form="searchBar"
-    name="<?php echo $style[$i];?>"
-    value="<?php echo $i;?>"
+    name="style[]"
+    value="<?php echo $style[$i];?>"
     />
     <span><?php echo $style[$i];?></span>
   </label>

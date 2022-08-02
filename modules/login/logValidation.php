@@ -1,7 +1,8 @@
 <?php
+require_once '../../config.php';
 require_once "../session.php";
 require_once "validation.php";
-require_once "../../../../ssl/connector.php";
+require_once CONN . "/connector.php";
 if(submitError($_POST['submit'],$_POST['usuario'],$_POST['password'],$usr,$pwd) !== false){
   header("Location:../../index.php?error=submit");
   exit();

@@ -51,8 +51,8 @@ $_SESSION['wish'] = array_unique($_SESSION['wish']);
       <tbody>
         <?php
         $i = 1;
-        $stmt = $conn->prepare('SELECT `it_nm`,`it_ot` AS `price`,`it_id`
-                                FROM `item`
+        $stmt = $conn->prepare('SELECT `it_nm`,`it_in` AS `price`,`it_id`
+                                FROM `ITEM`
                                 WHERE `it_nm` = :n');
         $stmt->bindParam('n',$j);
         foreach($_SESSION['wish'] as $j=>$v){

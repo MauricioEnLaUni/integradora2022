@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/offers.css">
 <link rel="stylesheet" href="css/card.css">
 <link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="/Integradora/css/account.css">
+<link rel="stylesheet" href="css/accounts.css">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
