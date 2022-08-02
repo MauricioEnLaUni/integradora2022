@@ -41,14 +41,17 @@
         </div>
         <div class="d-none d-md-block col-md-5 flex-row-reverse">
           <?php
-          if($_SESSION['user'] != 4) include_once ROOT . "/modules/header/logged.php";
-          else include_once ROOT . "/modules/header/logIn.php";
+          if($_SESSION['user'] != 4) include_once "modules/header/logged.php";
+          else include_once "modules/header/logIn.php";
           ?>
         </div>
+        <form class="d-none" action="search.php" method="get" id="navSearch"></form>
         <div class="search-bar col-md-4 d-none d-md-block">
           <input
               type="search"
               class="search-bar__input"
+              form="navSearch"
+              name="searchText"
               placeholder="Buscar"
               aria-label="buscar"
           />

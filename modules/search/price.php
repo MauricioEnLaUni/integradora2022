@@ -9,7 +9,7 @@ $min = (isset($_GET['minNumber'])) ? $_GET['minNumber'] : 150;
 $max = (isset($_GET['maxNumber'])) ? $_GET['maxNumber'] : 2999;
 
 
-$stmt->execute([$_GET['minNumber'],$_GET['maxNumber']]);
+$stmt->execute([$min,$max]);
 $result = $stmt->fetchAll(PDO::FETCH_NUM);
 foreach($result as $row){
   $minmax[] = $row[0];
