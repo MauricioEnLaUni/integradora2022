@@ -1,0 +1,10 @@
+INSERT INTO USERS VALUES('','Mary4283','green smolt','Mary','Curry','xWrbTUIlI6yuaD1xrya4nvsySRGFlKOQ','wbYEZESwHgXsdbNoeOo9dIdIvopB7ohC',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Carolyn1486','picayune economics','Carolyn','Drake','aUopgRuReFmbMzzWj9DgZxtw64SjJ10c','XDJ3wt4xsZqpDbCzd5RguZyEomTsS2db',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Lucy4598','fanatical netsuke','Lucy','Panek','yNc3Xi4FDpPZ0ooq5GEJl1yL4ov4qGMl','fw662lZUe3CpirM2OZV9BbqEadqqCv3L',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Irene7405','lopsided fear','Irene','Gutierrez','JDpX3qthaDcLKlCpmP8kU0gnCilxF43I','LqEakrKJQkKlZGiGjIeXgr8095PLsAec',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Casey190','sulky quail','Casey','Caraballo','qVcFvJIQBZibujDflIoDFFyxcWF2nwZt','4p4qVuq83pzotEUMeLryfus7PgZmZ3xM',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Jose9612','greasy microlending','Jose','Terrell','IRSZPe00Db2CfMUfcSyZP2nIcGH3D9zU','56WWkIPiklyyZmwSKH3ZDlGvCbN5o1Tw',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Tamara2953','bizarre flee','Tamara','Wilson','oVGWMcpx7iUjeiu92QQSgMUPddQN3GZH','eDKUaiNxbdhTd2eFjA6t571op5ExDZBV',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Mario4774','green guarantee','Mario','Russell','kKmJlErkxUXEPChXo2573b9QI7V1A3pQ','n0ZYR1UVjHSIo0DBJFxJfq9yJ3JuYqQQ',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Michelle2208','aboard scheme','Michelle','Brook','etJnzjvyXVGHAtXIsfOyW8iiZ7icELII','xpr0Lp0QZKQmECiBgVboYys32SKmth0G',NULL,NULL,3);
+INSERT INTO USERS VALUES('','Blaine8335','soggy pagoda','Blaine','Jones','ARZP0sPu4YU8pAD8kX0ftbp4XlmHMzfQ','NgQcxKjFQ8AgnHuLa5t02UowejAydAqd',NULL,NULL,3);

@@ -1,6 +1,8 @@
-#card
+#card1,
+#card2
 {
     --size: 100%;
+    margin-left: .25vw;
     margin-top: 0.4em;
     display: flex;
     flex-direction: row;
@@ -8,25 +10,22 @@
 }
 .mainCardButton
 {
-    background: var(--dark-purple);
-    border: .3em solid var(--pale-green);
-    color: var(--pale-green);
+    background: var(--blueU);
+    border: .3em solid var(--oxford-blue);
     font-size: 2.25ch;
     font-weight: bold;
     margin-left: 3%;
-    width: 30%;
 }
 .mainCardButton:hover
 {
-    
-    background: var(--pale-purple);
-    border: .3em solid var(--whitish);
-    color: #F2F2F2;
+    background: var(--resolution-blue);
+    border: .3em solid var(--blueU);
+    color: var(--lavender-web);
 }
 .mainCardImage
 {
-    background: #9a99bf;
-    border-bottom: 9pt double #F2F2F2;
+    background: var(--cornflower-blue);
+    border-bottom: 9pt double var(--cornflower-blue);
     width: 100%;
 }
 .mainCardImage img
@@ -35,8 +34,7 @@
 }
 .mainCardTitle
 {
-    background: #a9d9be;
-    border-bottom: 9pt double #F2F2F2;
+    border-bottom: 9pt double var(--cornflower-blue);
     color: #141259;
     font-size: 24px;
     font-weight: 700;
@@ -45,16 +43,17 @@
 }
 .mainCardTitle a
 {
-    color: #141259;
+    color: var(--lavender-web);
     text-decoration: none;
 }
 .mainCardTitle a:hover
 {
-    color: #9a99bf;
+    color: var(--electric-blue);
 }
 .mainCardPrice
 {
-    border-bottom: 9pt double black;
+    border-bottom: 9pt double var(--cornflower-blue);
+    color: var(--lavender-web);
     font-size: 1.2em;
     font-weight: 700;
     line-height: 190%;
@@ -71,24 +70,17 @@
     margin-right: 0.25em;
     text-align:justify;
 }
-article
+.mainCardSettings
 {
-    background: #a9d9be;
-    border: .2em solid #141259;
+    background: var(--blue-ryb);
+    border: .15em solid var(--cornflower-blue);
+    box-sizing: border-box;
     text-justify: center;
-    margin: auto;
 }
-article img
+#card1 article img,
+#card2 article img
 {
     width: 100%;
-}
-
-@media all and (min-width: 576px)
-{
-    .mainCardSettings
-    {
-        width: calc((var(--size) / 2) - .1em);
-    }
 }
 
 @media all and (min-width: 768px)
@@ -97,18 +89,4 @@ article img
     {
         margin: 0.4em 1.5% 0.6em 1.5%;
     }
-    .mainCardSettings
-    {
-        margin-top: .25em;
-        width: calc((var(--size) / 3) - .25em)
-    }
-}
-
-@media all and (min-width: 992px)
-{
-    .mainCardSettings
-    {
-        margin-top: .25em;
-        width: calc((var(--size) / 4) - .15em)
-    }   
 }

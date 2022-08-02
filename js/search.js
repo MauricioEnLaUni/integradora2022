@@ -7,13 +7,8 @@ function estiloForm()
     'Loafer',
     'Sandalia',
     'Slipper',
-    'Atlético',
-    'Trabajo',
-    'Mocasín',
-    'Vestir',
-    'Tacones',
-    'Mary Janes',
-    'Ortopédico'
+    'Atletico',
+    'Trabajo'
     ];
   let content = document.getElementById('estilo');
     for(i = 0; i < typeArray.length;i++)
@@ -23,7 +18,7 @@ function estiloForm()
         <input
         type="checkbox"
         form="searchBar"
-        name="estilos"
+        name="`+typeArray[i]+`"
         value="`+i+`"
         />
         <span>`+typeArray[i]+`</span>
@@ -37,8 +32,13 @@ function marcasDraw()
 {
   let typeArray = [
     'Adidas',
+    'Caterpillar',
+    'Converse',
+    'Crocs',
+    'ECCO',
+    'Hush',
     'Nike',
-    'Converse'
+    'SAS'
     ];
   let content = document.getElementById('marca');
     for(i = 0; i < typeArray.length;i++)
@@ -48,7 +48,7 @@ function marcasDraw()
         <input
         type="checkbox"
         form="searchBar"
-        name="marca"
+        name="`+typeArray[i]+`"
         value="`+i+`"
         />
         <span>`+typeArray[i]+`</span>
@@ -84,7 +84,7 @@ function colorDraw()
         name="color"
         value="`+typeArray[i+1]+`"
         />
-        <img class="colorImg" src="img\\svg\\check-circle-fill.svg" />
+        <img class="colorImg" src="img/svg/check-circle-fill.svg" />
         </span>
         </label>`;
         content.innerHTML+=sum;

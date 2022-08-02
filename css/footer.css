@@ -2,20 +2,17 @@
     line-height: 200%;
 }
 #conn li a nobr{
-    color: #212529;
+    color: var(--midnightblue);
 }
 #copyr{
-    grid-area: copyr;
-    margin: 0 3vw;
     text-align: justify;
 }
 #copyr p{
     font-size: 10px;
 }
-#fLists{
-    display:grid;
-    grid-area: contenido;
-    grid-template-columns: 1fr 1fr 1fr;
+#fLists ul
+{
+    padding-left: 1rem;
 }
 #fLists ul li{
     list-style-type: none;
@@ -23,22 +20,22 @@
     font-weight: 600;
 }
 #fLists ul li a{
-    color: #FFF;
+    color: var(--blue-ryb);
     text-decoration: none;
 }
 #ftitle{
-    color: #FFF;
+    color: var(--resolution-blue);
     font-family: 'Righteous', sans-serif;
     font-size: 32px;
     font-weight: 600;
-    margin-left: 2.5vw;
-    margin-top: 1vh;
 }
 #mail{
-    display:grid;
     font-weight: 600;
-    grid-area: mailing;
-    margin-right: 3vw;
+    margin-right: 2vw;
+}
+.fBox
+{
+    width: 100%;
 }
 #mail button{
     font-weight: 700;
@@ -46,27 +43,14 @@
 #mail h3{
     font-family: 'Righteous', sans-serif;
 }
-#terms{
-    grid-area: legalese;
-}
-.fBox{
-    display:grid;
+#terms a{
+    color: var(--rich-black);
+    font-weight: 600;
+    text-decoration: none;
 }
 .fh5{
-    color: #FFF;
+    color:var(--resolution-blue);
     font-family: 'Righteous', sans-serif;
     font-size: 28px;
-    font-weight: 500;
-}
-footer{
-    grid-area: footer;
-    grid-template-areas: "logo mailing"
-                         "contenido mailing"
-                         "copyr copyr"
-                         ". legalese";
-    grid-template-rows: 1fr 4fr 1fr 1fr;
-    grid-template-columns: 6fr 3fr;
-}
-footer ul li{
-    display: grid;
+    font-weight: 600;
 }
