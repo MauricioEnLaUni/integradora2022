@@ -89,7 +89,7 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
               name="searchText"
               />
           </label>
-          <button type="submit" name="submit">A</button>
+          <button type="submit" name="submit">Buscar</button>
         </form>
       </div>
     </div>

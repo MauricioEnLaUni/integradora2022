@@ -1,6 +1,6 @@
 <?php
 include_once "config.php";
-include_once ROOT . '/modules/session.php';
+include_once 'modules/session.php';
 include_once CONN . "/connector.php";
 if(isset($_POST['submit'])){
   $stmt = $conn->prepare("INSERT INTO `contact`
@@ -24,20 +24,20 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="css/adf.css">
     <title>Fictichos</title>
     <?php
-        include_once ROOT . '/modules/meta/stylesheets.php';
+        include_once 'modules/meta/stylesheets.php';
     ?>
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body class="bodyq">
   <header>
     <?php
-      include_once ROOT . '/modules/session.php';
-      include_once ROOT . '/modules/header.php';
+      include_once 'modules/session.php';
+      include_once 'modules/header.php';
     ?>
   </header>
     
 <?php
-  include_once ROOT . '/modules/modal.php';
+  include_once 'modules/modal.php';
 ?>
 <main>
 <div class="container">
@@ -120,7 +120,7 @@ if(isset($_POST['submit'])){
 </div>
 </main>
 <?php
-  include_once  ROOT . '/modules/footer.php';
+  include_once  'modules/footer.php';
 ?>
 <script src="js/one.js">
 </script>

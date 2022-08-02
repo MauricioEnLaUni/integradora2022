@@ -3,7 +3,7 @@ $type = [];
 // Declares style variables from the get
 if(isset($_GET['style'])){
   $stmt = $conn->prepare('SELECT `it_id`
-  FROM `item`
+  FROM `ITEM`
   WHERE `it_tp` = ?;');
   
   foreach($_GET['style'] as $cool){

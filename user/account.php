@@ -1,7 +1,7 @@
 <?php
 include_once CONN . "/connector.php";
 $stmt = $conn->prepare('SELECT `us_dn`,`us_nm`,`us_ln`
-                        FROM `users`
+                        FROM `USERS`
                         WHERE `us_id` = ?');
 $stmt->execute([$_SESSION['userId']]);
 if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -68,7 +68,7 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <div class="col-md-9">
           <?php
           $stmt = $conn->prepare('SELECT `em_em`,`em_id`
-          FROM `email`
+          FROM `EMAIL`
           WHERE `em_us` = ?');
           $stmt->execute([$_SESSION['userId']]);
           $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -110,7 +110,7 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     <div class="col-md-9">
       <?php
       $stmt = $conn->prepare('SELECT *
-      FROM `phone`
+      FROM `PHONE`
       WHERE `ph_us` = ?');
       $stmt->execute([$_SESSION['userId']]);
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -134,7 +134,7 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
       onclick="modInput('phoneIn','phoneMod')">
         Modificar
     </button>
-    <button type="submit" class="btn btn-info m-2 mb-5 col-2" form="phoneForm">Enviar</button>
+    <button type="submit" class="btn btn-info m-2 mb-5 col-2" form="phoneForm" disabled>Enviar</button>
     </div>
     <div class="col-md-9 d-flex justify-content-center">
   <?php
@@ -151,7 +151,7 @@ if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
       </div>
       <div class="row">
       <div class="col-md-9">
-        <input style='width:100%; margin-bottom:10px;' value="********" name="pwd" type="password" disabled minlength="16" maxlength="32"/>
+        <input style='width:100%; margin-bottom:10px;' onfocus="this.value=''" value="********" name="pwd" type="password" disabled minlength="16" maxlength="32"/>
       </div>
     </label>
     <div class="row">

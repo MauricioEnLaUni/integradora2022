@@ -3,4 +3,4 @@
   <div class="card-body">
     <p class="card-text"><?php echo $r[0];?></p>
   </div>
-</div> 
+</div>

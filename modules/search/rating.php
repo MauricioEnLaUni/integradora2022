@@ -1,10 +1,10 @@
 <?php
 $scores = [];
 $stmt = $conn->prepare('SELECT `it_id`
-FROM `item`
+FROM `ITEM`
 WHERE `it_id` IN (
 SELECT `sc_it`
-FROM `score`
+FROM `SCORE`
 GROUP BY (`sc_it`)
 HAVING AVG(`sc_se`) >= ?
 );');

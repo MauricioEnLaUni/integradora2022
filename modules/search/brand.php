@@ -12,7 +12,7 @@ $br[] = (isset($_GET['SAS'])) ? 'SAS' : "";
 
 // Creates the query
 $stmt = $conn->prepare('SELECT `it_id`
-FROM `item`
+FROM `ITEM`
 WHERE `it_br` = ?;');
 
 // Checks if any member isn't ''

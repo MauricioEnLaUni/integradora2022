@@ -10,6 +10,7 @@ function manageSessions(){
       $_SESSION['cart'] = [];
       $_SESSION['sPage'] = 1;
       $_SESSION['wish'] = [];
+      $_SESSION['page'] = $_SERVER['REQUEST_URI'];
   }else{
       $_SESSION['back'] = $_SESSION['page'];
       $_SESSION['back'] = substr($_SESSION['back'], 0, strpos($_SESSION['back'], "?"));

@@ -1,6 +1,6 @@
 <?php
   $stmt = $conn->prepare('SELECT `it_id`,`it_nm`,`it_ot`,`it_ds`
-  FROM `item`
+  FROM `ITEM`
   WHERE `it_id` = ?;');
   if(str_contains($_SERVER['REQUEST_URI'],'?') && empty($end)){
     ?>

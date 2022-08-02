@@ -1,13 +1,13 @@
 <?php
 $style = [
-  'Bota',
   'Bote',
+  'Bota',
   'Clogs',
-  'Loafer',
-  'Sandalia',
-  'Slipper',
-  'Atletico',
-  'Trabajo'
+  'Loafr',
+  'Sanda',
+  'Slipp',
+  'Atlet',
+  'Work'
   ];
 ?>
 <fieldset id="estilo">

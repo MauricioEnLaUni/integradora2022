@@ -8,7 +8,7 @@ $gn[] = (isset($_GET['infa'])) ? 'Infa' : "";
 
 // Prepares statement
 $stmt = $conn->prepare('SELECT `it_id`
-                        FROM `item`
+                        FROM `ITEM`
                         WHERE `it_wh` = ?;');
 
 // If any member isn't '' then query

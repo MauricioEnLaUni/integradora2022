@@ -22,16 +22,16 @@ foreach($_SESSION['cart'] as $c){
 </div>
 <form id="Out" action="modules/log.php" method="POST" display="none"></form>
 <div class="logButtons">
-  <img src="/Integradora/img/svg/personFill.svg" alt="" />
+  <img src="img/svg/personFill.svg" alt="" />
   <a
   class="btn btn-link"
-  href="/Integradora/user.php"
+  href="user.php"
   role="button">
       Perfil
 </a>
 </div>
 <div class="logButtons">
-  <img src="/Integradora/img/svg/personFill.svg" alt="" />
+  <img src="img/svg/personFill.svg" alt="" />
   <button
   name="logOut"
   form="Out"

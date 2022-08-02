@@ -5,13 +5,13 @@ include_once "../../../../ssl/connector.php";
 if($_POST['pf'] == 1){
   $pf = 1;
 }else if($_POST['pf'] == 2){
-  $stmt = $conn->prepare("UPDATE `address`
+  $stmt = $conn->prepare("UPDATE `ADDRESS`
   SET `ad_pf` = NULL
   WHERE `ad_us` = ?");
   $stmt->execute([$_SESSION['userId']]);
   $pf = 1;
 }else $pf = 'NULL';
-$stmt = $conn->prepare("INSERT INTO `address`
+$stmt = $conn->prepare("INSERT INTO `ADDRESS`
 VALUES('',:u,:n,:s,:p,:z,:c,:t,:f);");
 $stmt->bindParam('u',$_SESSION['userId']);
 $stmt->bindParam('n',$_POST['nb']);

@@ -1,7 +1,7 @@
 <?php
 // Price query between min and max
 $stmt = $conn->prepare('SELECT `it_id`
-                    FROM `item`
+                    FROM `ITEM`
                     WHERE `it_ot` BETWEEN ? AND ?;');
 
 // Defaults if not set

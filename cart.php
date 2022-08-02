@@ -3,7 +3,7 @@ include_once "config.php";
 include_once "modules/session.php";
 include_once CONN . "/connector.php";
 $stmt = $conn->prepare('SELECT `u`.`us_nm`,`u`.`us_ln`,`a`.`ad_st`,`a`.`ad_nb`,`a`.`ad_zn`,`a`.`ad_cy`,`a`.`ad_ct`
-FROM `users` AS `u`
+FROM `USERS` AS `u`
 INNER JOIN `address` AS `a` ON `u`.`us_id` = `a`.`ad_us`
 WHERE `us_id` = :u 
 LIMIT 1;');

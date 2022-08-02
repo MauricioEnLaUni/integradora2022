@@ -7,10 +7,10 @@ if(!isset($_POST['rmv'])){
 }
 if(isset($_POST['dont'])){
   unset($_SESSION['wish'][$_POST['rmv']]);
-  header("Location:/Integradora/wish.php");
+  header("Location:wish.php");
   exit();
 }
 $n = $_POST['rmv'];
 unset($_SESSION['cart'][$n]);
-header("Location:/Integradora/cart.php");
+header("Location:cart.php");
 ?> 

@@ -13,7 +13,7 @@
       <?php
       $i = 1;
       $stmt = $conn->prepare('SELECT `it_nm`,`it_in`,`it_id`
-                              FROM `item`
+                              FROM `ITEM`
                               WHERE `it_nm` = :n');
       $stmt->bindParam('n',$j);
       foreach($_SESSION['cart'] as $j=>$v){

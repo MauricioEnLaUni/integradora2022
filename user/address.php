@@ -3,7 +3,7 @@ include_once 'config.php';
 include_once "modules/session.php";
 include_once CONN . "/connector.php";
 $stmt = $conn->prepare('SELECT *
-FROM `address`
+FROM `ADDRESS`
 WHERE `ad_us` = ? ;');
 $stmt->execute([$_SESSION['userId']]);
 $result = $stmt->fetchAll();

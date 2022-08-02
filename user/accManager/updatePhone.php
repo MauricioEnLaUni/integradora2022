@@ -4,7 +4,7 @@ include_once "../../../../ssl/connector.php";
 // Builds the query and binds parameters
 $old = "";
 $new = "";
-$stmt = $conn->prepare("UPDATE `phone`
+$stmt = $conn->prepare("UPDATE `PHONE`
 SET `ph_nm` = :n
 WHERE `ph_nm` = :o AND `ph_us` = :u
 LIMIT 1;");

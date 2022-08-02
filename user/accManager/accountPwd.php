@@ -2,7 +2,7 @@
 include_once "../../modules/session.php";
 include_once "../../../../ssl/connector.php";
 if(isset($_POST['pwd'])){
-  $stmt = $conn->prepare("UPDATE `users`
+  $stmt = $conn->prepare("UPDATE `USERS`
   SET `us_pw` = ?
   WHERE `us_id` = ?
   LIMIT 1;");
