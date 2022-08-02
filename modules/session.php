@@ -3,10 +3,10 @@ ini_set('session.gc_maxlifetime', 1800);
 session_start();
 function manageSessions(){
   if(!isset($_SESSION['user'])){
-      $_SESSION['user'] = 4;
+      $_SESSION['user'] = 88;
       $_SESSION['start'] = date('Y-m-d H:i:s');
       $_SESSION['last_activity'] = date('Y-m-d H:i:s');
-      $_SESSION['userId'] = 0;
+      $_SESSION['userId'] = 1;
       $_SESSION['cart'] = [];
       $_SESSION['sPage'] = 1;
       $_SESSION['wish'] = [];
@@ -33,8 +33,15 @@ function regenerateId(){
         $_SESSION['start'] = date('Y-m-d H:i:s');
     }
 }
+function cleanCart(){
+    if($_SESSION['user'] != 0 || $_SESSION['user'] != 1 || $_SESSION['user'] != 2){
+        unset($_SESSION['cart']);
+        $_SESSION['cart'] = [];
+    }
+}
 function onPage(){
     manageSessions();
+    cleanCart();
     activity();
     regenerateId($_SESSION['start']);
     closeInactive();

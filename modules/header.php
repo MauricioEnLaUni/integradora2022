@@ -41,7 +41,7 @@
         </div>
         <div class="d-none d-md-block col-md-5 flex-row-reverse">
           <?php
-          if($_SESSION['user'] != 4) include_once "modules/header/logged.php";
+          if($_SESSION['user'] != 88) include_once "modules/header/logged.php";
           else include_once "modules/header/logIn.php";
           ?>
         </div>

@@ -72,7 +72,7 @@ function passValidation($pwd,$rpt){
 
 function createUser($conn,$usr,$pwd,$eml){
   $hash = password_hash($pwd,PASSWORD_ARGON2I);
-  $a = 2;
+  $a = 6;
   $vkey = md5(time() . $eml);
   $stmt = $conn->prepare('INSERT INTO `USERS` (`us_an`,`us_pw`,`us_al`)
   VALUES(?,?,?);');

@@ -2,7 +2,7 @@
   require_once '../../config.php';
   require_once "../session.php";
   require_once "validation.php";
-  require_once CONN . "/ssl/connector.php";
+  require_once CONN . "/connector.php";
   $usr;
   $pwd;
   $rpt;
