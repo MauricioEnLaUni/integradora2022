@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fictichos</title>
-    <?php
-      include_once 'config.php';
-      include_once ROOT . '/modules/meta/stylesheets.php';
-    ?>
-    <link rel="stylesheet" href="css/terms.css">
-    <link
-    rel="shortcut icon"
-    href="img/logo/favicon.ico"
-    type="image/x-icon"
-    />
-  </head>
-
-  <body>
-    <header>
-    <?php
-    include_once ROOT . '/modules/session.php';
-    include_once ROOT . '/modules/header.php';
-    ?>
-    </header>
-    <main>
-      <div class="row py-4 px-2">
+<div class="row py-4 px-2">
         <div class="col-1"></div>
         <div class="col-10 py-3 px-3" id="termsBody">
         <h2 class="text-center"><strong>Terms and Conditions</strong></h2>
@@ -151,11 +124,6 @@
 <p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
 
 <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </main>
-  <?php
-  include_once ROOT . '/modules/footer.php';
-  ?>
-  </body>
+</div>
+<div class="col-1"></div>
+</div>

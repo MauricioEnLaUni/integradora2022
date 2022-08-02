@@ -1,6 +1,6 @@
 <?php
 include_once "config.php";
-require_once ROOT . '/modules/session.php';
+require_once 'modules/session.php';
 include_once CONN . '/connector.php';
 if(isset($_POST['sale'])){
   $stmt = $conn->prepare('SELECT `it_nm`
