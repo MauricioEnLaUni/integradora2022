@@ -1,0 +1,29 @@
+.hero{
+  background-color: blue;
+  height: 64vh;
+}
+
+.blueU{
+  color: var(--blueU);
+}
+
+#abouTtitle{
+  font-size: 72px;
+  font-weight: 700;
+}
+
+#autor{
+  margin-left: 4rem;
+}
+
+#autor img
+{
+    border: 5px double #00467b;
+    border-radius: 50%;
+    width: 12vw;
+    height: 12vw;
+}
+
+.card{
+  margin-left: 2rem;
+}
