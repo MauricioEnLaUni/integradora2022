@@ -1,6 +1,7 @@
+<!-- Empieza Carrusel -->
 <div
     id="carrusel"
-    class="carousel slide row"
+    class="carousel slide"
     data-bs-ride="true"
 >
     <div class="carousel-indicators">
@@ -28,21 +29,21 @@
     <div class="carousel-inner">
     <div class="carousel-item active">
         <img
-        src="img/celebrate.webp"
+        src="img\smol\carrusel\carouselCoupleSmall.webp"
         class="d-block w-100"
         alt="..."
         />
     </div>
     <div class="carousel-item">
         <img
-        src="img/shoeline.jpg"
+        src="img\smol\carrusel\shoeCarouselSmall.webp"
         class="d-block w-100"
         alt="..."
         />
     </div>
     <div class="carousel-item">
         <img
-        src="img/mexico.webp"
+        src="img\smol\carrusel\trainSmall.webp"
         class="d-block w-100"
         alt="..."
         />
@@ -67,3 +68,4 @@
     <span class="visually-hidden">Next</span>
     </button>
 </div>
+<!-- Fin Carrusel -->

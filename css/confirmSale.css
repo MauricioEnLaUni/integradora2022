@@ -1,3 +1,37 @@
+/* #datosSale
+{
+  display:grid;
+  grid-template-areas:"user userPHP userPHP userPHP formaPago"
+                      "norder norderPHP norderPHP norderPHP formaPago"
+                      "fecha fechaPHP fechaPHP fechaPHP formaPago"
+                      "address addH AddressPHP AddressPHP AddressPHP formaPago";
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+}
+#datosSale p
+{
+  grid-column: 2 / 4;
+  font-size: 6;
+}
+#datosSale h3
+{
+  grid-column: 1 / 1;
+  font-size: 24px;
+}
+#datosSale h3:last-child
+{
+  grid-area: addH;
+  font-size: 24px;
+}
+#datosSale button
+{
+    grid-column: 1/2;
+}
+#datosSale h3,
+#datosSale p,
+#datosSale button
+{
+    display: grid;
+} */
 #datosSale
 {
   margin: .4em 5% 1.4em 5%;

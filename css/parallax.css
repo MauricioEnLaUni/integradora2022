@@ -1,9 +1,0 @@
-#parallax
-{
-  background-image: url("../img/shelves2.jpg");
-  height: 48vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
