@@ -3,18 +3,15 @@ USE `ficticho_fict`;
 SET NAMES 'utf8mb4';
 
 CREATE TABLE `ACCOUNTING`(
-	`ac_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- ID
+	`ac_id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, -- ID
     `ac_ct` VARCHAR(12), -- Concepto
     `ac_am` DECIMAL(11,2), -- Cantidad
     `ac_dt` DATETIME,  -- Fecha de cambio
-    `ac_md` CHAR(4), -- Modo de Pago
-    CONSTRAINT `PK_ACC` PRIMARY KEY (`ac_id`),
-    INDEX `IX_DT`(`ac_dt`), -- Indice para buscar por fechas
-    INDEX `IX_AM`(`ac_am`) -- Indice para buscar por cantidad
+    `ac_md` CHAR(4) -- Modo de Pago
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `ADDRESS`(
-	`ad_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`ad_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`ad_us` INT UNSIGNED NOT NULL, -- FK a usuarios
     `ad_nb` SMALLINT, -- Exterior number
     `ad_st` VARCHAR(25), -- Street
@@ -22,31 +19,26 @@ CREATE TABLE `ADDRESS`(
     `ad_zn` VARCHAR(25), -- Zone/Colony
     `ad_cy` VARCHAR(16), -- City
     `ad_ct` CHAR(2), -- Country
-    `ad_pf` TINYINT, -- Preferred Address
-    CONSTRAINT `PK_AD` PRIMARY KEY (`ad_id`),
-    INDEX `IX_PS`(`ad_ps`,`ad_cy`),
-    INDEX `IX_CY`(`AD_CY`)
+    `ad_pf` TINYINT UNSIGNED -- Preferred Address
 ) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `EMAIL`(
-	`em_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`em_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`em_us` INT UNSIGNED NOT NULL,
     `em_em` VARCHAR(128),
-	CONSTRAINT `PK_EM` PRIMARY KEY (`em_id`),
-    CONSTRAINT `UQ_EM` UNIQUE (`em_em`),
-    INDEX `IX_EM`(`em_em`) -- Indice para buscar por email
+    CONSTRAINT `UQ_EM` UNIQUE (`em_em`)
 ) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 -- Tabla muchos a muchos
 -- Tabla de órdenes e items
 CREATE TABLE `it_or`(
 	`or_id` int UNSIGNED NOT NULL,
-    `it_id` int,
+    `it_id` int UNSIGNED NOT NULL,
     `io_am` TINYINT -- Cantidad
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `ITEM`(
-	`it_id` INT UNSIGNED NOT NULL AUTO_INCREMENT, -- IDENTIFIER
+	`it_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, -- IDENTIFIER
 	`it_nm` VARCHAR(30), -- NAME
     `it_ds` VARCHAR(255), -- DESCRIPTION
 	`it_in` FLOAT(10,2), -- PRICE BUY
@@ -56,27 +48,20 @@ CREATE TABLE `ITEM`(
 	`it_wh` CHAR(4), -- Niño, Niña, Infa, Unsx, Homb, Mujr
 	`it_rd` DATE, -- RELEASE DATE
     `it_of` INT UNSIGNED NOT NULL, -- Oferta
-    `it_tx` FLOAT(6,2), -- Impuestos
-    `it_ft` BOOL, -- Si es promovido
-    CONSTRAINT `PK_IT` PRIMARY KEY (`it_id`),
-    INDEX `IX_NM`(`it_nm`),
-    INDEX `IX_BR`(`it_br`),
-    INDEX `IX_OT`(`it_in`)
+    `it_tx` DECIMAL(6,2), -- Impuestos
+    `it_ft` BOOL -- Si es promovido
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `OFFERS`(
-	`of_id` int UNSIGNED AUTO_INCREMENT,
+	`of_id` int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `of_st` DATE, -- Start  Date
     `of_ed` DATE, -- End
     `of_am` TINYINT, -- % Decrease
-    `of_ds` VARCHAR(255), -- Description
-    CONSTRAINT `PK_OF` PRIMARY KEY (`of_id`),
-    UNIQUE `UQ_OF`(`of_st`),
-    INDEX `IX_OFDT`(`of_st`,`of_ed`)
+    `of_ds` VARCHAR(255) -- Description
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `ORDERS`(
-	`or_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- Identifier PK
+	`or_id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, -- Identifier PK
     `or_us` int UNSIGNED NOT NULL , -- User who owns this, foreign key
     `or_in` DATETIME, -- Date the order was made
     `or_fl` DATETIME, -- Date order was fulfilled
@@ -86,48 +71,40 @@ CREATE TABLE `ORDERS`(
     `or_py` SMALLINT UNSIGNED, -- Order price
     `or_pd` BOOL, -- If the order's been paid. Not sure.
     `or_ad` DATETIME, -- When the order was paid
-    CONSTRAINT `PK_OR` PRIMARY KEY (`or_id`),
-    INDEX `IX_ORPY`(`OR_PY`)
+    `or_dv` INT UNSIGNED
 ) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `PHONE`(
-	`ph_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`ph_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`ph_us` INT UNSIGNED NOT NULL,
     `ph_nm` VARCHAR(15),
-	CONSTRAINT `PK_PH` PRIMARY KEY (`ph_id`),
-    CONSTRAINT `UQ_PH` UNIQUE (`PH_NM`),
-    INDEX `IX_PH`(`ph_nm`)
+    CONSTRAINT `UQ_PH` UNIQUE (`PH_NM`)
 ) ENGINE=InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `PROVIDER`(
-	`pr_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- Identifier
+	`pr_id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, -- Identifier
     `pr_nm` VARCHAR(20), -- Name
     `pr_wb` VARCHAR(64), -- Website
-    CONSTRAINT `PK_PR` PRIMARY KEY (`pr_id`),
-    CONSTRAINT `UQ_WB` UNIQUE (`PR_WB`),
-    INDEX `IX_WBNM`(`PR_NM`)
+    CONSTRAINT `UQ_WB` UNIQUE (`PR_WB`)
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 create table `SCORE`(
-	`sc_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,-- ID
+	`sc_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,-- ID
 	`sc_it` INT UNSIGNED NOT NULL,-- FK ITEM
 	`sc_us` INT UNSIGNED NOT NULL,-- FK USER
-	`sc_se` TINYINT UNSIGNED,-- SCORE?
-	CONSTRAINT `PK_SC` PRIMARY KEY (`sc_id`)
+	`sc_se` TINYINT UNSIGNED-- SCORE?
 )engine = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `STOCK`(
-	`st_id` int UNSIGNED NOT NULL AUTO_INCREMENT, -- IDENTIFIER
+	`st_id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, -- IDENTIFIER
     `st_it` int UNSIGNED NOT NULL, -- FK ITEM ID
     `st_st` TINYINT UNSIGNED, -- Amount of shoes in this stock position
     `st_lc` TINYINT UNSIGNED, -- Where the item is currently OUTOFSTOCK,TRANSITIN,TRANSITOUT,FRONT,STORE,WAREHOUSE
-    `st_sz` VARCHAR(5), -- Hexadecimal Operation DETERMINES SHOE SIZE 00 TO FF Only the first 
-    CONSTRAINT `PK_ST` PRIMARY KEY (`st_id`),
-    INDEX `IX_STSZ`(`ST_SZ`)
+    `st_sz` VARCHAR(5) -- Hexadecimal Operation DETERMINES SHOE SIZE 00 TO FF Only the first 
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `USERS`(
-	`us_id` INT UNSIGNED NOT NULL AUTO_INCREMENT, -- Identifier
+	`us_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, -- Identifier
     `us_an` VARCHAR(16), -- Account name <> Display Name
     `us_dn` VARCHAR(32), -- Display name <> Account Name
     `us_nm` VARCHAR(16), -- Name
@@ -137,32 +114,28 @@ CREATE TABLE `USERS`(
     `us_vf` BOOL DEFAULT NULL, -- Si el usuario está verificado
     `us_pr` INT UNSIGNED, -- FK Proveedor 
     `us_al` INT UNSIGNED, -- Nivel de acceso al sitio
-    CONSTRAINT `PK_UR` PRIMARY KEY (`us_id`),
     CONSTRAINT `UQ_USAN` UNIQUE (`us_an`),
     CONSTRAINT `UQ_USDN` UNIQUE (`us_dn`),
-    CONSTRAINT `UQ_USCS` UNIQUE (`us_cs`),
-    INDEX `IX_USPR`(`US_PR`)
+    CONSTRAINT `UQ_USCS` UNIQUE (`us_cs`)
 ) ENGINE = InnoDB CHARACTER SET utf8mb4;
 
 CREATE TABLE `pay_info` (
-  `pi_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `pi_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `ur_id` int(11) UNSIGNED NOT NULL,
   `pi_type` tinyint(2) UNSIGNED NOT NULL,
   `num_credits` int(11) NOT NULL,
   `price_per_credits` float NOT NULL,
-  `payment_time_stamp` datetime NOT NULL,
-  PRIMARY KEY (`pi_id`)
+  `payment_time_stamp` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `contact`(
-	`cn_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	`cn_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `cn_nm` VARCHAR(20),
     `cn_ln` VARCHAR(30),
     `cn_em` VARCHAR(128),
     `cn_is` TINYINT UNSIGNED,
     `cn_ph` VARCHAR(15),
-    `cn_ms` VARCHAR(255),
-    CONSTRAINT `PK_CN` PRIMARY KEY (`cn_id`)
+    `cn_ms` VARCHAR(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 

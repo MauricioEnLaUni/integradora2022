@@ -25,7 +25,9 @@
           <button
           class="btn btn-primary d-md-none col-3 d-flex"
           type="button"
-          data-bs-toggle="modal"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasTop"
+          aria-controls="offcanvasTop"
           role="button"
           href="#searchModal">
             <img src="img/svg/search.svg" alt="" />
@@ -41,7 +43,7 @@
         </div>
         <div class="d-none d-md-block col-md-5 flex-row-reverse">
           <?php
-          if($_SESSION['user'] != 4) include_once "modules/header/logged.php";
+          if($_SESSION['user'] != 88) include_once "modules/header/logged.php";
           else include_once "modules/header/logIn.php";
           ?>
         </div>

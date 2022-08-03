@@ -11,37 +11,19 @@
   font-size: 72px;
   font-weight: 700;
 }
-#autor
-{
-    background: #f3eed9;
-    justify-content: center;
-    text-align: center;
-}
 
-#autor h4
-{
-    color: #00467b;
-    font-size: 24px;
-    margin: 15px 0px;
+#autor{
+  margin-left: 4rem;
 }
 
 #autor img
 {
     border: 5px double #00467b;
     border-radius: 50%;
-    margin: auto;
-    width: 40vw;
-    height: 40vw;
+    width: 12vw;
+    height: 12vw;
 }
 
-#autor p
-{
-    color: #4276b0;
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-#autorCard #autor
-{
-    padding: 30px;
+.card{
+  margin-left: 2rem;
 }

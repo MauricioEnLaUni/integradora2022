@@ -5,7 +5,6 @@ include_once CONN . '/connector.php';
 include_once 'modules/search/allItems.php';
 if(!isset($end) || $end < 10) $_SESSION['sPage'] = 1;
 
-
 function getSearch($stmt,$cond,&$array){
   $stmt->execute([$cond]);
   $result = $stmt->fetchAll(PDO::FETCH_NUM);
@@ -76,6 +75,10 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
 <header>
   <?php include_once 'modules/header.php'; ?>
 </header>
+    <?php
+      include_once 'modules/modal.php';
+      include_once 'modules/header/offcanvasSearch.php';
+    ?>
   <main>
   <div class="container-fluid">
     <div class="row">
@@ -117,6 +120,7 @@ if(str_contains($_SERVER['REQUEST_URI'],'?')){
   </main>
   <?php
     include_once 'modules/footer.php';
+    include_once "modules/meta/scripts.html";
   ?>
 </body>
 </html>

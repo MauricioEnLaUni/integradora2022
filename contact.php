@@ -35,6 +35,10 @@ if(isset($_POST['submit'])){
       include_once 'modules/header.php';
     ?>
   </header>
+  <?php
+    include_once 'modules/modal.php';
+    include_once 'modules/header/offcanvasSearch.php';
+  ?>
     
 <?php
   include_once 'modules/modal.php';
@@ -121,6 +125,7 @@ if(isset($_POST['submit'])){
 </main>
 <?php
   include_once  'modules/footer.php';
+  include_once "modules/meta/scripts.html";
 ?>
 <script src="js/one.js">
 </script>
@@ -129,4 +134,4 @@ if(isset($_POST['submit'])){
   integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
   crossorigin="anonymous"
 ></script>
-</body
+</body>

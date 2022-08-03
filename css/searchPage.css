@@ -68,11 +68,6 @@
     justify-content: center;
     margin: .2em 0;
 }
-#color label:last-child
-{
-    align-self: center;
-    flex: 1 1 100%;
-}
 #color label span
 {
     border: .2em solid black;
@@ -121,6 +116,22 @@ legend
     text-align: center;
     text-shadow:
       .5px .5px 0em var(--rich-black),
-      .05px .05px .25em var(--emerald);
-    
+      .05px .05px .25em var(--emerald); 
+}
+.searchTitle a
+{
+  color: var(--emerald);
+  text-decoration: none;
+}
+@media all and (max-width:768px)
+{
+  legend
+  {
+    font-size: 3vw;
+  }
+  #color label span
+  {
+    min-height: 6vw;
+    min-width: 6vw;
+  }
 }

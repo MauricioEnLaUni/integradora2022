@@ -24,6 +24,8 @@
   <body>
     <?php
       include_once 'modules/modal.php';
+      include_once 'modules/modal.php';
+      include_once 'modules/header/offcanvasSearch.php';
     ?>
     <header>
       <?php include_once 'modules/header.php'; ?>

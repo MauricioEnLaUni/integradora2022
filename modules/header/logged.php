@@ -4,7 +4,7 @@ foreach($_SESSION['cart'] as $c){
   $cartSize += $c;
 }
 ?>
-<div class="listsLogos">
+<div class="listsLogos col-2 d-flex justify-content-center">
   <a
   class="btn btn-link position-relative"
   href="cart.php">
@@ -13,15 +13,8 @@ foreach($_SESSION['cart'] as $c){
     if($cartSize > 0) echo $cartSize;?></span>
   </a>
 </div>
-<div class="listsLogos">
-  <a
-  class="btn btn-link"
-  href="wish.php">
-    <img src="img/svg/heart-fill.svg" alt="Cart Button" />
-  </a>
-</div>
 <form id="Out" action="modules/log.php" method="POST" display="none"></form>
-<div class="logButtons">
+<div class="logButtons col-3">
   <img src="img/svg/personFill.svg" alt="" />
   <a
   class="btn btn-link"
@@ -30,7 +23,7 @@ foreach($_SESSION['cart'] as $c){
       Perfil
 </a>
 </div>
-<div class="logButtons">
+<div class="logButtons col-3">
   <img src="img/svg/personFill.svg" alt="" />
   <button
   name="logOut"

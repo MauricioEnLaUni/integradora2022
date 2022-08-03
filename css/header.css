@@ -84,8 +84,8 @@ nav div
 }
 #hButtons button
 {
-  background: var(--dark-purple);
-  border: 0.6vh double var(--pale-purple);
+  background: var(--resolution-blue);
+  border: 0.6vh double var(--emerald);
   border-radius: 50vh;
   height: 16vw;
   max-height: 70px;

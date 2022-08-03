@@ -72,19 +72,25 @@ function passValidation($pwd,$rpt){
 
 function createUser($conn,$usr,$pwd,$eml){
   $hash = password_hash($pwd,PASSWORD_ARGON2I);
-  $a = 2;
   $vkey = md5(time() . $eml);
-  $stmt = $conn->prepare('INSERT INTO `USERS` (`us_an`,`us_pw`,`us_al`)
-  VALUES(?,?,?);');
-  $stmt->execute([$usr,$hash,$a]);
-  $stmt = $conn->prepare('INSERT INTO `us_id`
+  $stmt = $conn->prepare('INSERT INTO `USERS` VALUES(NULL,?,NULL,NULL,NULL,?,?,NULL,NULL,3);');
+  $stmt->execute([$usr,$hash,$vkey]);
+
+  $stmt = $conn->prepare('SELECT `us_id`
   FROM `USERS`
-  WHERE `us_an` = :a
+  WHERE `us_an` = ?
   LIMIT 1;');
   $stmt->execute([$usr]);
-  $id = $stmt->fetch();
-  $stmt = $conn->prepare('INSERT INTO `EMAIL` (`em_us`,`em_em`,`em_key`)
-    VALUES(?,?,?);');
-  $stmt->execute([$id,$eml,$vkey]);
+  $id = $stmt->fetch(PDO::FETCH_NUM);
+  $stmt = $conn->prepare('INSERT INTO `EMAIL` (`em_us`,`em_em`)
+    VALUES(?,?);');
+  $stmt->execute([$id[0],$eml]);
+  $to = $eml;
+  $subject = "Email Verification";
+  $message = '<a href="/Integradora/registration?vkey=' . $vkey . '>Register Account</a>';
+  $headers = "From: admin@fictichos.com \r\n";
+  $headers .= "MIME-Version: 1.0" . "\r\n";
+  $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+  mail($to,$subject,$message,$headers);
 }
 ?>

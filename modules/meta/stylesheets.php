@@ -21,4 +21,9 @@ href="https://fonts.googleapis.com">
 href="https://fonts.gstatic.com" crossorigin>
 <link
 href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap"
-rel="stylesheet"> 
+rel="stylesheet">
+<link
+rel="shortcut icon"
+href="img/logo/favicon.ico"
+type="image/x-icon"
+/>

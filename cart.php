@@ -2,14 +2,13 @@
 include_once "config.php";
 include_once "modules/session.php";
 include_once CONN . "/connector.php";
-$stmt = $conn->prepare('SELECT `u`.`us_nm`,`u`.`us_ln`,`a`.`ad_st`,`a`.`ad_nb`,`a`.`ad_zn`,`a`.`ad_cy`,`a`.`ad_ct`
+$stmt = $conn->prepare('SELECT `u`.`us_nm`,`u`.`us_ln`,`a`.`ad_st`,`a`.`ad_nb`,`a`.`ad_zn`,`a`.`ad_cy`,`a`.`ad_ct`,`a`.`ad_id`
 FROM `USERS` AS `u`
-INNER JOIN `address` AS `a` ON `u`.`us_id` = `a`.`ad_us`
-WHERE `us_id` = :u 
+RIGHT JOIN `address` AS `a` ON `u`.`us_id` = `a`.`ad_us`
+WHERE `us_id` = ?
 LIMIT 1;');
-$stmt->bindParam('u',$_SESSION['userId']);
-$stmt->execute();
-$row = $stmt->fetch();
+$stmt->execute([$_SESSION['userId']]);
+if($row = $stmt->fetch()){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +16,7 @@ $row = $stmt->fetch();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Carrito</title>
   <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
   rel="stylesheet"
@@ -39,6 +38,10 @@ $row = $stmt->fetch();
   include_once "modules/header.php";
   ?>
   </header>
+  <?php
+    include_once 'modules/modal.php';
+    include_once 'modules/header/offcanvasSearch.php';
+  ?>
 <main>
 <div class="container-fluid mt-2 mb-5" id="orderPage">
   <div class="row">
@@ -53,6 +56,8 @@ $row = $stmt->fetch();
 </main>
 <?php
 include_once "modules/footer.php";
+include_once "modules/meta/scripts.html";
+}else header("Location:index.php?e=address");
 ?>
 </body>
 </html>

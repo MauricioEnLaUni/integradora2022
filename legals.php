@@ -24,6 +24,10 @@
     include_once 'modules/header.php';
     ?>
     </header>
+    <?php
+      include_once 'modules/modal.php';
+      include_once 'modules/header/offcanvasSearch.php';
+    ?>
     <main>
       <?php
       if(!isset($_GET['page']) || $_GET['page'] == 'tos'){
@@ -33,5 +37,6 @@
     </main>
   <?php
   include_once 'modules/footer.php';
+  include_once "modules/meta/scripts.html";
   ?>
   </body>

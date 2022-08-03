@@ -43,6 +43,10 @@ include_once  'modules/modal.php';
   include_once "modules/header.php";
 ?>
 </header>
+  <?php
+    include_once 'modules/modal.php';
+    include_once 'modules/header/offcanvasSearch.php';
+  ?>
 
 <main class="py-3">
   <div class="container-fluid">
@@ -52,6 +56,9 @@ include_once  'modules/modal.php';
     </div>
   <div id="parallax" class="row"></div>
   <div class="row" id="card1">
+    <?php
+      include_once "modules/index/card.php";
+    ?>
   </div>
 </div>
 </main>
@@ -63,7 +70,6 @@ include_once  'modules/modal.php';
   $loljson = json_encode($item);
   echo "<script>exhibit('itemImage',$loljson,$id)</script>";
   include_once "modules/meta/scripts.html";
-  include_once "modules/index/card.php";
 ?>
 </body>
 </html>

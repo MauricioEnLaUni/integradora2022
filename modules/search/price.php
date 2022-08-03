@@ -2,7 +2,7 @@
 // Price query between min and max
 $stmt = $conn->prepare('SELECT `it_id`
                     FROM `ITEM`
-                    WHERE `it_ot` BETWEEN ? AND ?;');
+                    WHERE `it_in` BETWEEN ? AND ?;');
 
 // Defaults if not set
 $min = (isset($_GET['minNumber'])) ? $_GET['minNumber'] : 150;

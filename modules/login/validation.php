@@ -54,4 +54,15 @@ function passValidation($usr,$pwd,$conn){
   }
   return $result;
 }
+
+function mailValid($conn,$usr){
+  $result;
+  $stmt = $conn->prepare('SELECT `us_al` FROM `USERS` WHERE `us_an` = ? ;');
+  $stmt->execute([$usr]);
+  if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    if($row['us_al'] == 3) $result = true;
+    else $result = false;
+  }
+  return $result;
+}
 ?>

@@ -1,5 +1,5 @@
 <?php
-  $stmt = $conn->prepare('SELECT `it_id`,`it_nm`,`it_ot`,`it_ds`
+  $stmt = $conn->prepare('SELECT `it_id`,`it_nm`,`it_in`,`it_ds`
   FROM `ITEM`
   WHERE `it_id` = ?;');
   if(str_contains($_SERVER['REQUEST_URI'],'?') && empty($end)){
@@ -18,12 +18,18 @@
           <img src="img/items/smol/<?php echo $tmp['it_id'] ?>.jpg" alt="" width="100vw" class="searchImg"/>
         </div>
         <div class="col-8">
-          <h3 class="searchTitle"><?php echo $tmp['it_nm'] ?></h3>
-          <h4 class="searchPrice"><?php echo $tmp['it_ot'] ?></h4>
+          <h3 class="searchTitle"><a href="exhibit.php?product=<?php echo $tmp['it_id'] ?>"><?php echo ucwords($tmp['it_nm']); ?></a></h3>
+          <h4 class="searchPrice"><?php echo "$" . $tmp['it_in'] ?></h4>
         </div>
         <div class="col-2 mt-3">
           <form method="POST" action="confirm.php">
-            <button class="searchButton btn btn-warning" type="submit" name="sale" value="<?php echo $tmp['it_id'] ;?>">
+            <button class="searchButton btn btn-warning"
+            <?php
+              if($_SESSION['userId'] != 0 && $_SESSION['userId'] != 1 && $_SESSION['userId'] != 2){
+                echo "disabled";
+              }
+            ?>
+            type="submit" name="sale" value="<?php echo $tmp['it_id'] ;?>">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="curr
               entColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
                 <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V

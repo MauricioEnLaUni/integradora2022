@@ -9,6 +9,7 @@
   include_once 'config.php';
   include_once 'user/userStyle.php';
   ?>
+  <link rel="stylesheet" href="css/logInModal.css">
 </head>
 <body>
   <header>
@@ -17,9 +18,13 @@
       include_once 'modules/header.php';
     ?>
   </header>
+    <?php
+      include_once 'modules/modal.php';
+      include_once 'modules/header/offcanvasSearch.php';
+    ?>
   <main>
   <?php
-  if($_SESSION['user'] == 4){
+  if($_SESSION['user'] == 88){
     header("Location:" . "index.php");
     exit();
   }else{
