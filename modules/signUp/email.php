@@ -1,9 +1,9 @@
 <?php
 if(isset($_GET['vkey'])){
   $vkey = $_GET['vkey'];
-  $stmt = $conn->prepare("SELECT `us_vf`,`vkey`
+  $stmt = $conn->prepare("SELECT `us_vf`,`us_cs`
                           FROM `USERS`
-                          WHERE `us_vf` = 0 AND `vkey` = ?
+                          WHERE `us_vf` = NULL AND `us_cs` = ?
                           LIMIT 1;");
   $result = $stmt->execute([$vkey]);
   if($result->num_rows == 1){
